@@ -5,14 +5,14 @@ import { HomeComponent } from './components/home/home.component';
 // import { Name2Component } from './';
 // import { Name3Component } from './';
 // import { Name4Component } from './';
-// import { PageNotFoundComponent } from './';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   // { path: 'path2', component: Name2Component },
   // { path: 'path3', component: Name3Component },
   // { path: 'path4', component: Name4Component },
-  // { path: '**', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent }
 
   // { path: 'path/:routeParam', component: MyComponent },
   // { path: 'staticPath', component: ... },
