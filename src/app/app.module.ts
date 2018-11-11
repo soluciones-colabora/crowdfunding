@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
