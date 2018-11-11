@@ -14,13 +14,15 @@ import { environment } from '../environments/environment';
 
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
