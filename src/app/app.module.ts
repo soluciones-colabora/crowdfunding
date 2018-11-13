@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
+// Angular Material
+import { MaterialComponentsModule } from './material-components/material-components.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // Routing
 import { AppRoutingModule } from './/app-routing.module';
 
@@ -17,7 +22,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-
 
 @NgModule({
   declarations: [
@@ -35,6 +39,8 @@ import { LoginComponent } from './components/login/login.component';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    MaterialComponentsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
