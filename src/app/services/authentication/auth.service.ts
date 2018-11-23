@@ -128,6 +128,11 @@ export class AuthService {
     });
   }
 
+  // Verifies if email is already registered
+  verifyEmail(email: string) {
+    return this.afAuth.auth.fetchSignInMethodsForEmail(email);
+  }
+
   // If error, console log and notify user
   private handleError(error: Error) {
     console.error(error);
