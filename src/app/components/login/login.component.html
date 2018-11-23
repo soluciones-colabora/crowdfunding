@@ -6,32 +6,63 @@
 <!-- User NOT logged in -->
 <ng-template #guest>
   <mat-card class="example-card">
-    <mat-card-header>
-      <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title>LogIn using email</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="example-container">
-        <mat-form-field>
-          <input matInput placeholder="Enter your email" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Enter your password" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-      </div>
-      <button mat-raised-button color="primary">Log In</button>
-    </mat-card-content>
-    Or login with...
-    <mat-card-actions>
-      <button mat-raised-button (click)="auth.googleLogin()" class="button btn-social btn-google">
-        <i class="fa fa-google"></i> Connect Google
-      </button>
-      <button mat-flat-button (click)="signInWithFacebook()" class="button btn-social btn-facebook">
-        <i class="fa fa-facebook fa-lg"></i> Connect Facebook
-      </button>
-    </mat-card-actions>
+    <mat-tab-group>
+      <mat-tab label="Log In">
+        <mat-card-header>
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <!-- <mat-card-title>LogIn using email</mat-card-title> -->
+        </mat-card-header>
+        <mat-card-content>
+          <div class="example-container">
+            <!-- <mat-form-field>
+              <input matInput placeholder="Enter your email" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Enter your password" [formControl]="password" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field> -->
+          </div>
+          <button mat-raised-button color="primary">Log In</button>
+        </mat-card-content>
+        Or login with...
+        <mat-card-actions>
+          <button mat-raised-button (click)="auth.googleLogin()" class="button btn-social btn-google">
+            <i class="fa fa-google"></i> Connect Google
+          </button>
+          <button mat-flat-button (click)="signInWithFacebook()" class="button btn-social btn-facebook">
+            <i class="fa fa-facebook fa-lg"></i> Connect Facebook
+          </button>
+        </mat-card-actions>
+      </mat-tab>
+      <mat-tab label="Register">
+          <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title>Register with email</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form [formGroup]="formulario" (ngSubmit)="register()">
+            <div class="example-container">
+              <mat-form-field>
+                <input matInput placeholder="Enter your email" formControlName="email" required>
+                <mat-error *ngIf="formulario.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Enter your password" formControlName="password" required>
+                <mat-error *ngIf="formulario.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                  <input matInput placeholder="Repeat your password" formControlName="password_confirm" required>
+                  <mat-error *ngIf="formulario.get('password_confirm').invalid">{{getErrorMessage('password_confirm')}}</mat-error>
+                </mat-form-field>
+              </div>
+              <mat-error *ngIf="formulario.invalid">{{getErrorForm()}}</mat-error>
+              <button mat-raised-button type="submit" [disabled]="!formulario.valid" color="primary">Register</button>
+            </form>
+          </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+
   </mat-card>
 </ng-template>
 
