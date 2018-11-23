@@ -18,6 +18,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
+// Validators
+import { EmailAvailableDirective } from './validators/email-available.directive';
+import { MatchPasswordValidatorDirective } from './validators//match-password.directive';
+
+
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -31,7 +36,9 @@ import { LoginComponent } from './components/login/login.component';
     PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    EmailAvailableDirective,
+    MatchPasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
