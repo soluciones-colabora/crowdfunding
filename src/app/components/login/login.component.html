@@ -6,38 +6,56 @@
 <!-- User NOT logged in -->
 <ng-template #guest>
   <mat-card class="example-card">
-    <mat-tab-group>
-      <mat-tab label="Log In">
-        <mat-card-header>
-            <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <!-- <mat-card-title>LogIn using email</mat-card-title> -->
-        </mat-card-header>
-        <mat-card-content>
-          <div class="example-container">
-            <!-- <mat-form-field>
-              <input matInput placeholder="Enter your email" [formControl]="email" required>
-              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Enter your password" [formControl]="password" required>
-              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field> -->
-          </div>
-          <button mat-raised-button color="primary">Log In</button>
-        </mat-card-content>
-        Or login with...
-        <mat-card-actions>
-          <button mat-raised-button (click)="auth.googleLogin()" class="button btn-social btn-google">
-            <i class="fa fa-google"></i> Connect Google
-          </button>
+    <mat-card-header class="center">
+      <mat-card-title>INICIAR SESIÓN</mat-card-title>
+      <mat-card-subtitle>Ingresa tus datos para comenzar a apoyar</mat-card-subtitle>
+      <mat-card-subtitle>¿No tienes cuenta? <a href="">Regístrate aquí</a></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="formulario" (ngSubmit)="register()">
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Correo electrónico" formControlName="email" required>
+            <mat-error *ngIf="formulario.get('email').invalid">{{getErrorEmail()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-hint align="end" (click)="getPassword()">Olvidé mi contraseña</mat-hint>
+            <mat-hint>
+              <mat-checkbox formControlName="rememberPassword">Recordar mis datos</mat-checkbox>
+            </mat-hint>
+            <mat-error *ngIf="formulario.get('password').invalid">{{getErrorPassword()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button type="submit" [disabled]="!formulario.valid" color="primary">INGRESAR</button>
+      </form>
+    </mat-card-content>
+
+    <div class="strike">
+      <!-- Se puede añadir una clase para cambiar la tipografía y tamaño de la ó -->
+      <span>ó</span>
+    </div>
+    <mat-card-actions>
+      <mat-grid-list cols="1" rowHeight="50px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
           <button mat-flat-button (click)="signInWithFacebook()" class="button btn-social btn-facebook">
-            <i class="fa fa-facebook fa-lg"></i> Connect Facebook
+            <i class="fa fa-facebook fa-lg"></i> Ingresar con Facebook
           </button>
-        </mat-card-actions>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <button mat-raised-button (click)="auth.googleLogin()" class="button btn-social btn-google">
+            <i class="fa fa-google"></i> Ingresar con Google +
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-actions>
+    <!-- <mat-tab-group>
+      <mat-tab label="Log In">
       </mat-tab>
       <mat-tab label="Register">
           <mat-card-header>
-              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>Register with email</mat-card-title>
           </mat-card-header>
           <mat-card-content>
@@ -61,8 +79,7 @@
             </form>
           </mat-card-content>
       </mat-tab>
-    </mat-tab-group>
-
+    </mat-tab-group> -->
   </mat-card>
 </ng-template>
 
