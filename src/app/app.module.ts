@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 
 // Validators
 import { EmailAvailableDirective } from './validators/email-available.directive';
+import { EmailRegisteredDirective } from './validators/email-registered.directive';
 import { MatchPasswordValidatorDirective } from './validators//match-password.directive';
 
 
@@ -38,6 +39,7 @@ import { LoginComponent } from './components/login/login.component';
     FooterComponent,
     LoginComponent,
     EmailAvailableDirective,
+    EmailRegisteredDirective,
     MatchPasswordValidatorDirective
   ],
   imports: [
