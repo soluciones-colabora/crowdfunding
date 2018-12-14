@@ -3,6 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterMainComponent } from './components/register/register-main/register-main.component';
+import { RegisterAssocComponent } from './components/register/register-assoc/register-assoc.component';
+import { RegisterDonorComponent } from './components/register/register-donor/register-donor.component';
+
+
 // import { Name3Component } from './';
 // import { Name4Component } from './';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -10,6 +15,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterMainComponent },
+  { path: 'register/assoc', component: RegisterAssocComponent },
+  { path: 'register/donor', component: RegisterDonorComponent },
+
   // { path: 'path3', component: Name3Component },
   // { path: 'path4', component: Name4Component },
   { path: '**', component: PageNotFoundComponent }
