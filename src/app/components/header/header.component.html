@@ -1,28 +1,27 @@
 <div>
-  <mat-toolbar color="primary">
-    <button mat-icon-button [routerLink]="['']"><mat-icon>home</mat-icon></button >
-    <span class="example-spacer"></span>
-    <span>Crowdfunding</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-  </mat-toolbar>
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item [routerLink]="['login']">Login</button>
-    <button mat-menu-item>Option 2</button>
-  </mat-menu>
-<!--
-  <mat-card>
-    <button mat-button>All</button>
-    <button mat-raised-button>Of</button>
-    <button mat-raised-button color="primary">The</button>
-    <button mat-raised-button color="accent">Buttons</button>
-  </mat-card>
-
-  <span class="done">
-    <button mat-fab>
-      <mat-icon>check circle</mat-icon>
-    </button>
-  </span> -->
+  <mat-grid-list cols="8" rowHeight="64px" gutterSize="0">
+    <mat-grid-tile colspan="6" rowspan="1" style="background: #DDBDF1;">
+      <mat-toolbar color="primary">
+        <span>COLABORA MÉXICO AC</span>
+        <span>|</span>
+        <form class="example-container" style="font-size: 10px">
+          <mat-form-field hideRequiredMarker="true" floatLabel="never">
+            <input matInput placeholder="BUSCAR CAUSAS...">
+            <mat-icon matPrefix>search</mat-icon>
+          </mat-form-field>
+        </form>
+        <span class="example-spacer"></span>
+        <button mat-button [routerLink]="['']">APOYAR CAMPAÑAS</button>
+        <span>|</span>
+        <button mat-button [routerLink]="['']">¿CÓMO APOYAR?</button>
+      </mat-toolbar>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="1" style= "background: lightpink">
+      <mat-toolbar color="accent">
+        <button mat-button [routerLink]="['login']">INICIAR SESIÓN</button>
+        <span>|</span>
+        <button mat-button [routerLink]="['']">REGISTRARSE</button>
+      </mat-toolbar>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
