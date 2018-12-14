@@ -29,6 +29,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterMainComponent } from './components/register/register-main/register-main.component';
+import { RegisterAssocComponent } from './components/register/register-assoc/register-assoc.component';
+import { RegisterDonorComponent } from './components/register/register-donor/register-donor.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent,
     EmailAvailableDirective,
     EmailRegisteredDirective,
-    MatchPasswordValidatorDirective
+    MatchPasswordValidatorDirective,
+    RegisterMainComponent,
+    RegisterAssocComponent,
+    RegisterDonorComponent
   ],
   imports: [
     BrowserModule,
