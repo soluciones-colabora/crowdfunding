@@ -15,6 +15,15 @@
         <mat-option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'datepicker'">
+      <!-- <input matInput [min]="field.min" [max]="field.max" [matDatepicker]="picker" placeholder="field.placeholder">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker> -->
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
   </div>
 
 </div>
