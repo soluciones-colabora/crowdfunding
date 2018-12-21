@@ -12,12 +12,13 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatGridListModule } from '@angular/material';
+    MatGridListModule,
+    MatStepperModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-        MatButtonModule,
+    MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
@@ -28,7 +29,8 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatStepperModule
   ],
   exports: [
     MatButtonModule,
@@ -42,7 +44,8 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatStepperModule
   ]
 })
 export class MaterialComponentsModule { }
