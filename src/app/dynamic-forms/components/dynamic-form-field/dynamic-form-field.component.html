@@ -1,0 +1,23 @@
+<div [formGroup]="form">
+  <!-- <label [attr.for]="field.key">{{field.label}}</label> -->
+
+  <div [ngSwitch]="field.controlType">
+
+    <mat-form-field *ngSwitchCase="'textbox'">
+      <input matInput [formControlName]="field.key"
+              [id]="field.key" [type]="field.type" [placeholder]="field.placeholder" [required]="field.required">
+      <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
+    </mat-form-field>
+    <select [id]="field.key"  *ngSwitchCase="'dropdown'" [formControlName]="field.key">
+      <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+  </div>
+
+</div>
+
+
+<!--
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

@@ -32,6 +32,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterMainComponent } from './components/register/register-main/register-main.component';
 import { RegisterAssocComponent } from './components/register/register-assoc/register-assoc.component';
 import { RegisterDonorComponent } from './components/register/register-donor/register-donor.component';
+// import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+// import { DynamicFormControlComponent } from './dynamic-forms/dynamic-form-control/dynamic-form-field.component';
+
+import { DynamicFormFieldComponent } from './dynamic-forms/components/dynamic-form-field/dynamic-form-field.component';
+import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dynamic-form.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +52,10 @@ import { RegisterDonorComponent } from './components/register/register-donor/reg
     MatchPasswordValidatorDirective,
     RegisterMainComponent,
     RegisterAssocComponent,
-    RegisterDonorComponent
+    RegisterDonorComponent,
+    DynamicFormComponent,
+    // DynamicFormControlComponent,
+    DynamicFormFieldComponent
   ],
   imports: [
     BrowserModule,
