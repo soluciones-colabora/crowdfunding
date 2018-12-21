@@ -20,12 +20,9 @@
           </mat-grid-tile>
         </mat-grid-list>
         <div>
-            <button mat-raised-button color="accent" matStepperPrevious style="margin-right: 20px">ANTERIOR</button>
-            <button (click)="onSubmit()" mat-raised-button color="accent" matStepperNext>FINALIZAR REGISTRO</button>
+          <button mat-raised-button color="accent" matStepperPrevious style="margin-right: 20px">ANTERIOR</button>
+          <button (click)="onSubmit({})" mat-raised-button color="accent" matStepperNext>FINALIZAR REGISTRO</button>
         </div>
-
-
-        <!-- <app-dynamic-form [backButton]="true" [lastForm]="true" [fields]="secondFormFields" (submited)="onSubmit($event)"></app-dynamic-form> -->
       </mat-step>
 
     </mat-horizontal-stepper>
