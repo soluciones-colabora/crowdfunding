@@ -1,3 +1,58 @@
-<p>
-  register-assoc works!
-</p>
+<mat-card class="example-card">
+  <mat-card-header class="center">
+    <mat-card-title>REGISTRO PARA ASOCIACIONES</mat-card-title>
+    <mat-card-subtitle>Ingresa tus datos para comenzar a apoyar.</mat-card-subtitle>
+    <mat-card-subtitle>¿Ya tienes cuenta? <a [routerLink]="['/login']">Inicia sesión aquí</a></mat-card-subtitle>
+  </mat-card-header>
+
+
+  <mat-card-content>
+    <mat-horizontal-stepper linear="false" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)" (formOut)="firstFormGroup"></app-dynamic-form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <app-dynamic-form [backButton]="true" [fields]="secondFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <app-dynamic-form [backButton]="true" [lastForm]="true" [fields]="thirdFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
+      </mat-step>
+
+    </mat-horizontal-stepper>
+  </mat-card-content>
+</mat-card>
+
+
+<!-- <form [formGroup]="firstFormGroup">
+  <ng-template matStepLabel>Fill out your name</ng-template>
+  <div class="display: flex; flex-direction: column; width: 100%;">
+  <mat-grid-list cols="2" rowHeight="100px">
+    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
+    <div class="display: flex; flex-direction: column; width: 100%;">
+
+      <mat-form-field>
+        <input matInput placeholder="Correo electrónico" formControlName="email" required>
+      </mat-form-field>
+    </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
+      <mat-form-field>
+        <input matInput placeholder="Nombre completo del representante" formControlName="name" required>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
+      <mat-form-field>
+        <input matInput placeholder="Nombre de la Asociación Civil" formControlName="acname" required>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
+      <mat-form-field>
+        <input matInput placeholder="CLUNI" formControlName="cluni" required>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+  </div>
+  <div>
+    <button mat-button matStepperNext>Next</button>
+  </div>
+</form> -->

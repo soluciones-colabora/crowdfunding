@@ -1,0 +1,36 @@
+<div [formGroup]="form">
+  <!-- <label [attr.for]="field.key">{{field.label}}</label> -->
+
+  <div [ngSwitch]="field.controlType">
+
+    <mat-form-field *ngSwitchCase="'textbox'">
+      <input matInput [formControlName]="field.key"
+              [id]="field.key" [type]="field.type" [placeholder]="field.placeholder" [required]="field.required">
+      <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'dropdown'">
+      <mat-label>{{field.label}}</mat-label>
+      <mat-select [id]="field.key"  [formControlName]="field.key">
+        <mat-option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'datepicker'">
+      <!-- <input matInput [min]="field.min" [max]="field.max" [matDatepicker]="picker" placeholder="field.placeholder">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker> -->
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+</div>
+
+
+<!--
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

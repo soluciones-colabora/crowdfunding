@@ -12,12 +12,17 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatGridListModule } from '@angular/material';
+    MatGridListModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonToggleModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
-        MatButtonModule,
+    MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
@@ -28,7 +33,12 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonToggleModule
   ],
   exports: [
     MatButtonModule,
@@ -42,7 +52,12 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatStepperModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonToggleModule
   ]
 })
 export class MaterialComponentsModule { }

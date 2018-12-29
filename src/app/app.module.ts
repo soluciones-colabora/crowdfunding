@@ -40,6 +40,13 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+// import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+// import { DynamicFormControlComponent } from './dynamic-forms/dynamic-form-control/dynamic-form-field.component';
+
+import { DynamicFormFieldComponent } from './dynamic-forms/components/dynamic-form-field/dynamic-form-field.component';
+import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dynamic-form.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +62,10 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     RegisterAssocComponent,
     RegisterDonorComponent,
     InicioComponent,
-    MainNavComponent
+    MainNavComponent,
+    DynamicFormComponent,
+    // DynamicFormControlComponent,
+    DynamicFormFieldComponent
   ],
   imports: [
     BrowserModule,
