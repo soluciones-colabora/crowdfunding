@@ -1,3 +1,86 @@
-<p>
-  home works!
-</p>
+<div class="inicio">
+    <div class="inicio__titulo">
+      <div class="overlay">
+      </div>
+      <div class="centrado">
+          <h1 class="titulo titulo__purpura"> 
+          <span class="titulo__rosa">&#8728;</span>
+          A UN CLIC DE CAMBIAR VIDAS
+          <span class="titulo__rosa">&#8728;</span>
+          </h1>
+        </div>
+      <button mat-flat-button class="btn-centrado">QUIERO APOYAR</button>
+    </div>
+</div>
+<div class="apoya apoya-container">
+    <div class="apoya-rectangle square-1"><img src="assets/cuadrado2.png" alt=""></div>
+    <div class="apoya-rectangle square-2"><img src="assets/cuadrado2.png" alt=""></div>
+    <div class="apoya-rectangle square-3"><img src="assets/cuadrado2.png" alt=""></div>
+    <div class="apoya-card">
+      <div class="content">
+        <H1>APOYA UNA CAMPAÑA</H1>
+        <p>Apoya a nuestrar causas y sé parte del cambio positivo en el mundo.</p>
+        <p>Conoce más sobre el proceso y las asociacines que se encargan todos los días de realizar el cambio.</p>
+        <button mat-flat-button>VER CAMPAÑAS</button>
+      </div>
+    </div>
+</div> 
+
+<div class="campaign">
+  <h3 stlye="text-align:center;">Nuevas campañas</h3>
+  <div class="card">
+    <div class="image-holder" style="background: url('assets/angeles.jpg');"></div>
+    <hr>
+    <div class="stats">
+      <div class="stats-time">
+          Quedan <strong>10</strong> días
+      </div> 
+      <div class="stats-graph">
+          <circle-progress
+          [percent]="15"
+          [radius]="45"
+          [space]="-7"
+          [outerStrokeWidth]="6"
+          [innerStrokeWidth]="1"
+          [backgroundPadding]="0"
+          [showBackground]="true"
+          [showSubtitle]="false"
+          [backgroundColor]="'#ffffff'"
+          [outerStrokeColor]="'#A65199'"
+          [innerStrokeColor]="'rgba(0, 0, 0, 0.3)'"
+          [showInnerStroke]="false"
+          [animation]="true"
+          [animationDuration]="300"
+        >
+      </circle-progress>
+
+      </div>
+      <div class="stats-donators">
+          <strong>50</strong> donadores
+      </div> 
+    </div>
+    <div class="description">
+      <h4>CAMPAÑA PARA APOYO VISUAL</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate lorem ipsum dolor sit amet consectetur...</p>
+      <div class="p-2">
+        <hr class="thin">
+      </div>
+    </div>
+  </div> 
+</div>
+
+
+<svg style="display:none">
+  <defs>
+    <filter id="dropshadow" x="-40%" y="-40%" width="150%" height="150%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> <!-- stdDeviation is how much to blur -->
+      <feOffset dx="5" dy="5" result="offsetblur"/> 
+      <feOffset dx="-5" dy="-5" result="offsetblur"/>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

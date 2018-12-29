@@ -1,9 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+// @import '/colabora-theme.scss';
+//Variables
+$lavanda_col : #A65199;
+$purpura_col: #6D5895;
+$morado_col: #674e96;
+ 
+$mat-purpureus: (
+  50 : #f4eaf3,
+  100 : #e4cbe0,
+  200 : #d3a8cc,
+  300 : #c185b8,
+  400 : #b36ba8,
+  500 : #a65199,
+  600 : #9e4a91,
+  700 : #954086,
+  800 : #8b377c,
+  900 : #7b276b,
+  A100 : #ffbef2,
+  A200 : #ff8be7,
+  A400 : #ff58dd,
+  A700 : #ff3ed7,
+);
 
-body {
+html,body, button, .mat-toolbar .mat-button {
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: 'Nunito', sans-serif!important;
 }
 
 mat-card {

@@ -1,0 +1,198 @@
+@import '../../../styles.scss';
+.inicio{
+	// padding-top: 83px;
+	&__titulo {
+		height: 450px;
+		    // display: inline-block;
+		background: url("/assets/angeles3.jpg");
+		background-position:top;
+		background-size: cover;
+		position: relative;
+		text-align: center;
+		.overlay {
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        width: 100%;
+	        height: 100%;
+	        transition: all .3s ease;
+	        // display: flex;
+			// align-items: center;
+			// justify-content: center;
+			background: rgba(#BABABA, 0.6);	
+		}
+	}	
+	.mat-flat-button {
+		padding-top: 0px;
+		background-color: $lavanda_col;
+		color:white;
+	}
+}
+
+.titulo-centrado {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.titulo {
+	color: #29265b;
+	font-weight: bold;
+	font-size: 45px;
+	// padding-left: 35px;
+	display: block;
+	&__black{
+		color: white;
+		text-shadow: 0.707px 0.707px 5.88px rgba(0, 0, 0, 0.59);
+	} 
+	&__purpura{
+		color: rgba($morado_col,1);
+		// text-shadow: 0.707px 0.707px 5.88px rgba(white, 0.59);
+	} 
+	&__rosa{
+		// padding-left: 100px;
+		color: rgba(#7b276b,0.9);
+		// text-shadow: 0.707px 0.707px 5.88px rgba(white, 0.59);
+	} 
+	.centrado {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.btn-centrado {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 250px;
+    font-size: 18px;
+}
+
+.apoya {
+	&-container{
+	  position: relative;
+	  height: 450px;
+	}
+	&-rectangle {
+		// width: 100%;
+		// height: auto;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	  position: absolute;
+	}
+	.square {
+		&-1{
+			left: 50%;	
+		}
+		&-2{
+			left: 52.5%;	
+		}
+		&-3{
+			left: 47.5%;	
+		}
+	}
+	&-card {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color:white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height:55%;
+		width: 54.7%;
+		border-radius: 5px;
+		box-shadow: 0px 0px 24.3px 2.7px rgba(0, 0, 0, 0.1);
+		.content {
+			text-align: center;
+			button.mat-flat-button {
+				width: 250px;
+					font-size: 18px;
+					padding-top: 0px;
+				background-color: $lavanda_col;
+				color:white;
+			}
+		}
+	}
+  }
+
+  .campaign {
+	height: 750px;
+	padding-left: 35px;
+	padding-right: 35px;
+  }
+  .card {
+	left: 60px;
+	border-radius: 5px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 24.3px 2.7px rgba(0, 0, 0, 0.1);
+	width: 400px;
+	height: 80%;
+	z-index: 50;
+
+	.image-holder {
+		height: 50%;
+		background-position:center;
+		background-size: cover;
+	}
+
+	.stats {
+		height:50px;
+		position: relative;
+		&-graph {
+			position:absolute;
+			left:50%;
+			transform: translate(-50%, -50%);
+		}
+		&-time {
+			position: absolute;
+			left:5%;
+			top:5%;
+		}
+		&-donators {
+			position: absolute;
+			left:75%;
+			top:5%;
+		}
+	}
+	hr {
+		// display: block;
+		// height: 5px;
+		border: 0;
+		border-top: 6px solid $lavanda_col;
+		// margin: 1em 0;
+		padding: 0; 
+		margin: 0;
+		&.thin {
+			border-top: 2px solid $lavanda_col!important;
+		}
+	}
+
+	.description {
+		h4,p {
+			text-align: center;
+		}
+		p {
+			font-size: 16px;
+			font-weight: 300;
+			color: #918e8e
+		}
+	}
+  }
+
+
+	  circle-progress{
+		// filter: url("/assets/filtros.svg#dropshadow");
+		filter: url(#dropshadow);
+	  }
+
+  #mySVG {
+	filter: url(#selective-shadow);
+ }
+ 
+  

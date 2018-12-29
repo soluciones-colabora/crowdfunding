@@ -1,7 +1,39 @@
-<p>Síguenos en ...</p>
+<div class="footer">
+    <div class="holder">
+<div class="ayuda">
+    <ul>
+        <li><h4>AYUDA</h4></li>
+        <li><button mat-button>¿Quiénes somos?</button></li>
+        <li><button mat-button>Quiero participar</button></li>
+        <li><button mat-button>Términos y condiciones</button></li>
+        <li><button mat-button>Aviso de privacidad</button></li>
+        <li><button mat-button>FAQ'S</button></li>
+    </ul>
+</div>    
 
-<a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-twitter"></a>
-<a href="#" class="fa fa-instagram"></a>
-<!-- <button mat-mini-fab class="facebook"><i class="fa fa-facebook fa-lg"></i></button>
-<button mat-mini-fab><i class="fa fa-google fa-lg"></i></button> -->
+<div class="contacto">
+    <h4>CONTACTO</h4>
+    <ul>
+       <li><button mat-button [routerLink]="['login']">correo@example.com</button></li>
+       <li><button mat-button [routerLink]="['login']">Télefono: (999)123 4567</button></li>
+       <li><button mat-button [routerLink]="['login']">Síguenos en Facebook</button></li>
+    </ul>
+</div>
+<div class="idioma">
+        <mat-form-field>
+                <select matNativeControl required appearance="legacy">
+                  <option value="volvo">Español</option>
+                  <option value="saab">Inglés</option>
+                </select>
+              </mat-form-field>
+              <mat-form-field>
+                    <select matNativeControl required  panelClass="select-panel">
+                      <option value="volvo">MXN</option>
+                      <option value="saab">USD</option>
+                    </select>
+                  </mat-form-field>
+</div>
+
+</div>
+</div>
+

@@ -1,25 +1,25 @@
 <div>
   <mat-grid-list cols="8" rowHeight="64px" gutterSize="0">
-    <mat-grid-tile colspan="6" rowspan="1" style="background: #DDBDF1;">
+    <mat-grid-tile colspan="6">
       <mat-toolbar color="primary">
         <span>COLABORA MÉXICO AC</span>
-        <span>|</span>
+        <span class="pipe">|</span>
         <form class="example-container" style="font-size: 10px">
-          <mat-form-field hideRequiredMarker="true" floatLabel="never">
+          <mat-form-field hideRequiredMarker="true"floatLabel="never">
             <input matInput placeholder="BUSCAR CAUSAS...">
             <mat-icon matPrefix>search</mat-icon>
           </mat-form-field>
         </form>
         <span class="example-spacer"></span>
         <button mat-button [routerLink]="['']">APOYAR CAMPAÑAS</button>
-        <span>|</span>
+        <span class="pipe">|</span>
         <button mat-button [routerLink]="['']">¿CÓMO APOYAR?</button>
       </mat-toolbar>
     </mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="1" style= "background: lightpink">
+    <mat-grid-tile colspan="2">
       <mat-toolbar color="accent">
         <button mat-button [routerLink]="['login']">INICIAR SESIÓN</button>
-        <span>|</span>
+        <span class="pipe">|</span>
         <button mat-button [routerLink]="['register']">REGISTRARSE</button>
       </mat-toolbar>
     </mat-grid-tile>
