@@ -3,10 +3,13 @@ import { FieldBase } from './field-base';
 export class FormField extends FieldBase<string> {
   controlType = 'form';
   fields: any[];
+  childCols: number;
 
   constructor(options: {} = {}) {
     super(options);
     this.fields = options['fields'] || [];
+    this.childCols = options['childCols'] || 2;
+
   }
 }
 
