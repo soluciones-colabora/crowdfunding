@@ -29,14 +29,14 @@
     <!-- <button *ngSwitchCase="'upload'" mat-raised-button color="accent">hello</button> -->
     <div *ngSwitchCase="'upload'">
       <label>{{field.label}}</label>
-      <button  mat-raised-button type="button" (click)="onFileClick(field.key)">
+      <button  mat-raised-button type="button" (click)="onFileClick(fileid)">
           {{field.text}}<mat-icon >attach_file</mat-icon>
       </button>
-      <input [id]="field.key" [accept]="field.type" type="file" style="display:none;"  [formControlName]="field.key" (change)="onFileChange($event.target.files)">
+      <input [id]="fileid" [accept]="field.type" type="file" style="display:none;"  [formControlName]="field.key" (change)="onFileChange($event.target.files)">
       <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
     </div>
 
-    <app-dynamic-form *ngSwitchCase="'form'" [fields]="field.fields" [form]="form" [key]="field.key"></app-dynamic-form>
+    <app-dynamic-form *ngSwitchCase="'form'" [formsArray]="form.controls[field.key]" [fields]="field.fields" [parentField]= "field" [label]="field.label" [cols]="field.childCols"></app-dynamic-form>
 
 
 

@@ -19,21 +19,89 @@ export class FieldService {
 
     const fields: FieldBase<any>[] = [
       new TextboxField({
-        key: 'test1',
-        label: 'test1',
+        key: 'productName',
+        label: 'Product Name',
         required: true,
         type: 'email',
-        placeholder: 'test1',
+        placeholder: 'Nombre del producto o servicio',
         order: 1
       }),
 
       new TextboxField({
-        key: 'test2',
-        label: 'test2',
+        key: 'productDescription',
+        label: 'Product Description',
         required: true,
-        placeholder: 'test2',
+        placeholder: 'Descripción',
         order: 2
       })
+
+    ];
+
+    return fields.sort((a, b) => a.order - b.order);
+  }
+
+  getTeamFormFields() {
+
+    const fields: FieldBase<any>[] = [
+      new TextboxField({
+        key: 'teamName',
+        label: 'Team Name',
+        required: true,
+        type: 'email',
+        placeholder: 'Nombre',
+        order: 1
+      }),
+
+      new TextboxField({
+        key: 'teamPosition',
+        label: 'Position',
+        required: true,
+        placeholder: 'Puesto',
+        order: 2
+      }),
+
+      new UploadField({
+        key: 'teamPhoto',
+        // label: 'Team Photo',
+        text: 'SUBIR ARCHIVO',
+        type: 'image/*',
+        order: 3
+      })
+
+    ];
+
+    return fields.sort((a, b) => a.order - b.order);
+  }
+
+  getSocialNetworkFields() {
+
+    const fields: FieldBase<any>[] = [
+      new DropdownField({
+        key: 'SNType',
+        label: 'Tipo de red social',
+        options: [
+          {key: 'facebook',  value: 'facebook'},
+          {key: 'twitter',  value: 'twitter'}
+        ],
+        required: true,
+        order: 1
+      }),
+
+      new TextboxField({
+        key: 'SNName',
+        label: 'SNName',
+        required: true,
+        placeholder: 'Nombre de la red social',
+        order: 2
+      }),
+
+      new TextboxField({
+        key: 'SNUrl',
+        label: 'SNUrl',
+        required: true,
+        placeholder: 'URL',
+        order: 3
+      }),
 
     ];
 
@@ -253,12 +321,12 @@ export class FieldService {
       }),
 
       new FormField({
-        key: 'formfield',
-        label: 'formfield',
-        placeholder: 'FORM FIELD',
+        key: 'products',
+        label: 'Productos y servicios',
         fields: this.getProductsFormFields(),
         // required: true,
         cols: 2,
+        childCols: 3,
         order: 10
       }),
 
@@ -286,10 +354,34 @@ export class FieldService {
         // type: '.doc,.docx',
         order: 2
       }),
+
+      new FormField({
+        key: 'team',
+        label: 'Equipo',
+        fields: this.getTeamFormFields(),
+        // required: true,
+        cols: 2,
+        childCols: 4,
+        order: 3
+      }),
+
+      new FormField({
+        key: 'socialNetworks',
+        label: 'Redes sociales',
+        fields: this.getSocialNetworkFields(),
+        // required: true,
+        cols: 2,
+        childCols: 4,
+        order: 4
+      })
     ];
 
     return fields.sort((a, b) => a.order - b.order);
   }
 
+  getFormLabels() {
+    const labels: string[] = ['Información básica', 'Acerca de la asociación', 'Equipo y redes'];
+    return labels;
+  }
 
 }
