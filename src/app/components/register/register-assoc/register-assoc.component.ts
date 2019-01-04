@@ -17,7 +17,7 @@ export class RegisterAssocComponent implements OnInit {
   secondFormFields: any[];
   thirdFormFields: any[];
 
-  payload: {};
+  payload = {};
 
   constructor(private _formBuilder: FormBuilder, service: FieldService) {
     this.firstFormFields = service.getFirstFormFields();
@@ -37,7 +37,13 @@ export class RegisterAssocComponent implements OnInit {
   }
 
   onSubmit(payload) {
-    this.payload = { ...payload, ...this.payload };
+    this.payload = Object.assign(this.payload, payload);
     console.log('payload :', this.payload);
   }
+
+  getForm(asdf) {
+    console.log('asdf :', asdf);
+
+  }
+
 }
