@@ -7,11 +7,11 @@
 
 
   <mat-card-content>
-    <mat-horizontal-stepper linear="false" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
+    <mat-horizontal-stepper linear="false" labelPosition="bottom" #stepper>
+      <mat-step [stepControl]="firstFormGroup" label="Información Básica">
         <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)" (formOut)="firstFormGroup"></app-dynamic-form>
       </mat-step>
-      <mat-step [stepControl]="secondFormGroup">
+      <mat-step [stepControl]="secondFormGroup" label="Intereses">
         <mat-grid-list cols="4" rowHeight="100px">
           <mat-grid-tile *ngFor="let field of secondFormFields">
             <mat-button-toggle (change)="buttonToggleChanged(field)">
