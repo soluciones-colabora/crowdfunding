@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  slides = [
+    {img: 'assets/canaco_gris.png'},
+    {img: 'assets/coparmex_gris.png'},
+    {img: 'assets/ieym_gris.png'},
+    {img: 'assets/nacional_gris.png'},
+    {img: 'assets/sefoe_gris.png'},
+    {img: 'assets/siies_gris.png'},
+    {img: 'assets/tec_gris.png'},
+  ];
 
   constructor() { }
 

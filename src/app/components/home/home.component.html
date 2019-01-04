@@ -2,7 +2,7 @@
     <div class="inicio__titulo">
       <div class="overlay">
       </div>
-      <div class="centrado">
+      <div class="titulo-centrado">
           <h1 class="titulo titulo__purpura"> 
           <span class="titulo__rosa">&#8728;</span>
           A UN CLIC DE CAMBIAR VIDAS
@@ -69,6 +69,51 @@
   </div> 
 </div>
 
+
+<div class="responsive-carousel">
+    <div class="carousel" id="carousel1">
+      <owl-carousel
+         [options]="{ 'items': 7,
+         'dots': false,
+         'navigation': false,
+         'autoplay': true,
+         'autoplaySpeed': 500,
+         'loop': true}"
+         [items]="slides">
+         <div class="item" *ngFor="let image of slides;let i = index">
+             <img src="{{image.img}}" alt="">
+         </div>
+     </owl-carousel>
+    </div>
+    <div class="carousel" id="carousel2">
+      <owl-carousel
+         [options]="{ 'items': 4,
+          'dots': false,
+          'navigation': false,
+          'autoplay': true,
+          'autoplaySpeed': 500,
+          'loop': true}"
+         [items]="slides">
+         <div class="item" *ngFor="let image of slides;let i = index">
+             <img src="{{image.img}}" alt="">
+         </div>
+     </owl-carousel>
+    </div>
+    <div class="carousel" id="carousel3">
+      <owl-carousel
+         [options]="{items: 2,
+         dots: false,
+         navigation: false,
+         autoplay: true,
+         autoplaySpeed: 500,
+         loop: true}"
+         [items]="slides">
+         <div class="item" *ngFor="let image of slides;let i = index">
+             <img src="{{image.img}}" alt="">
+         </div>
+     </owl-carousel>
+    </div>
+    </div>
 
 <svg style="display:none">
   <defs>

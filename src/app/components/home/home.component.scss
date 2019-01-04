@@ -4,7 +4,7 @@
 	&__titulo {
 		height: 450px;
 		    // display: inline-block;
-		background: url("/assets/angeles3.jpg");
+		background: url("/assets/unicef.jpg");
 		background-position:top;
 		background-size: cover;
 		position: relative;
@@ -19,7 +19,7 @@
 	        // display: flex;
 			// align-items: center;
 			// justify-content: center;
-			background: rgba(#BABABA, 0.6);	
+			background: rgba(#ffffff, 0.5);	
 		}
 	}	
 	.mat-flat-button {
@@ -55,17 +55,11 @@
 		color: rgba(#7b276b,0.9);
 		// text-shadow: 0.707px 0.707px 5.88px rgba(white, 0.59);
 	} 
-	.centrado {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
 }
 
 .btn-centrado {
 	position: absolute;
-	top: 60%;
+	top: 70%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 250px;
@@ -78,11 +72,18 @@
 	  height: 450px;
 	}
 	&-rectangle {
-		// width: 100%;
-		// height: auto;
+		width: 100%;
+		height: auto;
 		top: 50%;
 		transform: translate(-50%, -50%);
 	  position: absolute;
+	  img {
+		  left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+		  width: 90%;
+		  height: auto;
+	  }
 	}
 	.square {
 		&-1{
@@ -131,9 +132,9 @@
 	border-radius: 5px;
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 0px 24.3px 2.7px rgba(0, 0, 0, 0.1);
-	width: 400px;
+	width: 350px;
 	height: 80%;
-	z-index: 50;
+	// z-index: 1;
 
 	.image-holder {
 		height: 50%;
@@ -185,14 +186,202 @@
 	}
   }
 
+  .carousel {
+    width: 100% !important;
+    max-height: 200px !important;
+    background: #d5d5d5 !important;
+
+    owl-carousel {
+        .item {
+            padding: 10px 15px !important;
+            img {
+                max-height: 150px !important;
+                width: auto !important;
+            }
+        }
+    }
+}
+
+.responsive-carousel {
+    #carousel1 {
+        display:block;
+    }
+    #carousel2 {
+        display:none;
+    }
+    #carousel3 {
+        display:none;
+    }
+}
 
 	  circle-progress{
 		// filter: url("/assets/filtros.svg#dropshadow");
 		filter: url(#dropshadow);
 	  }
 
-  #mySVG {
-	filter: url(#selective-shadow);
- }
+
+	  .justify-content-center {
+		display: flex;
+		align-items: stretch;
+	}
+	
+	mdb-card{
+		// padding: 50px 50px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		&-holder {
+			padding: 0 50px;
+	
+			p {
+				font-size: 23px;
+			}
+		}
+	
+	}
+	
+	mdb-card-img {
+		max-height: 300px;
+	}
+	
+	mdb-card-title {
+		text-align: center;
+		h4 {
+			// color: $gray;
+			font-size: 20px;
+		}
+	}
  
-  
+  //Responsivo
+@media(max-width: 1180px) {
+    .inicio__parallax-estadisticas {
+        &-holder {
+            flex-basis: 30%;
+        }
+    }
+
+    mdb-card {
+        padding: 25px;
+    }
+}
+
+@media(max-width: 1024px) {
+    .inicio__servicios-cuadro {
+        .overlay {
+            opacity: 100;
+        }
+    }
+    
+    .inicio__servicios {
+        a.overlay > h3 {
+            font-size: 18px;
+        }
+    }
+
+    .inicio__parallax-estadisticas {
+        justify-content: space-between;
+        .counter {
+            font-size: 50px !important;
+        }
+
+        &-holder {
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+       
+    }
+
+    .inicio__parallax-blanco_estadisticas {
+        min-height: 400px;
+
+    }
+
+    mdb-card {
+        padding: 15px;
+    }
+
+    mdb-card-title {
+        h4 {
+            font-size: 16px;
+        }
+    }
+
+    mdb-card-body {
+        a {
+            font-size: 16px;
+        }
+    }
+
+    .responsive-carousel {
+        #carousel1 {
+            display:none;
+        }
+        #carousel2 {
+            display:block;
+        }
+        #carousel3 {
+            display:none;
+        }
+    }
+}
+
+@media(max-width: 950px) {
+    .justify-content-center {
+        flex-wrap: wrap;
+    }
+    mdb-card {
+        flex-basis: 50%;
+    }
+}
+
+@media(max-width: 860px) {
+    .inicio__parallax-blanco {
+        min-height: 200px;
+    }
+
+    .inicio__parallax-estadisticas {
+        flex-wrap: wrap;
+        justify-content: center;
+        &-holder {
+            flex-basis: 100%;
+
+            p:first-of-type {
+                display: none;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .inicio__servicios {
+        &-cuadro {
+            flex-basis: 50%;
+        }
+    }
+}
+
+@media(max-width: 440px) {
+    .inicio__servicios {
+        &-cuadro {
+            flex-basis: 100%;
+        }
+    }
+    mdb-card {
+        flex-basis: 100%;
+    }
+    .responsive-carousel {
+        #carousel1 {
+            display:none;
+        }
+        #carousel2 {
+            display:none;
+        }
+        #carousel3 {
+            display:block;
+        }
+    }
+}
