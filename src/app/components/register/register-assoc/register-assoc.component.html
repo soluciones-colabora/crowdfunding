@@ -5,11 +5,11 @@
     <mat-card-subtitle>¿Ya tienes cuenta? <a [routerLink]="['/login']">Inicia sesión aquí</a></mat-card-subtitle>
   </mat-card-header>
 
-
+  <!-- (formOut)="getForm($event)" -->
   <mat-card-content>
     <mat-horizontal-stepper linear="false" #stepper>
       <mat-step [stepControl]="firstFormGroup">
-        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)" (formOut)="firstFormGroup"></app-dynamic-form>
+        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
         <app-dynamic-form [backButton]="true" [fields]="secondFormFields" (submited)="onSubmit($event)"></app-dynamic-form>

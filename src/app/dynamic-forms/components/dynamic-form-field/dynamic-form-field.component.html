@@ -5,27 +5,51 @@
 
     <mat-form-field *ngSwitchCase="'textbox'">
       <input matInput [formControlName]="field.key"
-              [id]="field.key" [type]="field.type" [placeholder]="field.placeholder" [required]="field.required">
+              [id]="field.key" [type]="field.type" [maxlength]="field.maxlength" [placeholder]="field.placeholder" [required]="field.required"
+              >
       <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
     </mat-form-field>
 
     <mat-form-field *ngSwitchCase="'dropdown'">
       <mat-label>{{field.label}}</mat-label>
-      <mat-select [id]="field.key"  [formControlName]="field.key">
+      <mat-select [id]="field.key"  [formControlName]="field.key" [required]="field.required">
         <mat-option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</mat-option>
       </mat-select>
     </mat-form-field>
+
+
+    <!-- <mat-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason"> -->
+    <mat-radio-group *ngSwitchCase="'radiobuttons'" [id]="field.key" [formControlName]="field.key" [required]="field.required">
+      <mat-label>{{field.label}}</mat-label>
+      <mat-radio-button *ngFor="let opt of field.options" [value]="opt.key">
+        {{opt.value}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <!-- <button *ngSwitchCase="'upload'" mat-raised-button color="accent">hello</button> -->
+    <div *ngSwitchCase="'upload'">
+      <label>{{field.label}}</label>
+      <button  mat-raised-button type="button" (click)="onFileClick(field.key)">
+          {{field.text}}<mat-icon >attach_file</mat-icon>
+      </button>
+      <input [id]="field.key" [accept]="field.type" type="file" style="display:none;"  [formControlName]="field.key" (change)="onFileChange($event.target.files)">
+      <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
+    </div>
+
+    <app-dynamic-form *ngSwitchCase="'form'" [fields]="field.fields" [form]="form" [key]="field.key"></app-dynamic-form>
+
+
 
     <mat-form-field *ngSwitchCase="'datepicker'">
       <!-- <input matInput [min]="field.min" [max]="field.max" [matDatepicker]="picker" placeholder="field.placeholder">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker> -->
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <input [required]="field.required" [min]="field.min" [max]="field.max" matInput [formControl]="form.controls[field.key]" [matDatepicker]="picker" [placeholder]="field.placeholder">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
     </mat-form-field>
   </div>
-
 </div>
 
 

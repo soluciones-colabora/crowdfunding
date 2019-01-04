@@ -1,8 +1,11 @@
-<div>
+<div *ngIf="main; else elseTemplate" >
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
 
-    <mat-grid-list cols="2" rowHeight="100px">
-      <mat-grid-tile *ngFor="let field of fields">
+    <mat-grid-list [cols]="cols" rowHeight="100px" style="display: flex;">
+      <mat-grid-tile *ngFor="let field of fields"
+        [colspan]="field.cols"
+        [rowspan]="field.rows"
+        style="background: aqua">
         <app-field [field]="field" [form]="form"></app-field>
       </mat-grid-tile>
     </mat-grid-list>
@@ -20,3 +23,31 @@
     <strong>Saved the following values</strong><br>{{payLoad}}
   </div> -->
 </div>
+
+<ng-template #elseTemplate>
+  <div *ngFor="let nestedForm of formsArray">
+        <form (ngSubmit)="onSubmit()" [formGroup]="nestedForm" style="background: green; width: auto;">
+          <!-- <mat-grid-list [cols]="cols" rowHeight="100px" >
+            <mat-grid-tile *ngFor="let field of fields"
+              [colspan]="field.cols"
+              [rowspan]="field.rows">
+              <app-field [field]="field" [form]="nestedForm"></app-field>
+            </mat-grid-tile>
+          </mat-grid-list> -->
+          <div *ngFor="let field of fields">
+              <app-field [field]="field" [form]="nestedForm"></app-field>
+          </div>
+          <!-- <div class="form-row">
+            <button type="submit" [disabled]="!form.valid">Save</button>
+          </div> -->
+          <div>
+            <button  (click)="addForm()" mat-raised-button color="accent">AGREGAR <mat-icon >add_circle</mat-icon></button>
+          </div>
+        </form>
+
+        <!-- <div *ngIf="payLoad" class="form-row">
+          <strong>Saved the following values</strong><br>{{payLoad}}
+        </div> -->
+
+      </div>
+</ng-template>
