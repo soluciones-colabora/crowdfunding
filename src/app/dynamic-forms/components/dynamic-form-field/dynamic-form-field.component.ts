@@ -11,6 +11,12 @@ export class DynamicFormFieldComponent {
   @Input() field: FieldBase<any>;
   @Input() form: FormGroup;
   public file: File;
+  public fileid;
+
+  constructor ( ) {
+    const date = new Date();
+    this.fileid = '' + date.getTime();
+  }
 
   get isValid() { return this.form.controls[this.field.key].valid; }
 
