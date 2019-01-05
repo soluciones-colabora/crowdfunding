@@ -6,6 +6,8 @@ export class FieldBase<T> {
   order: number;
   controlType: string;
   placeholder: string;
+  rows: number;
+  cols: number;
 
   constructor(options: {
       value?: T,
@@ -14,7 +16,9 @@ export class FieldBase<T> {
       required?: boolean,
       order?: number,
       controlType?: string,
-      placeholder?: string
+      placeholder?: string,
+      rows?: number,
+      cols?: number
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';
@@ -23,5 +27,7 @@ export class FieldBase<T> {
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
     this.placeholder = options.placeholder || '';
+    this.rows = options.rows === undefined ? 1 : options.rows;
+    this.cols = options.cols === undefined ? 1 : options.cols;
   }
 }

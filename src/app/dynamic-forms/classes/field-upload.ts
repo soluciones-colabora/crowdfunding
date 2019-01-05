@@ -1,14 +1,16 @@
 import { FieldBase } from './field-base';
 
-export class TextboxField extends FieldBase<string> {
-  controlType = 'textbox';
+export class UploadField extends FieldBase<string> {
+  controlType = 'upload';
   type: string;
-  maxlength: string;
+  maxSize: number;
+  text: string;
 
   constructor(options: {} = {}) {
     super(options);
     this.type = options['type'] || '';
-    this.maxlength = options['maxlength'] || '';
+    this.maxSize = options['maxSize'] || 1 * 1024 * 1024;
+    this.text = options['text'] || 'SUBIR ARCHIVO';
   }
 }
 

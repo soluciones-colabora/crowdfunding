@@ -1,14 +1,12 @@
 import { FieldBase } from './field-base';
 
-export class TextboxField extends FieldBase<string> {
-  controlType = 'textbox';
-  type: string;
-  maxlength: string;
+export class RadiobuttonField extends FieldBase<string> {
+  controlType = 'radiobuttons';
+  options: {key: string, value: string}[] = [];
 
   constructor(options: {} = {}) {
     super(options);
-    this.type = options['type'] || '';
-    this.maxlength = options['maxlength'] || '';
+    this.options = options['options'] || [];
   }
 }
 

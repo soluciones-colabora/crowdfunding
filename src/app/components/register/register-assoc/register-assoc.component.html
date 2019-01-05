@@ -5,18 +5,27 @@
     <mat-card-subtitle>¿Ya tienes cuenta? <a [routerLink]="['/login']">Inicia sesión aquí</a></mat-card-subtitle>
   </mat-card-header>
 
-
+  <!-- (formOut)="getForm($event)" -->
   <mat-card-content>
-    <mat-horizontal-stepper linear="false" #stepper>
+    <mat-horizontal-stepper linear="false" labelPosition="bottom" #stepper>
       <mat-step [stepControl]="firstFormGroup">
-        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)" (formOut)="firstFormGroup"></app-dynamic-form>
+        <ng-template matStepLabel>{{labels[0]}}</ng-template>
+        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>{{labels[1]}}</ng-template>
         <app-dynamic-form [backButton]="true" [fields]="secondFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
       </mat-step>
       <mat-step [stepControl]="thirdFormGroup">
+          <ng-template matStepLabel>{{labels[2]}}</ng-template>
         <app-dynamic-form [backButton]="true" [lastForm]="true" [fields]="thirdFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
       </mat-step>
+      <!-- <mat-step *ngFor="let formField of formFields; let i = index" [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>{{labels[i]}}</ng-template>
+        <app-dynamic-form [fields]="formField" (submited)="onSubmit($event)" [label]="labels[i]"></app-dynamic-form>
+      </mat-step> -->
+
+
 
     </mat-horizontal-stepper>
   </mat-card-content>

@@ -30,12 +30,12 @@ export class RegisterDonorComponent implements OnInit {
   }
 
   onSubmit(payload) {
-    this.payload = { ...payload, ...this.payload };
+    this.payload = Object.assign(this.payload, payload);
     const interests = {};
     this.secondFormFields.forEach(field => {
       interests[field.label] = field.checked;
     });
-    this.payload = { ...payload, interests };
+    this.payload = { ...this.payload, interests };
     console.log('payload :', this.payload);
   }
 

@@ -57,6 +57,7 @@ export class FieldService {
           {key: 'male',  value: 'Hombre'},
           {key: 'female',  value: 'Mujer'}
         ],
+        required: true,
         order: 5
       }),
 

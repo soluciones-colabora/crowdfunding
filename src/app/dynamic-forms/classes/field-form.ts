@@ -1,14 +1,15 @@
 import { FieldBase } from './field-base';
 
-export class TextboxField extends FieldBase<string> {
-  controlType = 'textbox';
-  type: string;
-  maxlength: string;
+export class FormField extends FieldBase<string> {
+  controlType = 'form';
+  fields: any[];
+  childCols: number;
 
   constructor(options: {} = {}) {
     super(options);
-    this.type = options['type'] || '';
-    this.maxlength = options['maxlength'] || '';
+    this.fields = options['fields'] || [];
+    this.childCols = options['childCols'] || 2;
+
   }
 }
 
