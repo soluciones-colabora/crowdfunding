@@ -1,18 +1,19 @@
-<mat-card class="example-card">
+<!-- <mat-card class="register-card">
   <mat-card-header class="center">
     <mat-card-title>REGISTRARSE</mat-card-title>
     <mat-card-subtitle>Elige el tipo de perfil que te gustaría tener</mat-card-subtitle>
-    <mat-card-subtitle>¿Ya tienes cuenta? <a [routerLink]="['/login']">Inicia sesión aquí</a></mat-card-subtitle>
+    <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>
-    <mat-grid-list cols="2" rowHeight="50px">
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <button mat-flat-button mat-raised-button color="accent" [routerLink]="['/register/assoc']">ASOCIACIÓN CIVIL</button>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <button mat-flat-button mat-raised-button color="accent" [routerLink]="['/register/donor']">DONADOR(A)</button>
-
-      </mat-grid-tile>
-    </mat-grid-list>
+      
   </mat-card-actions>
-</mat-card>
+</mat-card> -->
+<div class="register-holder">
+  REGISTRARSE
+  <p>Elige el tipo de perfil que te gustaría tener</p>
+  <p>¿Ya tienes cuenta?  <a [routerLink]="['/login']">Inicia sesión aquí</a></p>
+  <div class="buttons">
+      <button  mat-raised-button color="accent" [routerLink]="['/register/assoc']">ASOCIACIÓN CIVIL</button>
+          <button  mat-raised-button color="accent" [routerLink]="['/register/donor']">DONADOR(A)</button>
+  </div>
+</div>

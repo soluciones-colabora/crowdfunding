@@ -3,8 +3,7 @@
     <mat-grid-list [cols]="cols" rowHeight="100px">
       <mat-grid-tile *ngFor="let field of fields"
         [colspan]="field.cols"
-        [rowspan]="field.rows"
-        style="background: aqua">
+        [rowspan]="field.rows">
         <app-field [field]="field" [form]="form"></app-field>
       </mat-grid-tile>
     </mat-grid-list>
@@ -39,6 +38,6 @@
           </ng-template>
         </mat-grid-tile>
       </mat-grid-list>
-    </form>
+    </form> 
   </div>
 </ng-template>

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import "~owl.carousel/dist/assets/owl.carousel.css";
 // @import "~owl.carousel/dist/assets/owl.theme.default.css";
 // @import '/colabora-theme.scss';
@@ -25,7 +26,7 @@ $mat-purpureus: (
   A700 : #ff3ed7,
 );
 
-html,body, button, .mat-toolbar .mat-button {
+html,body, button, .mat-toolbar .mat-button .mat-form-field .mat-stepper-horizontal {
   margin: 0;
   font-family: 'Nunito', sans-serif!important;
 }
@@ -45,4 +46,91 @@ mat-toolbar-row {
   bottom: 20px;
   right: 20px;
   color: white;
+}
+
+
+//Inputs
+
+app-field {
+  width: 100%;
+  mat-form-field {
+    width: 95%;
+  }
+}
+
+
+//Butoons
+
+.mat-raised-button.mat-accent {
+  padding-top: 0px;
+  background-color: $purpura_col;
+  color:white;
+}
+
+
+//Stepper
+// .mat-form-field.mat-focused {
+  
+//      .mat-form-field-infix {
+//       border-bottom: 1.5px solid $lavanda_col!important;         
+//     }
+  
+// }
+.mat-form-field-infix{
+  border-bottom: 1.5px solid $lavanda_col;    
+}
+.mat-form-field.mat-focused{
+  .mat-form-field-flex {
+    border-bottom: none;         
+  }
+}
+.mat-form-field-label{
+  // color:$lavanda_col!important;
+  margin-bottom: 10px!important;
+  }
+// }
+.mat-radio-button {
+  margin-left: 10px!important;
+}
+.mat-step-icon {
+  height: 65px!important;
+  width: 65px!important;
+  border: 1.5px solid rgba(0,0,0,.38);    
+}
+
+.mat-step-label {
+  display: none!important;
+}
+.mat-stepper-horizontal-line {
+  border-top-width: 10px!important;
+}
+.mat-horizontal-stepper-header-container {
+  margin-bottom: 10px;
+}
+.mat-step-header .mat-step-icon {
+  background-color: #fff;
+  color:  rgba(0,0,0,.38);
+  font-size: 17px;
+  font-weight: 800;
+  -webkit-box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
+  -moz-box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
+  box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
+  &-selected {
+    color: $morado_col!important;
+    border: 1.5px solid $morado_col;
+  }
+
+  &-state-number{
+    color:  rgba(0,0,0,.38);
+  }
+  &-state-edit{
+    background-color: $morado_col;
+    border:none; 
+    color:  #fff;
+    border: 1.5px solid $morado_col;
+  }
+}
+
+.mat-radio-outer-circle {
+  border-color:$lavanda_col;
 }
