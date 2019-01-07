@@ -1,8 +1,8 @@
 <ng-container *ngIf="!formsArray; else elseTemplate" >
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <mat-grid-list [cols]="cols" rowHeight="100px">
+    <mat-grid-list [cols]="(isHandset$ | async) ? 1 : cols" rowHeight="100px">
       <mat-grid-tile *ngFor="let field of fields"
-        [colspan]="field.cols"
+        [colspan]="(isHandset$ | async) ? 1 : field.cols"
         [rowspan]="field.rows">
         <app-field [field]="field" [form]="form"></app-field>
       </mat-grid-tile>
@@ -23,9 +23,9 @@
   <mat-label>{{label}}</mat-label>
   <div *ngFor="let nestedForm of formsArray.controls; let i = index">
     <form (ngSubmit)="onSubmit()" [formGroup]="nestedForm" style="background: green; width: 800px;">
-      <mat-grid-list [cols]="cols" rowHeight="100px" >
+      <mat-grid-list [cols]="(isHandset$ | async) ? 1 : cols" rowHeight="100px" >
         <mat-grid-tile *ngFor="let field of fields"
-          [colspan]="field.cols"
+          [colspan]="(isHandset$ | async) ? 1 : field.cols"
           [rowspan]="field.rows">
           <app-field [field]="field" [form]="nestedForm"></app-field>
         </mat-grid-tile>
@@ -38,6 +38,6 @@
           </ng-template>
         </mat-grid-tile>
       </mat-grid-list>
-    </form> 
+    </form>
   </div>
 </ng-template>

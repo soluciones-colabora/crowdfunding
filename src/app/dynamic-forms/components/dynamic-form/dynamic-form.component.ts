@@ -1,5 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormArray } from '@angular/forms';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { FieldBase } from '../../classes/field-base';
 import { FieldControlService } from '../../field-control.service';
@@ -34,7 +37,13 @@ export class DynamicFormComponent implements OnInit {
   nextButtonText = '';
   form: FormGroup;
 
-  constructor(private fcs: FieldControlService) {  }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
+
+  constructor(private fcs: FieldControlService,
+              private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
     // console.log('this.fields :', this.fields);
