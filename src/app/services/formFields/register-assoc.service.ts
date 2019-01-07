@@ -227,17 +227,8 @@ export class FieldService {
         required: true,
         placeholder: 'Teléfono fijo',
         order: 12
-      }),
+      })
 
-      new TextboxField({
-        key: 'edad',
-        label: 'edad',
-        type: 'number',
-        required: true,
-        placeholder: 'Edad',
-        cols: 2,
-        order: 13
-      }),
     ];
 
     return fields.sort((a, b) => a.order - b.order);
