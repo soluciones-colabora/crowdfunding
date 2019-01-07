@@ -22,7 +22,8 @@ export class FieldService {
         label: 'Name',
         required: true,
         placeholder: 'Nombre completo',
-        order: 1
+        order: 1,
+        cols: 2
       }),
 
       new TextboxField({

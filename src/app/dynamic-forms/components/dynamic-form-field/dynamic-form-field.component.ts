@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { FieldBase } from '../../classes/field-base';
 
@@ -13,7 +16,11 @@ export class DynamicFormFieldComponent {
   public file: File;
   public fileid;
 
-  constructor ( ) {
+  public isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
+  constructor ( private breakpointObserver: BreakpointObserver ) {
     const date = new Date();
     this.fileid = '' + date.getTime();
   }
