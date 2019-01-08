@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Routing
 import { AppRoutingModule } from './/app-routing.module';
 
+// Directives
+import { DropZoneDirective } from './drop-zone.directive';
+
 // Firebase Modules
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -33,7 +36,8 @@ import { RegisterMainComponent } from './components/register/register-main/regis
 import { RegisterAssocComponent } from './components/register/register-assoc/register-assoc.component';
 import { RegisterDonorComponent } from './components/register/register-donor/register-donor.component';
 import { InicioComponent } from './inicio/inicio.component';
-// Módulos
+
+// Modules
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { OwlModule } from 'ngx-owl-carousel';
@@ -50,6 +54,7 @@ import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dy
 @NgModule({
   declarations: [
     AppComponent,
+    DropZoneDirective,
     HomeComponent,
     PageNotFoundComponent,
     HeaderComponent,

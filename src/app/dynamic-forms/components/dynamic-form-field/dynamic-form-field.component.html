@@ -31,15 +31,27 @@
     <div *ngSwitchCase="'upload'">
         <p>{{field.label}}</p>
       <button  mat-raised-button type="button" (click)="onFileClick(fileid)">
-          {{field.text}}<mat-icon >attach_file</mat-icon>
+          {{field.text}}<mat-icon>attach_file</mat-icon>
       </button>
-      <input [id]="fileid" [accept]="field.type" type="file" style="display:none;"  [formControlName]="field.key" (change)="onFileChange($event.target.files)">
-      <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
+      <input [id]="fileid" [accept]="field.type" type="file" style="display:none;"  (change)="onFileChange($event.target.files)">
+      <!-- <mat-error *ngIf="!isValid">El campo es requerido</mat-error> -->
+      <mat-error *ngIf="fileError.unsupported">*Seleccione una imagen por favor</mat-error>
+      <mat-error *ngIf="fileError.size">*El tamaño de la imagen debe ser menor a 1mb.</mat-error>
+    </div>
+
+    <div *ngSwitchCase="'dropZone'">
+      <mat-label>{{field.label}}</mat-label>
+      <div class="dropzone"
+        dropZone
+        (hovered)="toggleHover($event)"
+        (dropped)="onFileDrop($event)"
+        [class.hovering]="isHovering">
+        <mat-icon >photo_library</mat-icon>
+        <mat-label>{{field.text}}</mat-label>
+      </div>
     </div>
 
     <app-dynamic-form *ngSwitchCase="'form'" [formsArray]="form.controls[field.key]" [fields]="field.fields" [parentField]= "field" [label]="field.label" [cols]="field.childCols"></app-dynamic-form>
-
-
 
     <mat-form-field *ngSwitchCase="'datepicker'">
       <!-- <input matInput [min]="field.min" [max]="field.max" [matDatepicker]="picker" placeholder="field.placeholder">

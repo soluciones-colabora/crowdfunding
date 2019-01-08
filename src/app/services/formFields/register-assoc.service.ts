@@ -6,6 +6,8 @@ import { TextboxField } from '../../dynamic-forms/classes/field-textbox';
 import { RadiobuttonField } from '../../dynamic-forms/classes/field-radiobutton';
 import { FormField } from '../../dynamic-forms/classes/field-form';
 import { UploadField } from '../../dynamic-forms/classes/field-upload';
+import { DropZoneField } from '../../dynamic-forms/classes/field-dropZone';
+
 
 
 
@@ -172,6 +174,7 @@ export class FieldService {
         label: 'Logotipo',
         text: 'SUBIR LOGO',
         type: 'image/*',
+        required: true,
         // type: 'application/pdf',
         // type: '.doc,.docx',
         order: 6
@@ -364,6 +367,17 @@ export class FieldService {
         cols: 2,
         childCols: 4,
         order: 4
+      }),
+
+      new DropZoneField({
+        key: 'gallery',
+        label: 'Galería de fotos',
+        text: 'Arrastra aquí tus imágenes',
+        type: 'image/*',
+        // required: true,
+        cols: 2,
+        rows: 2,
+        order: 5
       })
     ];
 
