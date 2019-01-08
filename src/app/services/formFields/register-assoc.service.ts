@@ -243,6 +243,7 @@ export class FieldService {
         key: 'summary',
         label: 'Summary',
         required: true,
+        textarea: true,
         placeholder: 'Resumen',
         order: 1
       }),
@@ -251,6 +252,7 @@ export class FieldService {
         key: 'mission',
         label: 'Mission',
         required: true,
+        textarea: true,
         placeholder: 'Misión',
         order: 2
       }),
@@ -259,6 +261,7 @@ export class FieldService {
         key: 'vision',
         label: 'Vision',
         required: true,
+        textarea: true,
         placeholder: 'Visión',
         order: 3
       }),
@@ -267,6 +270,7 @@ export class FieldService {
         key: 'values',
         label: 'Values',
         required: true,
+        textarea: true,
         placeholder: 'Valores (cada valor separado por una coma ",")',
         order: 4
       }),
@@ -275,6 +279,7 @@ export class FieldService {
         key: 'beneficiaries',
         label: 'Beneficiaries',
         required: true,
+        textarea: true,
         placeholder: 'Beneficiarios',
         order: 5
       }),
@@ -283,6 +288,7 @@ export class FieldService {
         key: 'valueProposition',
         label: 'Value Proposition',
         required: true,
+        textarea: true,
         placeholder: 'Propuesta de valor',
         order: 6
       }),
@@ -291,6 +297,7 @@ export class FieldService {
         key: 'changeTheory',
         label: 'Change Theory',
         required: true,
+        textarea: true,
         placeholder: 'Teoría del cambio',
         order: 7
       }),
@@ -310,6 +317,7 @@ export class FieldService {
         key: 'awards',
         label: 'Awards',
         required: true,
+        textarea: true,
         placeholder: 'Premios o reconocimientos (cada uno separado por una coma ",")',
         order: 9
       }),

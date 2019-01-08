@@ -4,9 +4,15 @@
   <div [ngSwitch]="field.controlType">
 
     <mat-form-field *ngSwitchCase="'textbox'">
-      <input matInput [formControlName]="field.key"
-              [id]="field.key" [type]="field.type" [maxlength]="field.maxlength" [placeholder]="field.placeholder" [required]="field.required"
-              >
+      <ng-container *ngIf="field.textarea; else textboxTemplate">
+        <textarea matInput mat-autosize="true" style="overflow: hidden" [formControlName]="field.key"
+        [id]="field.key" [type]="field.type" [maxlength]="field.maxlength" [placeholder]="field.placeholder" [required]="field.required"></textarea>
+      </ng-container>
+      <ng-template #textboxTemplate>
+        <input matInput [formControlName]="field.key"
+          [id]="field.key" [type]="field.type" [maxlength]="field.maxlength" [placeholder]="field.placeholder" [required]="field.required"
+        >
+      </ng-template>
       <mat-error *ngIf="!isValid">El campo es requerido</mat-error>
     </mat-form-field>
 

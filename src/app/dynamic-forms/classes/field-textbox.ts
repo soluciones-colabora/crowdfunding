@@ -4,11 +4,13 @@ export class TextboxField extends FieldBase<string> {
   controlType = 'textbox';
   type: string;
   maxlength: string;
+  textarea: boolean;
 
   constructor(options: {} = {}) {
     super(options);
     this.type = options['type'] || '';
     this.maxlength = options['maxlength'] || '';
+    this.textarea = options['textarea'] || false;
   }
 }
 
