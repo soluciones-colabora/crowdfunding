@@ -1,7 +1,7 @@
 @import '../../../../styles.scss';
 .assoc-card {
   max-width: 800px;
-  margin-top: 84px;
+  margin-top: calc(64px + 32px);
 }
 
 .center {
@@ -25,3 +25,4 @@ a {
   text-decoration-line: underline;
   font-weight: 600
 }
+

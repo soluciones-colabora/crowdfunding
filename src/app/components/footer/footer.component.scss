@@ -1,4 +1,5 @@
 @import '../../../styles.scss';
+@import '~compass-mixins/lib/compass/css3';
 /* Style all font awesome icons */
 .fa {
   padding: 10px;
@@ -32,8 +33,13 @@
   color: white;
 }
 
+
 .footer {
-  background-color:$lavanda_col;
+// Permalink - use to edit and share this gradient:
+// http://colorzilla.com/gradient-editor/#6d5895+0,6d5895+35,a65199+74,a65199+100
+background-color: #6d5895; // Old browsers
+@include filter-gradient(#6d5895, #a65199, horizontal); // IE6-9 fallback on horizontal gradient
+@include background-image(linear-gradient(to bottom right, #6d5895 0%,#6d5895 35%,#a65199 74%,#a65199 100%));
   // position: absolute;
   display: flex;
   width: 100%;
@@ -49,7 +55,13 @@ mat-form-field {
      font-size: 16px!important;
   }
   margin-right: 10px;
+  // select {
+
+  //   border-bottom: 1px solid #ccc;
+  // }
 }
+
+
 .holder {
   padding: 15px;
   display: flex;

@@ -27,6 +27,7 @@
     "angular-bootstrap-md": "^7.1.0",
     "angular5-csv": "^0.2.10",
     "chart.js": "^2.5.0",
+    "compass-mixins": "^0.12.10",
     "core-js": "^2.5.4",
     "firebase": "^5.5.8",
     "font-awesome": "^4.7.0",

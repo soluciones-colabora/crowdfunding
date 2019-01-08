@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card class="donnor-card">
   <mat-card-header class="center">
     <mat-card-title>REGISTRO PARA DONADORES</mat-card-title>
     <mat-card-subtitle>Ingresa tus datos para comenzar a apoyar.</mat-card-subtitle>
@@ -7,24 +7,23 @@
 
 
   <mat-card-content>
-    <mat-horizontal-stepper linear="false" labelPosition="bottom" #stepper>
-      <mat-step [stepControl]="firstFormGroup" label="Información Básica">
+    <mat-horizontal-stepper linear="false" label="false" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
         <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)" (formOut)="firstFormGroup"></app-dynamic-form>
       </mat-step>
-      <mat-step [stepControl]="secondFormGroup" label="Intereses">
-        <mat-grid-list cols="4" rowHeight="100px">
-          <mat-grid-tile *ngFor="let field of secondFormFields">
+      <mat-step [stepControl]="secondFormGroup">
+        <div class="ods-container">
+          <div *ngFor="let field of secondFormFields">
             <mat-button-toggle (change)="buttonToggleChanged(field)">
               {{field.label}}
             </mat-button-toggle>
-          </mat-grid-tile>
-        </mat-grid-list>
-        <div>
+          </div>
+        </div>
+        <div class="controls-stepper">
           <button mat-raised-button color="accent" matStepperPrevious style="margin-right: 20px">ANTERIOR</button>
           <button (click)="onSubmit({})" mat-raised-button color="accent" matStepperNext>FINALIZAR REGISTRO</button>
         </div>
       </mat-step>
-
     </mat-horizontal-stepper>
   </mat-card-content>
 </mat-card>

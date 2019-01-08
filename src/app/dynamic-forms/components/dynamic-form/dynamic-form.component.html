@@ -1,13 +1,13 @@
 <ng-container *ngIf="!formsArray; else elseTemplate" >
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <mat-grid-list [cols]="cols" rowHeight="100px">
-      <mat-grid-tile *ngFor="let field of fields"
+      <mat-grid-tile *ngFor="let field of fields" 
         [colspan]="field.cols"
         [rowspan]="field.rows">
         <app-field [field]="field" [form]="form"></app-field>
       </mat-grid-tile>
     </mat-grid-list>
-    <div>
+    <div style="margin-top:15px;">
       <button *ngIf="backButton" mat-raised-button color="accent" matStepperPrevious style="margin-right: 20px">ANTERIOR</button>
       <button  type="submit" mat-raised-button color="accent" matStepperNext [disabled]="!form.valid">{{nextButtonText}}</button>
     </div>
@@ -22,7 +22,7 @@
 <ng-template #elseTemplate>
   <mat-label>{{label}}</mat-label>
   <div *ngFor="let nestedForm of formsArray.controls; let i = index">
-    <form (ngSubmit)="onSubmit()" [formGroup]="nestedForm" style="background: green; width: 800px;">
+    <form (ngSubmit)="onSubmit()" [formGroup]="nestedForm" class="nested-form">
       <mat-grid-list [cols]="cols" rowHeight="100px" >
         <mat-grid-tile *ngFor="let field of fields"
           [colspan]="field.cols"
@@ -30,11 +30,11 @@
           <app-field [field]="field" [form]="nestedForm"></app-field>
         </mat-grid-tile>
         <mat-grid-tile>
-          <ng-container *ngIf="i<(formsArray.length - 1); else addButton">
-              <button (click)="removeForm(i)" mat-raised-button color="accent">ELIMINAR<mat-icon >remove_circle</mat-icon></button>
+          <ng-container *ngIf="i < (formsArray.length - 1); else addButton">
+              <button (click)="removeForm(i)" mat-raised-button color="accent">ELIMINAR <mat-icon>remove_circle</mat-icon></button>
           </ng-container>
           <ng-template #addButton>
-            <button (click)="addForm()" mat-raised-button color="accent">AGREGAR<mat-icon >add_circle</mat-icon></button>
+            <button (click)="addForm()" mat-raised-button color="accent">AGREGAR <mat-icon>add_circle</mat-icon></button>
           </ng-template>
         </mat-grid-tile>
       </mat-grid-list>

@@ -1,7 +1,15 @@
+@import '../../../../styles.scss';
+
 .mat-radio-button {
     margin-left: 10px!important;
 }
-
+div.form-field {
+    margin-top:25px;
+}
 mat-label  {
     margin-top: 10px;
+}
+
+app-dynamic-form.dynamic-form {
+    margin: 25px 0px;
 }

@@ -50,6 +50,9 @@ mat-toolbar-row {
 
 
 //Inputs
+.mat-grid-tile {
+  overflow:visible!important;
+}
 
 app-field {
   width: 100%;
@@ -76,8 +79,27 @@ app-field {
 //     }
   
 // }
-.mat-form-field-infix{
-  border-bottom: 1.5px solid $lavanda_col;    
+app-dynamic-form {
+ .mat-form-field-infix{
+   border-bottom: 1.5px solid $lavanda_col;    
+ }
+ 
+}
+
+app-dynamic-form.dynamic-form {
+  padding: 25px 0px;
+}
+// .cdk-focused ,.cdk-mouse-focused {
+//   background-color: #fff!important;
+// }
+.mat-step-header:hover{
+  background-color: #fff!important;
+   &:hover {
+    height: 70px!important;
+    width: 70px!important;
+    -webkit-transition: linear 0.3s; /* Safari */
+     transition: linear 0.3s;
+  }
 }
 .mat-form-field.mat-focused{
   .mat-form-field-flex {
@@ -96,13 +118,29 @@ app-field {
   height: 65px!important;
   width: 65px!important;
   border: 1.5px solid rgba(0,0,0,.38);    
+  &:hover {
+    height: 70px!important;
+    width: 70px!important;
+    -webkit-transition: linear 0.3s; /* Safari */
+     transition: linear 0.3s;
+  }
 }
+// .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,
+//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after, [dir=rtl] 
+//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after, [dir=rtl] 
+//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before {
+//   display: none!important;
+// }
 
-.mat-step-label {
+
+.mat-step-label{
   display: none!important;
 }
 .mat-stepper-horizontal-line {
-  border-top-width: 10px!important;
+  border-width: 10px!important;
+}
+.mat-horizontal-stepper-header {
+  padding: 12px;
 }
 .mat-horizontal-stepper-header-container {
   margin-bottom: 10px;

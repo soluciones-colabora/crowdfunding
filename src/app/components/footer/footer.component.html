@@ -20,17 +20,26 @@
     </ul>
 </div>
 <div class="idioma">
-        <mat-form-field>
-                <select matNativeControl required appearance="legacy">
-                  <option value="volvo">Español</option>
-                  <option value="saab">Inglés</option>
-                </select>
+        <mat-form-field  appearance="legacy">
+                <mat-select placeholder="Selecciona un idioma">
+                        <mat-option value ="spanish">
+                          Español
+                        </mat-option>
+                        <mat-option value ="english">
+                          Inglés
+                        </mat-option>
+                      </mat-select>
               </mat-form-field>
-              <mat-form-field>
-                    <select matNativeControl required  panelClass="select-panel">
-                      <option value="volvo">MXN</option>
-                      <option value="saab">USD</option>
-                    </select>
+              <mat-form-field appearance="legacy">
+                  <mat-select
+                  >
+                      <mat-option value ="spanish">
+                        MXN
+                      </mat-option>
+                      <mat-option value ="english">
+                        USD
+                      </mat-option>
+                    </mat-select>
                   </mat-form-field>
 </div>
 
