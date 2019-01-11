@@ -10,46 +10,19 @@
     <mat-horizontal-stepper linear="false" label="false" #stepper>
       <mat-step [stepControl]="firstFormGroup">
         <!-- <ng-template matStepLabel>{{labels[0]}}</ng-template> -->
-        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
+        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event, 0)"></app-dynamic-form>
       </mat-step>
-      <mat-step [stepControl]="secondFormGroup">    
-        <app-dynamic-form [backButton]="true" [fields]="secondFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
+      <mat-step [stepControl]="secondFormGroup">
+        <app-dynamic-form [backButton]="true" [fields]="secondFormFields" (submited)="onSubmit($event, 1)"></app-dynamic-form>
       </mat-step>
       <mat-step [stepControl]="thirdFormGroup">
-        <app-dynamic-form [backButton]="true" [lastForm]="true" [fields]="thirdFormFields" (submited)="onSubmit($event)"></app-dynamic-form>
+        <app-dynamic-form [backButton]="true" [lastForm]="true" [fields]="thirdFormFields" (submited)="onSubmit($event, 2)"></app-dynamic-form>
       </mat-step>
+      <!-- <mat-step *ngFor="let formField of formFields; let i = index" [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>{{labels[i]}}</ng-template>
+        <app-dynamic-form [fields]="formField" (submited)="onSubmit($event)" [label]="labels[i]"></app-dynamic-form>
+      </mat-step> -->
+    </mat-horizontal-stepper>
+  </mat-card-content>
+</mat-card>
 
-
-<!-- <form [formGroup]="firstFormGroup">
-  <ng-template matStepLabel>Fill out your name</ng-template>
-  <div class="display: flex; flex-direction: column; width: 100%;">
-  <mat-grid-list cols="2" rowHeight="100px">
-    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
-    <div class="display: flex; flex-direction: column; width: 100%;">
-
-      <mat-form-field>
-        <input matInput placeholder="Correo electrónico" formControlName="email" required>
-      </mat-form-field>
-    </div>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
-      <mat-form-field>
-        <input matInput placeholder="Nombre completo del representante" formControlName="name" required>
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
-      <mat-form-field>
-        <input matInput placeholder="Nombre de la Asociación Civil" formControlName="acname" required>
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="1" style="background-color: lightblue">
-      <mat-form-field>
-        <input matInput placeholder="CLUNI" formControlName="cluni" required>
-      </mat-form-field>
-    </mat-grid-tile>
-  </mat-grid-list>
-  </div>
-  <div>
-    <button mat-button matStepperNext>Next</button>
-  </div>
-</form> -->

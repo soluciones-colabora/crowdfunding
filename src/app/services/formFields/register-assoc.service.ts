@@ -127,7 +127,7 @@ export class FieldService {
       // }),
 
       new TextboxField({
-        key: 'emailAddress',
+        key: 'email',
         label: 'Email',
         required: true,
         type: 'email',
@@ -160,7 +160,7 @@ export class FieldService {
       }),
 
       new RadiobuttonField({
-        key: 'donnor',
+        key: 'isDonnor',
         label: '¿Es una donadora autorizada?',
         options: [
           {key: 'Si',  value: 'Si'},

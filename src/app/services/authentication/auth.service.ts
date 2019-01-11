@@ -94,12 +94,12 @@ export class AuthService {
 
   emailSignUp(email: string, password: string) {
     return this.afAuth.auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(credential => {
-        // this.notify.update('Welcome new user!', 'success');
-        return this.updateUserData(credential.user); // if using firestore
-      })
-      .catch(error => this.handleError(error));
+      .createUserWithEmailAndPassword(email, password);
+      // .then(credential => {
+      //   // this.notify.update('Welcome new user!', 'success');
+      //   return this.updateUserData(credential.user); // if using firestore
+      // })
+      // .catch(error => this.handleError(error));
   }
 
   emailLogin(email: string, password: string) {
