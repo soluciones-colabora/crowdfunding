@@ -9,7 +9,7 @@
   <mat-card-content>
     <mat-horizontal-stepper linear="false" labelPosition="bottom" #stepper>
       <mat-step [stepControl]="firstFormGroup" label="Información Básica">
-        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)" (formOut)="firstFormGroup"></app-dynamic-form>
+        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit(0,$event)" (formOut)="firstFormGroup"></app-dynamic-form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup" label="Intereses">
         <mat-grid-list cols="4" rowHeight="100px">
@@ -21,7 +21,7 @@
         </mat-grid-list>
         <div>
           <button mat-raised-button color="accent" matStepperPrevious style="margin-right: 20px">ANTERIOR</button>
-          <button (click)="onSubmit({})" mat-raised-button color="accent" matStepperNext>FINALIZAR REGISTRO</button>
+          <button (click)="onSubmit(1)" mat-raised-button color="accent" matStepperNext>FINALIZAR REGISTRO</button>
         </div>
       </mat-step>
 
