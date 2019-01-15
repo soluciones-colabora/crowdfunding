@@ -59,8 +59,8 @@ export class DynamicFormComponent implements OnInit {
     if (this.formsArray) {
       const newform = this.fcs.toFormGroup(this.fields);
       this.formsArray.push(newform);
-      let smt  = this.formsArray.length * this.fields.length;
-      console.log('smt :', smt);
+      // let smt  = this.formsArray.length * this.fields.length;
+      // console.log('smt :', smt);
       // console.log('this.key :', this.key);
       // let newkey = this.key;
       // for (const key in this.form.controls) {

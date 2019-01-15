@@ -45,7 +45,7 @@ export class RegisterAssocComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private storage: AngularFireStorage,
-    private associationService: AssociationService,
+    private assocSrvc: AssociationService,
     private toastr:  ToastrService
     ) {
     this.formFields = [];
@@ -71,40 +71,40 @@ export class RegisterAssocComponent implements OnInit {
   }
 
   onSubmit(payload: any, index: number) {
-    this.toastr.success('¡Su registro se realizó exitosamente!', '¡Éxito!');
     this.payload = Object.assign(this.payload, payload);
-    console.log('index :', index);
     console.log('payload :', this.payload);
-    this.openDialog();
     // Change form to array loading...
     if (index === 2) {
-      this.register('something');
+      this.openDialog();
     }
   }
 
-  async register(registerModal) {
-    // this.modalMessage = '¿Deseas registrarte?';
-    // // El modal se invoca con una promesa que se resuelve si el modal es aceptado o se reachaza si es cerrado
-    // await this.modalService.open(registerModal).result;
+  async register() {
+    try {
+      const email = this.payload['email'];
+      const password = 'password';
 
-    const email = this.payload['email'];
-    const password = 'password';
-    // Signup the new user and get its uid
-    const credential = await this.authService.emailSignUp(email, password);
-    // Store all user files
-    await this.uploadAllFiles(credential.user.uid);
+      // Signup the new user and get its uid
+      const credential = await this.authService.emailSignUp(email, password);
+      const uid = credential.user.uid;
 
-    this.payload['uid'] = credential.user.uid;
-    const association: Association = { ...this.payload };
+      // Store all user files
+      await this.uploadAllFiles(uid);
 
-    const assoc = await this.associationService.createAssociation(association);
-    console.log('assoc :', assoc);
+      // Register association in DB
+      const association: Association = { ...this.payload, uid: uid};
+      const createdAssoc = await this.assocSrvc.createAssociation(association);
+      console.log('assoc :', createdAssoc);
 
-    this.toastr.success('¡Su registro se realizó exitosamente!', '¡Éxito!', {
-      timeOut: 10000
-    });
-    this.router.navigate(['/index']);
-    // this.toastr.error('¡Hubo un error con su registro!', '¡Error!');
+      this.toastr.success('¡Su registro se realizó exitosamente!', '¡Éxito!', {
+        timeOut: 10000
+      });
+      this.router.navigate(['/index']);
+    } catch (error) {
+      // Should check for each type of error: SignUp, Upload, CreateAssoc
+      // console.log('error :', error);
+      this.toastr.error('¡Hubo un error con su registro!', '¡Error!');
+    }
   }
 
   private async uploadAllFiles(uid: string) {
@@ -147,7 +147,7 @@ export class RegisterAssocComponent implements OnInit {
     const uploadTask = this.storage.upload(path, file, { customMetadata });
 
     const fileRef = this.storage.ref(path);
-    let downloadURL: Observable<string> = undefined;
+    let downloadURL: Observable<string>;
     // The file's download URL
     // this.task.snapshotChanges().pipe(
     //   finalize(() => this.downloadURL = fileRef.getDownloadURL() )
@@ -162,20 +162,18 @@ export class RegisterAssocComponent implements OnInit {
     return url;
   }
 
-  getForm(asdf) {
-    console.log('asdf :', asdf);
-
-  }
-
   openDialog(): void {
     const dialogRef = this.dialog.open(ConfirmationDialog, {
       width: '250px',
-      data: {title: "Terminar registro", message: "¿Desea registrarse?"}
+      data: {title: 'Terminar registro', message: '¿Desea registrarse?'}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log('result :', result);
+      if (result) {
+        this.register();
+      }
     });
   }
 
