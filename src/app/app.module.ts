@@ -1,6 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 
@@ -49,6 +52,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 
 import { DynamicFormFieldComponent } from './dynamic-forms/components/dynamic-form-field/dynamic-form-field.component';
 import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dynamic-form.component';
+import { ConfirmationDialog } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
@@ -70,10 +74,12 @@ import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dy
     MainNavComponent,
     DynamicFormComponent,
     // DynamicFormControlComponent,
-    DynamicFormFieldComponent
+    DynamicFormFieldComponent,
+    ConfirmationDialog
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -83,6 +89,7 @@ import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dy
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     MaterialComponentsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
@@ -101,6 +108,7 @@ import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dy
     MatListModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [ConfirmationDialog]
 })
 export class AppModule { }

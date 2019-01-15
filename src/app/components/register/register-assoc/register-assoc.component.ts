@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { AuthService } from '../../../services/authentication/auth.service';
-// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
+
+// Imports for dialog
+import { MatDialog } from '@angular/material';
+import { ConfirmationDialog } from '../../dialogs/confirmation-dialog/confirmation-dialog.component';
+
 
 import { AssociationService } from '../../../services/database/Association/association.service';
 import { Association } from '../../../interfaces/association.interface';
@@ -34,13 +39,14 @@ export class RegisterAssocComponent implements OnInit {
 
 
   constructor(
+    public dialog: MatDialog,
     private _formBuilder: FormBuilder,
     service: FieldService,
     private router: Router,
     private authService: AuthService,
     private storage: AngularFireStorage,
     private associationService: AssociationService,
-    // private toastr:  ToastrService
+    private toastr:  ToastrService
     ) {
     this.formFields = [];
     this.formFields.push(service.getFirstFormFields());
@@ -65,9 +71,11 @@ export class RegisterAssocComponent implements OnInit {
   }
 
   onSubmit(payload: any, index: number) {
+    this.toastr.success('¡Su registro se realizó exitosamente!', '¡Éxito!');
     this.payload = Object.assign(this.payload, payload);
     console.log('index :', index);
     console.log('payload :', this.payload);
+    this.openDialog();
     // Change form to array loading...
     if (index === 2) {
       this.register('something');
@@ -79,8 +87,6 @@ export class RegisterAssocComponent implements OnInit {
     // // El modal se invoca con una promesa que se resuelve si el modal es aceptado o se reachaza si es cerrado
     // await this.modalService.open(registerModal).result;
 
-
-    // Aquí se incluye la lógica cuando el modal ha sido aceptado
     const email = this.payload['email'];
     const password = 'password';
     // Signup the new user and get its uid
@@ -94,14 +100,10 @@ export class RegisterAssocComponent implements OnInit {
     const assoc = await this.associationService.createAssociation(association);
     console.log('assoc :', assoc);
 
-    // // Se asignan los valores del formulario al objeto student.
-    // this.assign(this.enterprise, this.formulario.value);
-
-    // this.toastr.success('¡Su registro se realizó exitosamente!', '¡Éxito!');
-    // this.toastr.info('Por favor revise en su bandeja de entrada o spam el correo de verifiación de cuenta', '¡Importante!', {
-    //   timeOut: 10000
-    // });
-    // this.router.navigate(['/index']);
+    this.toastr.success('¡Su registro se realizó exitosamente!', '¡Éxito!', {
+      timeOut: 10000
+    });
+    this.router.navigate(['/index']);
     // this.toastr.error('¡Hubo un error con su registro!', '¡Error!');
   }
 
@@ -163,6 +165,18 @@ export class RegisterAssocComponent implements OnInit {
   getForm(asdf) {
     console.log('asdf :', asdf);
 
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmationDialog, {
+      width: '250px',
+      data: {title: "Terminar registro", message: "¿Desea registrarse?"}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log('result :', result);
+    });
   }
 
 }

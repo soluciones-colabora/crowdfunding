@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+// regular style toast
+@import '~ngx-toastr/toastr.css';
+// if you'd like to use it without importing all of bootstrap it requires
+// @import '~bootstrap/scss/functions';
+// @import '~bootstrap/scss/variables';
+// @import '~bootstrap/scss/mixins';
+// @import '~ngx-toastr/toastr-bs4-alert';
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 // @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import "~owl.carousel/dist/assets/owl.carousel.css";
@@ -8,7 +15,7 @@
 $lavanda_col : #A65199;
 $purpura_col: #6D5895;
 $morado_col: #674e96;
- 
+
 $mat-purpureus: (
   50 : #f4eaf3,
   100 : #e4cbe0,
@@ -70,18 +77,18 @@ app-field {
 
 //Stepper
 // .mat-form-field.mat-focused {
-  
+
 //      .mat-form-field-infix {
-//       border-bottom: 1.5px solid $lavanda_col!important;         
+//       border-bottom: 1.5px solid $lavanda_col!important;
 //     }
-  
+
 // }
 .mat-form-field-infix{
-  border-bottom: 1.5px solid $lavanda_col;    
+  border-bottom: 1.5px solid $lavanda_col;
 }
 .mat-form-field.mat-focused{
   .mat-form-field-flex {
-    border-bottom: none;         
+    border-bottom: none;
   }
 }
 .mat-form-field-label{
@@ -95,7 +102,7 @@ app-field {
 .mat-step-icon {
   height: 65px!important;
   width: 65px!important;
-  border: 1.5px solid rgba(0,0,0,.38);    
+  border: 1.5px solid rgba(0,0,0,.38);
 }
 
 .mat-step-label {
@@ -125,7 +132,7 @@ app-field {
   }
   &-state-edit{
     background-color: $morado_col;
-    border:none; 
+    border:none;
     color:  #fff;
     border: 1.5px solid $morado_col;
   }
