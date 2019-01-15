@@ -40,7 +40,6 @@ export class RegisterAssocComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    private _formBuilder: FormBuilder,
     service: FieldService,
     private router: Router,
     private authService: AuthService,
@@ -79,6 +78,21 @@ export class RegisterAssocComponent implements OnInit {
     }
   }
 
+  private openDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmationDialog, {
+      width: '250px',
+      data: {title: 'Terminar registro', message: '¿Desea registrarse?'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log('result :', result);
+      if (result) {
+        this.register();
+      }
+    });
+  }
+
   async register() {
     try {
       const email = this.payload['email'];
@@ -93,12 +107,14 @@ export class RegisterAssocComponent implements OnInit {
 
       // Register association in DB
       const association: Association = { ...this.payload, uid: uid};
-      const createdAssoc = await this.assocSrvc.createAssociation(association);
-      console.log('assoc :', createdAssoc);
+      await this.assocSrvc.createAssociation(association);
 
+      // Inform user register was succesful
       this.toastr.success('¡Su registro se realizó exitosamente!', '¡Éxito!', {
         timeOut: 10000
       });
+
+      // Return to index
       this.router.navigate(['/index']);
     } catch (error) {
       // Should check for each type of error: SignUp, Upload, CreateAssoc
@@ -162,19 +178,6 @@ export class RegisterAssocComponent implements OnInit {
     return url;
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ConfirmationDialog, {
-      width: '250px',
-      data: {title: 'Terminar registro', message: '¿Desea registrarse?'}
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log('result :', result);
-      if (result) {
-        this.register();
-      }
-    });
-  }
 
 }
