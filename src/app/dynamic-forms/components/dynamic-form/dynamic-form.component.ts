@@ -1,5 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormArray } from '@angular/forms';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { FieldBase } from '../../classes/field-base';
 import { FieldControlService } from '../../field-control.service';
@@ -33,14 +36,31 @@ export class DynamicFormComponent implements OnInit {
   payLoad = '';
   nextButtonText = '';
   form: FormGroup;
+  isHandset = false;
 
-  constructor(private fcs: FieldControlService) {  }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches)
+  );
+
+  constructor(private fcs: FieldControlService,
+    private breakpointObserver: BreakpointObserver) {
+      this.isHandset$.subscribe(result => {
+        this.isHandset = result;
+        if (this.formsArray) {
+          this.parentField.rows = this.isHandset ? this.formsArray.length * this.fields.length : this.formsArray.length;
+          console.log('this.parentField.rows :', this.parentField.rows);
+        }
+      });
+  }
 
   ngOnInit() {
     // console.log('this.fields :', this.fields);
     if (this.formsArray) {
       const newform = this.fcs.toFormGroup(this.fields);
       this.formsArray.push(newform);
+      // let smt  = this.formsArray.length * this.fields.length;
+      // console.log('smt :', smt);
       // console.log('this.key :', this.key);
       // let newkey = this.key;
       // for (const key in this.form.controls) {
@@ -78,12 +98,12 @@ export class DynamicFormComponent implements OnInit {
     console.log('adding');
     const newform = this.fcs.toFormGroup(this.fields);
     this.formsArray.push(newform);
-    this.parentField.rows = this.formsArray.length;
+    this.parentField.rows = this.isHandset ? this.formsArray.length * this.fields.length : this.formsArray.length;
   }
 
   removeForm(index: number) {
     console.log('removing');
     this.formsArray.removeAt(index);
-    this.parentField.rows = this.formsArray.length;
+    this.parentField.rows = this.isHandset ? this.formsArray.length * this.fields.length : this.formsArray.length;
   }
 }

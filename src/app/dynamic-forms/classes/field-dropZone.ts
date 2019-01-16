@@ -1,16 +1,16 @@
 import { FieldBase } from './field-base';
 
-export class TextboxField extends FieldBase<string> {
-  controlType = 'textbox';
+export class DropZoneField extends FieldBase<string> {
+  controlType = 'dropZone';
   type: string;
-  maxlength: string;
-  textarea: boolean;
+  maxSize: number;
+  text: string;
 
   constructor(options: {} = {}) {
     super(options);
     this.type = options['type'] || '';
-    this.maxlength = options['maxlength'] || '';
-    this.textarea = options['textarea'] || false;
+    this.maxSize = options['maxSize'] || 1 * 1024 * 1024;
+    this.text = options['text'] || 'SUBIR ARCHIVO';
   }
 }
 

@@ -6,6 +6,8 @@ import { TextboxField } from '../../dynamic-forms/classes/field-textbox';
 import { RadiobuttonField } from '../../dynamic-forms/classes/field-radiobutton';
 import { FormField } from '../../dynamic-forms/classes/field-form';
 import { UploadField } from '../../dynamic-forms/classes/field-upload';
+import { DropZoneField } from '../../dynamic-forms/classes/field-dropZone';
+
 
 
 
@@ -125,7 +127,7 @@ export class FieldService {
       // }),
 
       new TextboxField({
-        key: 'emailAddress',
+        key: 'email',
         label: 'Email',
         required: true,
         type: 'email',
@@ -158,7 +160,7 @@ export class FieldService {
       }),
 
       new RadiobuttonField({
-        key: 'donnor',
+        key: 'isDonnor',
         label: '¿Es una donadora autorizada?',
         options: [
           {key: 'Si',  value: 'Si'},
@@ -172,6 +174,7 @@ export class FieldService {
         label: 'Logotipo',
         text: 'SUBIR LOGO',
         type: 'image/*',
+        required: true,
         // type: 'application/pdf',
         // type: '.doc,.docx',
         order: 6
@@ -227,17 +230,8 @@ export class FieldService {
         required: true,
         placeholder: 'Teléfono fijo',
         order: 12
-      }),
+      })
 
-      new TextboxField({
-        key: 'edad',
-        label: 'edad',
-        type: 'number',
-        required: true,
-        placeholder: 'Edad',
-        cols: 2,
-        order: 13
-      }),
     ];
 
     return fields.sort((a, b) => a.order - b.order);
@@ -249,6 +243,7 @@ export class FieldService {
         key: 'summary',
         label: 'Summary',
         required: true,
+        textarea: true,
         placeholder: 'Resumen',
         order: 1
       }),
@@ -257,6 +252,7 @@ export class FieldService {
         key: 'mission',
         label: 'Mission',
         required: true,
+        textarea: true,
         placeholder: 'Misión',
         order: 2
       }),
@@ -265,6 +261,7 @@ export class FieldService {
         key: 'vision',
         label: 'Vision',
         required: true,
+        textarea: true,
         placeholder: 'Visión',
         order: 3
       }),
@@ -273,6 +270,7 @@ export class FieldService {
         key: 'values',
         label: 'Values',
         required: true,
+        textarea: true,
         placeholder: 'Valores (cada valor separado por una coma ",")',
         order: 4
       }),
@@ -281,6 +279,7 @@ export class FieldService {
         key: 'beneficiaries',
         label: 'Beneficiaries',
         required: true,
+        textarea: true,
         placeholder: 'Beneficiarios',
         order: 5
       }),
@@ -289,6 +288,7 @@ export class FieldService {
         key: 'valueProposition',
         label: 'Value Proposition',
         required: true,
+        textarea: true,
         placeholder: 'Propuesta de valor',
         order: 6
       }),
@@ -297,6 +297,7 @@ export class FieldService {
         key: 'changeTheory',
         label: 'Change Theory',
         required: true,
+        textarea: true,
         placeholder: 'Teoría del cambio',
         order: 7
       }),
@@ -316,6 +317,7 @@ export class FieldService {
         key: 'awards',
         label: 'Awards',
         required: true,
+        textarea: true,
         placeholder: 'Premios o reconocimientos (cada uno separado por una coma ",")',
         order: 9
       }),
@@ -373,6 +375,17 @@ export class FieldService {
         cols: 2,
         childCols: 4,
         order: 4
+      }),
+
+      new DropZoneField({
+        key: 'gallery',
+        label: 'Galería de fotos',
+        text: 'Arrastra aquí tus imágenes',
+        type: 'image/*',
+        // required: true,
+        cols: 2,
+        rows: 2,
+        order: 5
       })
     ];
 

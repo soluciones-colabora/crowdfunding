@@ -22,11 +22,11 @@ export class FieldService {
         label: 'Name',
         required: true,
         placeholder: 'Nombre completo',
-        order: 1
+        order: 1,
       }),
 
       new TextboxField({
-        key: 'emailAddress',
+        key: 'email',
         label: 'Email',
         required: true,
         type: 'email',
@@ -43,7 +43,7 @@ export class FieldService {
       }),
 
       new TextboxField({
-        key: 'ocupación',
+        key: 'occupation',
         label: 'Ocupación',
         required: true,
         placeholder: 'Ocupación',

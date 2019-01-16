@@ -1,6 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 
@@ -10,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Routing
 import { AppRoutingModule } from './/app-routing.module';
+
+// Directives
+import { DropZoneDirective } from './drop-zone.directive';
 
 // Firebase Modules
 import { AngularFireModule } from '@angular/fire';
@@ -33,7 +39,8 @@ import { RegisterMainComponent } from './components/register/register-main/regis
 import { RegisterAssocComponent } from './components/register/register-assoc/register-assoc.component';
 import { RegisterDonorComponent } from './components/register/register-donor/register-donor.component';
 import { InicioComponent } from './inicio/inicio.component';
-// Módulos
+
+// Modules
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { OwlModule } from 'ngx-owl-carousel';
@@ -47,11 +54,13 @@ import { DynamicFormFieldComponent } from './dynamic-forms/components/dynamic-fo
 import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dynamic-form.component';
 import { CardComponent } from './components/card/card.component';
 import { ApoyarComponent } from './components/apoyar/apoyar.component';
+import { ConfirmationDialog } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    DropZoneDirective,
     HomeComponent,
     PageNotFoundComponent,
     HeaderComponent,
@@ -69,10 +78,12 @@ import { ApoyarComponent } from './components/apoyar/apoyar.component';
     // DynamicFormControlComponent,
     DynamicFormFieldComponent,
     CardComponent,
-    ApoyarComponent
+    ApoyarComponent,
+    ConfirmationDialog
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -82,6 +93,7 @@ import { ApoyarComponent } from './components/apoyar/apoyar.component';
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     MaterialComponentsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
       radius: 45,
@@ -113,6 +125,7 @@ import { ApoyarComponent } from './components/apoyar/apoyar.component';
     MatListModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [ConfirmationDialog]
 })
 export class AppModule { }

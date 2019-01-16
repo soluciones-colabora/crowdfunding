@@ -1,8 +1,8 @@
 <ng-container *ngIf="!formsArray; else elseTemplate" >
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <mat-grid-list [cols]="cols" rowHeight="100px">
-      <mat-grid-tile *ngFor="let field of fields" 
-        [colspan]="field.cols"
+      <mat-grid-tile *ngFor="let field of fields"
+        [colspan]="(isHandset$ | async) ? cols : field.cols"
         [rowspan]="field.rows">
         <app-field [field]="field" [form]="form"></app-field>
       </mat-grid-tile>
@@ -25,7 +25,7 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="nestedForm" class="nested-form">
       <mat-grid-list [cols]="cols" rowHeight="100px" >
         <mat-grid-tile *ngFor="let field of fields"
-          [colspan]="field.cols"
+          [colspan]="(isHandset$ | async) ? cols : field.cols"
           [rowspan]="field.rows">
           <app-field [field]="field" [form]="nestedForm"></app-field>
         </mat-grid-tile>
@@ -38,6 +38,6 @@
           </ng-template>
         </mat-grid-tile>
       </mat-grid-list>
-    </form> 
+    </form>
   </div>
 </ng-template>
