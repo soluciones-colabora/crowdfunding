@@ -1,0 +1,30 @@
+<div class="apoyar">
+  <h1>APOYAR CAMPAÑAS</h1>
+  <hr>
+ <p> Ordena por intereses ( selecciona uno o varios intereses)</p>
+</div>
+
+<div class="ods-container">
+    <div >
+        <mat-button-toggle>
+          TODOS
+        </mat-button-toggle>
+      </div>
+  <div *ngFor="let field of odsFields">
+    <mat-button-toggle (change)="buttonToggleChanged(field)">
+      {{field.label}}
+    </mat-button-toggle>
+  </div>
+</div>
+
+<div class="campaign" *ngFor="let field of odsFields">
+  <div class="campaign-card" >
+    <app-card></app-card>
+  </div>
+  <div class="campaign-card" >
+    <app-card></app-card>
+  </div>
+  <div class="campaign-card" >
+    <app-card></app-card>
+  </div>
+</div>

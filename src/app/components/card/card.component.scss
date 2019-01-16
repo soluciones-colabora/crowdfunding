@@ -1,0 +1,108 @@
+ @import '../../../styles.scss';
+.card {
+	border-radius: 5px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 24.3px 2.7px rgba(0, 0, 0, 0.1);
+	// width: 80%;
+	// padding: 20px;
+	height: 80%;
+
+	.image-holder {
+		height: 50%;
+		background-position:center!important;
+		background-size: cover!important;
+		background-repeat: no-repeat!important;
+	}
+
+	.stats {
+		height:50px;
+		position: relative;
+		// padding-top: 15px;
+		padding-left:15px;
+		padding-right: 15px;
+		&-graph {
+			position:absolute;
+			left:50%;
+			transform: translate(-50%, -50%);
+		}
+		&-holder {
+			padding-top:10px;
+			display:flex;
+			justify-content: space-between;
+		}
+		&-spacer {
+			flex-basis: 40%;
+		}
+		&-time {
+			flex-basis: 30%;
+		}
+		&-donators {
+			text-align:right;
+			flex-basis:30%;
+		}
+	}
+	hr {
+		// display: block;
+		// height: 5px;
+		border: 0;
+		border-top: 6px solid $purpura_col;
+		// margin: 1em 0;
+		padding: 0; 
+		margin: 0;
+		&.thin {
+			border-top: 2px solid $purpura_col!important;
+		}
+	}
+
+	.description {
+		h4,h5,p {
+			text-align: center;
+		}
+		p {
+			font-size: 16px;
+			font-weight: 300;
+			color: #918e8e
+		}
+		.footer {
+			// position: relative;
+			// height: 100px;
+		&-holder {
+			display: flex;
+			justify-content: center;
+			.donado {
+				margin-top: 10px;
+				flex-basis: 50%;
+				border-right: 2px solid $purpura_col;
+			}
+			.spacer {
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%, -50%); 
+				.rule {
+					border-left: thick solid #ff0000;
+				}
+			}
+			.meta {
+				margin-top: 10px;
+				flex-basis: 50%;	
+			}
+		}
+	}
+	}
+	.mat-flat-button {
+		width: 100%;
+		padding-top: 0px;
+		// background-color:rgba(#fff, 0);
+		// color:$lavanda_col;
+		background-color:$lavanda_col;
+		color:white;
+		border: 1.5px solid $lavanda_col;
+		&:hover {
+			background-color:$lavanda_col;
+			color:white;
+			// border-color: $lavanda_col;
+			transition: all .3 ease;
+		}
+}
+  }

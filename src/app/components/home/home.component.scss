@@ -132,67 +132,82 @@
 
   .campaign {
 	height: 750px;
-	padding-left: 35px;
-	padding-right: 35px;
-  }
-  .card {
-	left: 60px;
-	border-radius: 5px;
-	background-color: rgb(255, 255, 255);
-	box-shadow: 0px 0px 24.3px 2.7px rgba(0, 0, 0, 0.1);
-	width: 350px;
-	height: 80%;
-	// z-index: 1;
-
-	.image-holder {
-		height: 50%;
-		background-position:center;
-		background-size: cover;
-	}
-
-	.stats {
-		height:50px;
-		position: relative;
-		&-graph {
-			position:absolute;
-			left:50%;
-			transform: translate(-50%, -50%);
-		}
-		&-time {
-			position: absolute;
-			left:5%;
-			top:5%;
-		}
-		&-donators {
-			position: absolute;
-			left:75%;
-			top:5%;
-		}
-	}
-	hr {
-		// display: block;
-		// height: 5px;
-		border: 0;
-		border-top: 6px solid $lavanda_col;
-		// margin: 1em 0;
-		padding: 0; 
-		margin: 0;
-		&.thin {
-			border-top: 2px solid $lavanda_col!important;
-		}
-	}
-
-	.description {
-		h4,p {
-			text-align: center;
-		}
-		p {
-			font-size: 16px;
-			font-weight: 300;
-			color: #918e8e
-		}
+	padding-left: 20px;
+	padding-right: 20px;
+	display:flex;
+	justify-content: space-evenly;
+	&-card {
+	  flex-basis: 28%;
 	}
   }
+//   .card {
+// 	flex-basis: 28%;
+// 	// left: 60px;
+// 	border-radius: 5px;
+// 	background-color: rgb(255, 255, 255);
+// 	box-shadow: 0px 0px 24.3px 2.7px rgba(0, 0, 0, 0.1);
+// 	width: 80%;
+// 	height: 80%;
+// 	// z-index: 1;
+
+// 	.image-holder {
+// 		height: 50%;
+// 		background-position:center;
+// 		background-size: cover;
+// 		background-repeat: no-repeat;
+// 	}
+
+// 	.stats {
+// 		height:50px;
+// 		position: relative;
+// 		// padding-top: 15px;
+// 		padding-left:15px;
+// 		padding-right: 15px;
+// 		&-graph {
+// 			position:absolute;
+// 			left:50%;
+// 			transform: translate(-50%, -50%);
+// 		}
+// 		&-holder {
+// 			padding-top:10px;
+// 			display:flex;
+// 			justify-content: space-between;
+// 		}
+// 		&-spacer {
+// 			flex-basis: 40%;
+// 		}
+// 		&-time {
+// 			flex-basis: 30%;
+// 		}
+// 		&-donators {
+// 			text-align:right;
+// 			flex-basis:30%;
+// 		}
+// 	}
+// 	hr {
+// 		// display: block;
+// 		// height: 5px;
+// 		border: 0;
+// 		border-top: 6px solid $purpura_col;
+// 		// margin: 1em 0;
+// 		padding: 0; 
+// 		margin: 0;
+// 		&.thin {
+// 			border-top: 2px solid $purpura_col!important;
+// 		}
+// 	}
+
+// 	.description {
+// 		h4,p {
+// 			text-align: center;
+// 		}
+// 		p {
+// 			font-size: 16px;
+// 			font-weight: 300;
+// 			color: #918e8e
+// 		}
+// 	}
+//   }
 
   .carousel {
     width: 100% !important;
@@ -222,10 +237,10 @@
     }
 }
 
-	  circle-progress{
-		// filter: url("/assets/filtros.svg#dropshadow");
-		filter: url(#dropshadow);
-	  }
+	//   circle-progress{
+	// 	// filter: url("/assets/filtros.svg#dropshadow");
+	// 	filter: url(#dropshadow);
+	//   }
 
 
 	  .justify-content-center {

@@ -45,6 +45,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 
 import { DynamicFormFieldComponent } from './dynamic-forms/components/dynamic-form-field/dynamic-form-field.component';
 import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dynamic-form.component';
+import { CardComponent } from './components/card/card.component';
+import { ApoyarComponent } from './components/apoyar/apoyar.component';
 
 
 @NgModule({
@@ -65,7 +67,9 @@ import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dy
     MainNavComponent,
     DynamicFormComponent,
     // DynamicFormControlComponent,
-    DynamicFormFieldComponent
+    DynamicFormFieldComponent,
+    CardComponent,
+    ApoyarComponent
   ],
   imports: [
     BrowserModule,
@@ -80,12 +84,25 @@ import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dy
     BrowserAnimationsModule,
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
-      radius: 100,
-      outerStrokeWidth: 10,
-      innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
-      animationDuration: 300,
+      radius: 45,
+      space : -5,
+      outerStrokeWidth: 6,
+      innerStrokeWidth: 6,
+      backgroundPadding: 0,
+      showBackground: true,
+      titleFontSize: '18',
+      unitsFontSize: '18',
+      titleColor: '#6D5895',
+      showTitle: true,
+      animateTitle: false,
+      showSubtitle: false,
+      backgroundColor: '#ffffff',
+      outerStrokeColor: '#6D5895',
+      innerStrokeColor: '#e7e8ea',
+      showInnerStroke: true,
+      showUnits: true,
+      animation: true,
+      animationDuration: 300
     }),
     OwlModule,
     LayoutModule,

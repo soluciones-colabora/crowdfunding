@@ -11,6 +11,7 @@ import { RegisterDonorComponent } from './components/register/register-donor/reg
 // import { Name3Component } from './';
 // import { Name4Component } from './';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ApoyarComponent } from './components/apoyar/apoyar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterMainComponent },
   { path: 'register/assoc', component: RegisterAssocComponent },
   { path: 'register/donor', component: RegisterDonorComponent },
+  { path: 'apoyar', component: ApoyarComponent },
 
   // { path: 'path3', component: Name3Component },
   // { path: 'path4', component: Name4Component },
