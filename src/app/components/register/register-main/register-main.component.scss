@@ -1,3 +1,40 @@
+@import '../../../../styles.scss';
+.register {
+  &-holder {
+    margin-top:84px;
+    min-height: 350px;
+    // max-width: 750px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    // &-center {
+    //   flex-basis: 50%;
+    // }
+    h3,p {
+      text-align: center;
+    }
+  }
+}
+    .buttons {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      &-card {
+        box-shadow: 2px 2px 5px 0px rgba(186,186,186,1);
+        flex-basis:35%;
+        background-color: $lavanda_col;
+        color:white;
+        padding:10px;
+        &.outline {
+          background-color: white;
+          color:$lavanda_col;
+          h3,p {
+            z-index:1000!important;
+          }
+        }
+      }
+    }
 .register-card {
   max-width: 400px;
   margin-top: 74px;
@@ -9,3 +46,6 @@
   align-items: center;
 }
 
+.mat-ripple-element {
+  opacity: 60%;
+}

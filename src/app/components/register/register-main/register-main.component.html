@@ -1,19 +1,24 @@
-<!-- <mat-card class="register-card">
-  <mat-card-header class="center">
-    <mat-card-title>REGISTRARSE</mat-card-title>
-    <mat-card-subtitle>Elige el tipo de perfil que te gustaría tener</mat-card-subtitle>
-    <mat-card-subtitle></mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions>
-      
-  </mat-card-actions>
-</mat-card> -->
+
 <div class="register-holder">
-  REGISTRARSE
-  <p>Elige el tipo de perfil que te gustaría tener</p>
-  <p>¿Ya tienes cuenta?  <a [routerLink]="['/login']">Inicia sesión aquí</a></p>
-  <div class="buttons">
-      <button  mat-raised-button color="accent" [routerLink]="['/register/assoc']">ASOCIACIÓN CIVIL</button>
-          <button  mat-raised-button color="accent" [routerLink]="['/register/donor']">DONADOR(A)</button>
+  <div class="register-center">
+
+    <h3>REGISTRARSE</h3>
+    <p>Elige el tipo de perfil que te gustaría tener</p>
+    <p>¿Ya tienes cuenta?  <a [routerLink]="['/login']">Inicia sesión aquí</a></p>
+    <div class="buttons">
+         <div matRipple [matRippleColor]="'#A6519928'" class="buttons-card outline" [routerLink]="['/register/assoc']">
+            <p><mat-icon>card_giftcard</mat-icon></p>
+        <p>DONADOR(A)</p>
+        <p>Quiero donar y apoyar a las asociaciones civiles que se encuentran dentro de mis intereses</p>
+      </div>
+        <div matRipple [matRippleColor]="'#A6519928'" class="buttons-card outline" [routerLink]="['/register/assoc']">
+           <p> <mat-icon>group</mat-icon></p>
+        <p>ASOCIACIÓN CIVIL</p>
+        <p>Quiero donar y apoyar a las asociaciones civiles que se encuentran dentro de mis intereses</p>
+      </div>
+      <!-- <button  mat-raised-button color="accent" [routerLink]="['/register/assoc']">ASOCIACIÓN CIVIL</button>
+      <button  mat-raised-button color="accent" [routerLink]="['/register/donor']">DONADOR(A)</button> -->
+    </div>
   </div>
 </div>
+

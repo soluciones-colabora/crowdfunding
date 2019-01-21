@@ -20,6 +20,7 @@ import {
     MatButtonToggleModule,
     MatRadioModule,
     MatDialogModule } from '@angular/material';
+    import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import {
     MatNativeDateModule,
     MatButtonToggleModule,
     MatRadioModule,
-     MatDialogModule
+    MatDialogModule,
+    MatRippleModule
   ],
   exports: [
     MatButtonModule,
@@ -63,7 +65,8 @@ import {
     MatNativeDateModule,
     MatButtonToggleModule,
     MatRadioModule,
-     MatDialogModule
+    MatDialogModule,
+    MatRippleModule
   ]
 })
 export class MaterialComponentsModule { }
