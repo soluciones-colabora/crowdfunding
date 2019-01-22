@@ -1,0 +1,130 @@
+<p>
+  assoc-detail works!
+
+
+
+
+
+
+
+  HELLOOO!!!
+
+</p>
+<div class="register-holder">
+  REGISTRARSE
+
+
+  <mat-grid-list cols="12" rowHeight="100px">
+    <mat-grid-tile colspan="8"rowspan="1" style="background-color: aqua;" style="width: 100%; height: 100%;">
+      <h1>hola</h1>
+      <hr>
+      <p>Qué pasa?</p>
+      <!-- CAMPAÑA PARA APOYO VISUAL<br>
+      <p>
+        Hello there
+          <a href="">www.hogardeangeles.com</a>
+          <i class="fa fa-facebook-square"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-map-marker"></i>
+      </p> -->
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4"rowspan="1" style="background-color: green;"></mat-grid-tile>
+    <mat-grid-tile colspan="5"rowspan="2" style="background-color: yellow;">
+      <mat-list style="width: 80%">
+        <mat-list-item> <div>DÍAS RESTANTES    </div>    <div style="text-align: right">10</div></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>DONADORES Y DONADORAS <div style="text-align: right">   50     </div></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>META MÍNIMA</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>DONADO</mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3"rowspan="2">
+      <div class="stats">
+        <div class="stats-graph">
+          <circle-progress [percent]="75"> </circle-progress>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="4"rowspan="2">
+        <iframe width="" height="200" [src]='safeURL' frameborder="0"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <h1>Hola</h1>
+    <button  mat-raised-button color="accent" [routerLink]="['/register/donnor']">QUIERO APOYAR</button>
+
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <mat-action-list>
+        <button mat-list-item (click)="navigate(0)">RESUMEN</button>
+        <button mat-list-item (click)="navigate(1)">BENEFICIARIOS</button>
+        <button mat-list-item (click)="navigate(2)">PROPUESTA DE VALOR</button>
+        <button mat-list-item (click)="navigate(3)">EQUIPO</button>
+        <button mat-list-item (click)="navigate(4)">GALERÍA</button>
+        <button mat-list-item (click)="navigate(5)">COMENTARIOS</button>
+      </mat-action-list>
+    </mat-sidenav>
+    <mat-sidenav-content [ngSwitch]="navItem">
+      <div *ngSwitchCase="0">
+        <h1>RESUMEN</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis, turpis sit amet consectetur laoreet, arcu lectus feugiat magna, ac blandit arcu ante sed diam. Fusce commodo ac massa sit amet elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean volutpat tempor tellus, id luctus magna vestibulum congue. Nullam nec dignissim purus. Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.
+        </p>
+        <h2>MISIÓN</h2>
+        <p> Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.</p>
+        <h2>VISIÓN</h2>
+        <p> Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.</p>
+        <h2>VALORES</h2>
+        <mat-list >
+            <mat-list-item>Valor 1</mat-list-item>
+            <mat-list-item>Valor 2</mat-list-item>
+            <mat-list-item>Valor 3</mat-list-item>
+
+        </mat-list>
+        <h2>SOBRE NOSOTROS</h2>
+      </div>
+      <div *ngSwitchCase="1">
+        <h1>BENEFICIARIOS</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis, turpis sit amet consectetur laoreet, arcu lectus feugiat magna, ac blandit arcu ante sed diam. Fusce commodo ac massa sit amet elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean volutpat tempor tellus, id luctus magna vestibulum congue. Nullam nec dignissim purus. Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis, turpis sit amet consectetur laoreet, arcu lectus feugiat magna, ac blandit arcu ante sed diam. Fusce commodo ac massa sit amet elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean volutpat tempor tellus, id luctus magna vestibulum congue. Nullam nec dignissim purus. Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.
+        </p>
+      </div>
+      <div *ngSwitchCase="2">
+        <h1>PROPUESTA DE VALOR</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis, turpis sit amet consectetur laoreet, arcu lectus feugiat magna, ac blandit arcu ante sed diam. Fusce commodo ac massa sit amet elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean volutpat tempor tellus, id luctus magna vestibulum congue. Nullam nec dignissim purus. Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.
+        </p>
+      </div>
+      <div *ngSwitchCase="3">
+        <h1>EQUIPO</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis, turpis sit amet consectetur laoreet, arcu lectus feugiat magna, ac blandit arcu ante sed diam. Fusce commodo ac massa sit amet elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean volutpat tempor tellus, id luctus magna vestibulum congue. Nullam nec dignissim purus. Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.
+        </p>
+      </div>
+      <div *ngSwitchCase="4">
+        <h1>GALERÍA</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis, turpis sit amet consectetur laoreet, arcu lectus feugiat magna, ac blandit arcu ante sed diam. Fusce commodo ac massa sit amet elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean volutpat tempor tellus, id luctus magna vestibulum congue. Nullam nec dignissim purus. Sed rutrum accumsan arcu. Duis odio diam, ultrices sit amet ligula eget, condimentum suscipit leo. Vivamus aliquet quam nisi, at sagittis velit aliquam ac.
+        </p>
+      </div>
+      <div *ngSwitchCase="5">
+        <h1>COMENTARIOS</h1>
+        <div style="width: 800px; height: 150px;">
+          <mat-form-field appearance="outline" style="width: 100%; height: 100%; background-color: white;">
+            <textarea matInput matAutosize="false" placeholder="Escribe tu comentario..." style="height: 150px; background-color: white; resize: none"></textarea>
+          </mat-form-field>
+          <button mat-flat-button>ENVIAR</button>
+        </div>
+      </div>
+      <div *ngSwitchDefault>{{navItem}}
+        ASDASD
+        ASDASD
+        <p>Hello</p>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
