@@ -5,10 +5,12 @@
 	box-shadow: 0px 0px 24.3px 2.7px rgba(0, 0, 0, 0.1);
 	// width: 80%;
 	// padding: 20px;
-	height: 80%;
-
+	overflow: visible;
+	height: 500px;
+	width: 335px;
+	position:relative;
 	.image-holder {
-		height: 50%;
+		padding-top: 60%;
 		background-position:center!important;
 		background-size: cover!important;
 		background-repeat: no-repeat!important;
@@ -34,9 +36,11 @@
 			flex-basis: 40%;
 		}
 		&-time {
+			font-size: 0.80em;
 			flex-basis: 30%;
 		}
 		&-donators {
+			font-size:0.80em;
 			text-align:right;
 			flex-basis:30%;
 		}
@@ -50,51 +54,72 @@
 		padding: 0; 
 		margin: 0;
 		&.thin {
-			border-top: 2px solid $purpura_col!important;
+			border-top: 1.5px solid $purpura_col!important;
 		}
 	}
 
 	.description {
-		h4,h5,p {
-			text-align: center;
-		}
-		p {
-			font-size: 16px;
-			font-weight: 300;
-			color: #918e8e
+		  .text {
+		  padding: 15px 10px 0px 10px;		  
+		  h6 {
+			  text-align: center;
+			  font-weight: bold;
+		  }
+		  p {
+		  	font-size: 0.9em;
+		  	font-weight: 300;
+		  	color: #918e8e;
+			  text-align: justify;
+			  margin-bottom: 0%;
+		  }
 		}
 		.footer {
-			// position: relative;
-			// height: 100px;
-		&-holder {
-			display: flex;
-			justify-content: center;
-			.donado {
-				margin-top: 10px;
-				flex-basis: 50%;
-				border-right: 2px solid $purpura_col;
-			}
-			.spacer {
-				position:absolute;
-				top:50%;
-				left:50%;
-				transform: translate(-50%, -50%); 
-				.rule {
-					border-left: thick solid #ff0000;
+				// position: relative;
+				// height: 100px;
+			&-holder {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 10px;
+				.donado {
+					margin-top: 10px;
+					flex-basis: 50%;
+					border-right: 1.5px solid $purpura_col;
+				}
+				.spacer {
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform: translate(-50%, -50%); 
+					.rule {
+						border-left: thick solid #ff0000;
+					}
+				}
+				.meta {
+					margin-top: 10px;
+					flex-basis: 50%;	
+				}
+				h6 {
+					text-align: center;
+					margin-bottom: 0%;
+				}
+				p {
+					text-align: center;
+					font-size: 0.80em;
+					font-weight: 300;
+					margin-bottom: 0%;
 				}
 			}
-			.meta {
-				margin-top: 10px;
-				flex-basis: 50%;	
-			}
 		}
-	}
 	}
 	.mat-flat-button {
 		width: 100%;
 		padding-top: 0px;
 		// background-color:rgba(#fff, 0);
 		// color:$lavanda_col;
+		position: absolute;
+		bottom:0px;
+		left:50%;
+		transform: translate(-50%,0%);
 		background-color:$lavanda_col;
 		color:white;
 		border: 1.5px solid $lavanda_col;
@@ -106,3 +131,4 @@
 		}
 }
   }
+
