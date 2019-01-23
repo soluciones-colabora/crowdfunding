@@ -55,6 +55,7 @@ import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dy
 import { CardComponent } from './components/card/card.component';
 import { ApoyarComponent } from './components/apoyar/apoyar.component';
 import { ConfirmationDialog } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { ConfirmationDialog } from './components/dialogs/confirmation-dialog/con
     DynamicFormFieldComponent,
     CardComponent,
     ApoyarComponent,
-    ConfirmationDialog
+    ConfirmationDialog,
+    AssocDetailComponent
   ],
   imports: [
     BrowserModule,

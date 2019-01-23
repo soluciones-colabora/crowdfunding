@@ -6,6 +6,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterMainComponent } from './components/register/register-main/register-main.component';
 import { RegisterAssocComponent } from './components/register/register-assoc/register-assoc.component';
 import { RegisterDonorComponent } from './components/register/register-donor/register-donor.component';
+import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.component';
+
 
 
 // import { Name3Component } from './';
@@ -18,6 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterMainComponent },
   { path: 'register/assoc', component: RegisterAssocComponent },
+  { path: 'detail', component: AssocDetailComponent },
   { path: 'register/donor', component: RegisterDonorComponent },
   { path: 'apoyar', component: ApoyarComponent },
 
