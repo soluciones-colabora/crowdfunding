@@ -49,7 +49,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 // import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 // import { DynamicFormControlComponent } from './dynamic-forms/dynamic-form-control/dynamic-form-field.component';
-
+import { ScrollSpyModule } from 'ngx-scrollspy';
 import { DynamicFormFieldComponent } from './dynamic-forms/components/dynamic-form-field/dynamic-form-field.component';
 import { DynamicFormComponent } from './dynamic-forms/components/dynamic-form/dynamic-form.component';
 import { CardComponent } from './components/card/card.component';
@@ -96,6 +96,7 @@ import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.com
     MaterialComponentsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
+    ScrollSpyModule.forRoot(),
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
       radius: 45,
