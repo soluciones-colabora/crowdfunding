@@ -4,6 +4,13 @@
  <p> Ordena por intereses ( selecciona uno o varios intereses)</p>
 </div>
 
+<mat-form-field>
+    <mat-select placeholder="Favorite food"  name="food">
+      <mat-option *ngFor="let field of odsFields" [value]="field.label">
+          {{field.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 <div class="ods-container">
     <div >
         <mat-button-toggle>
@@ -16,7 +23,16 @@
     </mat-button-toggle>
   </div>
 </div>
-
+<div class="container-scroller">
+  <div class="scrolling-wrapper">
+    <div class="card"><app-card></app-card></div>
+    <div class="card"><app-card></app-card></div>
+    <div class="card"><app-card></app-card></div>
+    <div class="card"><app-card></app-card></div>
+    <div class="card"><app-card></app-card></div>
+    <div class="card"><app-card></app-card></div>
+  </div>
+</div>
 <div class="campaign" *ngFor="let field of odsFields">
   <div class="campaign-card" >
     <app-card></app-card>
@@ -28,3 +44,5 @@
     <app-card></app-card>
   </div>
 </div>
+
+

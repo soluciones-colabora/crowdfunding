@@ -1,4 +1,4 @@
-<p>
+<!-- <p>
   assoc-detail works!
 
 
@@ -12,21 +12,6 @@
 </p>
 <div class="register-holder">
   REGISTRARSE
-
-
-  <mat-grid-list cols="12" rowHeight="100px">
-    <mat-grid-tile colspan="8"rowspan="1" style="background-color: aqua;" style="width: 100%; height: 100%;">
-      <h1>hola</h1>
-      <hr>
-      <p>Qué pasa?</p>
-      <!-- CAMPAÑA PARA APOYO VISUAL<br>
-      <p>
-        Hello there
-          <a href="">www.hogardeangeles.com</a>
-          <i class="fa fa-facebook-square"></i>
-          <i class="fa fa-instagram"></i>
-          <i class="fa fa-map-marker"></i>
-      </p> -->
     </mat-grid-tile>
     <mat-grid-tile colspan="4"rowspan="1" style="background-color: green;"></mat-grid-tile>
     <mat-grid-tile colspan="5"rowspan="2" style="background-color: yellow;">
@@ -127,4 +112,164 @@
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+</div> -->
+
+<div class="main-holder">
+  <div class="title">
+      <h2>{{'campaña para apoyo visual' | uppercase}}</h2>
+  </div>
+  <div class="subtitle">
+      <a href="www.hogardeangeles.com">
+        www.hogardeangeles.com
+      </a>
+      <a href="" >
+        (999)1234567
+      </a>
+      <a href="">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="">
+        <i class="fas fa-map-marker"></i>
+      </a>
+  </div>
+  <div class="hr-holder">
+     <div class="hr"></div>
+  </div>
+  <div class="detail-holder">
+    <div class="statistics">
+      <div>
+      <p> {{'Días restantes' | uppercase}}</p> <span>10</span>
+      </div>
+      <div>
+        <p>{{'Donadores y Donadoras' | uppercase }}</p> <span>50</span>
+      </div>
+      <div>
+        <p>META MÍNIMA</p> <span>{{2500 | currency:'MXN'}}</span>
+      </div>
+      <div>
+       <p>DONADO</p> <span>{{1875 | currency:'MXN'}}</span>
+      </div>
+    </div>
+    <div class="circle-holder">     
+        <circle-progress [percent]="75" [radius]="60"> </circle-progress>
+    </div>
+    <div class="video">
+        <iframe height="100%" width="100%" [src]='safeURL' frameborder="0"  
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="button-holder">
+    <button mat-flat-button>QUIERO APOYAR</button>
+    <div class="spacer"></div>
+  </div>
 </div>
+
+<div class="general-holder">
+<div class="menu">
+  <div class="img-asoc">
+    <img src="assets/hogardeangeles.png" alt="">
+  </div>
+  <ul>
+    <li><a (click)="scrollToElement(resumen)"> RESUMEN</a></li>
+    <li><a (click)="scrollToElement(beneficiarios)"> BENEFICIARIOS</a></li>
+    <li><a (click)="scrollToElement(valor)"> PROPUESTA DE VALOR</a></li>
+    <li><a (click)="scrollToElement(equipo)"> EQUIPO</a></li>
+    <li><a (click)="scrollToElement(galeria)"> GALERÍA</a></li>
+  </ul>
+</div>
+<div scrollSpyElement="equipo" class="info scrollbar-colabora">
+    <div #resumen>
+      <h3>RESUMEN</h3>
+      <hr style="padding-right: 20px;">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo 
+        leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non 
+        tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue 
+        ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim 
+        congue vitae eget justo. Nullam tincidunt tortor nisl, id ultrices felis accumsan
+        sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam 
+        non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing 
+        elit. Vivamus lacinia ante faucibus venenatis tincidunt.</p>
+        <strong>MISIÓN</strong>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Maecenas eget commodo leo. Curabitur nec dolor finibus, 
+            ornare ipsum sed, pretium lacus. Vivamus non tortor sit amet sem vestibulum
+            semper. Integer eget urna tempor, molestie augue quis, viverra urna. 
+            Quisque sed enim sem. </p>
+        <strong>VISIÓN</strong>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Maecenas eget commodo leo. Curabitur nec dolor finibus, 
+            ornare ipsum sed, pretium lacus. Vivamus non tortor sit amet sem vestibulum
+            semper. Integer eget urna tempor, molestie augue quis, viverra urna. 
+            Quisque sed enim sem. </p>
+            <strong>VALORES</strong>
+            <ul class="values">
+              <li>Respeto</li>
+              <li>Honestidad</li>
+              <li>Integridad</li>
+            </ul>
+        <strong>SOBRE NOSOTROS</strong>
+        <p class="marker"><i class="fas fa-map-marker"></i> Mérida, Yucatán, MX</p>
+        <p class="calendar"> <i class="fas fa-calendar"></i> 2017</p>
+         <strong>DESCARGABLES</strong>
+
+    </div>
+    
+    <div #beneficiarios>
+      <h3>BENEFICIARIOS</h3>
+      <hr>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+    </div>
+
+    <div #valor>
+      <h3>PROPUESTA DE VALOR</h3>
+      <hr>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+    </div>
+    <div #equipo >
+      <h3>EQUIPO</h3>
+      <hr>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+    </div>
+    
+    <div #galeria>
+      <h3>GALERÍA</h3>
+      <hr>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+      <h5>Smooth Scroll Example</h5>
+    </div>
+
+
+  </div>
+</div>
+
