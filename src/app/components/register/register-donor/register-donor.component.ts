@@ -83,6 +83,9 @@ export class RegisterDonorComponent implements OnInit {
       const credential = await this.authService.emailSignUp(email, password);
       const uid = credential.user.uid;
 
+      // Send user email to verify its email
+      await credential.user.sendEmailVerification();
+
       // Register donnor in DB
       const donnor: Donnor = { ...this.payload, uid: uid};
       await this.donnorSrvc.createDonnor(donnor);
@@ -96,7 +99,7 @@ export class RegisterDonorComponent implements OnInit {
       this.router.navigate(['/index']);
     } catch (error) {
       // Should check for each type of error: SignUp, Upload, CreateDonnor
-      // console.log('error :', error);
+      console.log('error :', error);
       this.toastr.error('¡Hubo un error con su registro!', '¡Error!');
     }
   }
