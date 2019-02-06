@@ -46,6 +46,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { OwlModule } from 'ngx-owl-carousel';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 // import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 // import { DynamicFormControlComponent } from './dynamic-forms/dynamic-form-control/dynamic-form-field.component';
@@ -56,6 +57,7 @@ import { CardComponent } from './components/card/card.component';
 import { ApoyarComponent } from './components/apoyar/apoyar.component';
 import { ConfirmationDialog } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.component';
+import { ScrollerComponent } from './components/scroller/scroller.component';
 
 
 @NgModule({
@@ -81,7 +83,8 @@ import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.com
     CardComponent,
     ApoyarComponent,
     ConfirmationDialog,
-    AssocDetailComponent
+    AssocDetailComponent,
+    ScrollerComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,6 +100,7 @@ import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.com
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
     ScrollSpyModule.forRoot(),
+    ScrollDispatchModule,
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
       radius: 45,

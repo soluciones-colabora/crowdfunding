@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 
 import { FieldBase } from '../../classes/field-base';
 import { FieldControlService } from '../../field-control.service';
-import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 @Component({
   selector: 'app-dynamic-form',
