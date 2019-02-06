@@ -1,0 +1,50 @@
+@import '../../../styles.scss';
+
+.profile {
+    @include navbar;
+    .general {
+        display: flex;
+        justify-content: flex-start;
+        align-items: space-evenly;
+        height: 200px;
+        background:#f7f7f7;;
+        padding: 20px 50px;
+        position: relative;
+        &-info {
+            flex-basis:60%;
+            padding-left: 50px;
+        }
+        &-photo {
+            //  flex-basis:35%;
+             img {
+                height: 150px;
+                width:150px;
+                overflow:hidden;
+                object-fit: cover;
+                border-radius: 5px;
+                @include box-avatar();
+             }
+        }
+        
+        &-badge {
+            //  flex-basis:50%;
+            position: absolute;
+            right: 5%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            
+             img {
+                height: 150px;
+                width:150px;
+                overflow:hidden;
+                object-fit: cover;
+                border-radius: 100%;
+                // @include box-avatar();
+             }
+        }
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

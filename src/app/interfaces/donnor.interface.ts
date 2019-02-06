@@ -15,8 +15,8 @@ export interface Donnor {
   birthdate?:    Date;
   country?:      string;
   postalCode?:   number;
-
-
+  amountdonated?: number;
+  numberdonated?: number;
   // Interests
   interests?:    object;
 }

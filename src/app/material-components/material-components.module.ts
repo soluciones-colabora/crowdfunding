@@ -19,7 +19,9 @@ import {
     MatNativeDateModule,
     MatButtonToggleModule,
     MatRadioModule,
-    MatDialogModule } from '@angular/material';
+    MatDialogModule,
+    MatTreeModule
+   } from '@angular/material';
     import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
@@ -44,7 +46,8 @@ import {
     MatButtonToggleModule,
     MatRadioModule,
     MatDialogModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTreeModule
   ],
   exports: [
     MatButtonModule,
@@ -66,7 +69,8 @@ import {
     MatButtonToggleModule,
     MatRadioModule,
     MatDialogModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTreeModule
   ]
 })
 export class MaterialComponentsModule { }

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
+import { FieldService } from '../../services/formFields/register-donor.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [ FieldService ]
 })
 export class HomeComponent implements OnInit {
   slides = [
@@ -15,8 +17,11 @@ export class HomeComponent implements OnInit {
     {img: 'assets/siies_gris.png'},
     {img: 'assets/tec_gris.png'},
   ];
+  odsFields: any[];
+  constructor(fieldservice: FieldService) { 
+    this.odsFields = fieldservice.getSecondFormFields();
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
