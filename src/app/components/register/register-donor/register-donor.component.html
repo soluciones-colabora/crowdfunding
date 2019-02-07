@@ -9,7 +9,7 @@
   <mat-card-content>
     <mat-horizontal-stepper linear="false" label="false" #stepper>
       <mat-step [stepControl]="firstFormGroup">
-        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit($event)" (formOut)="firstFormGroup"></app-dynamic-form>
+        <app-dynamic-form [fields]="firstFormFields" (submited)="onSubmit(0, $event)" (formOut)="firstFormGroup"></app-dynamic-form>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">
         <div class="ods-container">

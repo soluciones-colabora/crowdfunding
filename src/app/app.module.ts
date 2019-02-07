@@ -53,10 +53,13 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { InViewportModule } from 'ng-in-viewport';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { ProfileComponent } from './components/profile/profile.component';
 // import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 // import { DynamicFormControlComponent } from './dynamic-forms/dynamic-form-control/dynamic-form-field.component';
+import { ScrollSpyModule } from 'ngx-scrollspy';
+import { ScrollerComponent } from './components/scroller/scroller.component';
 
 
 @NgModule({
@@ -83,7 +86,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     ApoyarComponent,
     ConfirmationDialog,
     AssocDetailComponent,
-    ProfileComponent
+    ProfileComponent,
+    ScrollerComponent
   ],
   imports: [
     BrowserModule,
@@ -99,6 +103,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
     InViewportModule,
+    ScrollSpyModule.forRoot(),
+    ScrollDispatchModule,
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
       radius: 45,

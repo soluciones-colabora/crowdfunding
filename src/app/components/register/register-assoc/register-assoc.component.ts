@@ -102,6 +102,9 @@ export class RegisterAssocComponent implements OnInit {
       const credential = await this.authService.emailSignUp(email, password);
       const uid = credential.user.uid;
 
+      // Send user email to verify its email
+      await credential.user.sendEmailVerification();
+
       // Store all user files
       await this.uploadAllFiles(uid);
 
