@@ -91,12 +91,6 @@ mat-toolbar-row {
   color: white;
 }
 
-
-//Inputs
-// .mat-grid-tile {
-//   overflow:visible!important;
-// }
-
 app-field {
   width: 100%;
   mat-form-field {
@@ -109,10 +103,9 @@ app-field {
 
 .mat-raised-button.mat-accent {
   padding-top: 0px;
-  background-color: $purpura_col;
+  background-color: $primary;
   color:white;
 }
-
 
 app-dynamic-form.dynamic-form {
   padding: 25px 0px;
@@ -142,23 +135,6 @@ app-dynamic-form.dynamic-form {
 .mat-radio-button {
   margin-left: 10px!important;
 }
-.mat-step-icon {
-  height: 65px!important;
-  width: 65px!important;
-  border: 1.5px solid rgba(0,0,0,.38);    
-  &:hover {
-    height: 70px!important;
-    width: 70px!important;
-    -webkit-transition: linear 0.3s; /* Safari */
-     transition: linear 0.3s;
-  }
-}
-// .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,
-//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after, [dir=rtl] 
-//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after, [dir=rtl] 
-//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before {
-//   display: none!important;
-// }
 
 
 .mat-step-label{
@@ -174,41 +150,50 @@ app-dynamic-form.dynamic-form {
   margin-bottom: 10px;
 }
 .mat-step-header .mat-step-icon {
+  height: 65px!important;
+  width: 65px!important;
+  border: 1.5px solid rgba(0,0,0,.38);    
+  &:hover {
+    height: 70px!important;
+    width: 70px!important;
+    -webkit-transition: linear 0.3s; /* Safari */
+     transition: linear 0.3s;
+  }
+
   background-color: #fff;
   color:  rgba(0,0,0,.38);
   font-size: 17px;
   font-weight: 800;
-  -webkit-box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
-  -moz-box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
-  box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
+  @include box-shadow(1px,1px,3px,0px,#bababa);
+
   &-selected {
-    color: $morado_col!important;
-    border: 1.5px solid $morado_col;
+    color: $primary!important;
+    border: 1.5px solid $primary;
   }
 
   &-state-number{
     color:  rgba(0,0,0,.38);
   }
   &-state-edit{
-    background-color: $morado_col;
+    background-color: $primary;
     border:none;
     color:  #fff;
-    border: 1.5px solid $morado_col;
+    border: 1.5px solid $primary;
   }
 }
 
 .mat-radio-outer-circle {
-  border-color:$lavanda_col;
+  border-color:$secondary;
 }
 
 .ods-container {
   // height: 350px;
   padding-bottom: 50px;
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: flex-start ;
-  align-items: center;
- 
+  // display: flex;
+  // flex-wrap:wrap;
+  // justify-content: flex-start ;
+  // align-items: center;
+ @include flex-parent(flex-start,center,center,wrap);
   div {
     flex-basis:calc(100%/6);
     padding: 0px 10px;
@@ -223,7 +208,7 @@ app-dynamic-form.dynamic-form {
       margin-bottom: 20px;
       // background-color:rgba($lavanda_col,0.2);
       &.mat-button-toggle-checked {
-        background-color: rgba($lavanda_col,0.5);
+        background-color: rgba($secondary,0.5);
       }
     }
   }

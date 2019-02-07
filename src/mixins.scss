@@ -84,3 +84,11 @@
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$primary, endColorstr=$secondary,GradientType=1 ); /* IE6-9 */
   }
+
+  @mixin flex-parent ($justify: space-evenly,$align-items: center,$align-content:center,$wrap:nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align-items;
+    align-content: $align-content;
+    flex-wrap:wrap;
+  };
