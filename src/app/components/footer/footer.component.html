@@ -20,27 +20,25 @@
     </ul>
 </div>
 <div class="idioma">
-        <mat-form-field  appearance="legacy">
-                <mat-select placeholder="Selecciona un idioma">
-                        <mat-option value ="spanish">
-                          Español
-                        </mat-option>
-                        <mat-option value ="english">
-                          Inglés
-                        </mat-option>
-                      </mat-select>
-              </mat-form-field>
-              <mat-form-field appearance="legacy">
-                  <mat-select
-                  >
-                      <mat-option value ="spanish">
-                        MXN
-                      </mat-option>
-                      <mat-option value ="english">
-                        USD
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
+  <div>
+    <button mat-raised-button [matMenuTriggerFor]="currMenu">
+      MXN
+    </button>
+  </div>
+  <div>
+      <button  mat-raised-button [matMenuTriggerFor]="langMenu">
+        ES
+      </button>
+    </div>
+    <mat-menu #currMenu="matMenu">
+      <button mat-menu-item>USD</button>
+      <button mat-menu-item>MXN</button>
+    </mat-menu>
+  <mat-menu #langMenu="matMenu">
+    <button  mat-menu-item>EN</button>
+    <button mat-menu-item>ES</button>
+  </mat-menu>
+
 </div>
 
 </div>

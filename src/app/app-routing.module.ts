@@ -14,6 +14,7 @@ import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.com
 // import { Name4Component } from './';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ApoyarComponent } from './components/apoyar/apoyar.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'detail', component: AssocDetailComponent },
   { path: 'register/donor', component: RegisterDonorComponent },
   { path: 'apoyar', component: ApoyarComponent },
+  { path: 'perfil', component: ProfileComponent },
 
   // { path: 'path3', component: Name3Component },
   // { path: 'path4', component: Name4Component },

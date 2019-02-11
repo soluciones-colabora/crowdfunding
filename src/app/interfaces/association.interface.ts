@@ -39,7 +39,8 @@ export interface Association {
   team?:           [];
   socialNetworks?: [];
   gallery?:        [];
-
-
+  amountcollected?: number;
+  numberdonors?: number;
+  rating?: number;
 }
 

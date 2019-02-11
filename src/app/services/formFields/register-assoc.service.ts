@@ -384,7 +384,7 @@ export class FieldService {
         type: 'image/*',
         // required: true,
         cols: 2,
-        rows: 2,
+        rows: 1,
         order: 5
       })
     ];

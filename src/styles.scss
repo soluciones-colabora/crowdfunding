@@ -1,20 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 // regular style toast
 @import '~ngx-toastr/toastr.css';
-// if you'd like to use it without importing all of bootstrap it requires
-// @import '~bootstrap/scss/functions';
-// @import '~bootstrap/scss/variables';
-// @import '~bootstrap/scss/mixins';
-// @import '~ngx-toastr/toastr-bs4-alert';
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'mixins.scss';
+// @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 // @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import "~owl.carousel/dist/assets/owl.carousel.css";
 // @import "~owl.carousel/dist/assets/owl.theme.default.css";
 // @import '/colabora-theme.scss';
 //Variables
-$lavanda_col : #A65199;
-$purpura_col: #6D5895;
-$morado_col: #674e96;
+$lavanda_col : #D97C1E;
+$purpura_col: #A94924;
+$morado_col: #A94924;
+$primary: #D97C1E;
+$secondary:#A94924;
+$gris_col: rgba(#bababa,0.5);
+
+$mat-chinese-red: (
+    50 : #f5e9e5,
+    100 : #e5c8bd,
+    200 : #d4a492,
+    300 : #c38066,
+    400 : #b66445,
+    500 : #a94924,
+    600 : #a24220,
+    700 : #98391b,
+    800 : #8f3116,
+    900 : #7e210d,
+    A100 : #ffbbb0,
+    A200 : #ff8f7d,
+    A400 : #ff634a,
+    A700 : #ff4d30
+);
+
+$mat-ochre: (
+    50 : #faefe4,
+    100 : #f4d8bc,
+    200 : #ecbe8f,
+    300 : #e4a362,
+    400 : #df9040,
+    500 : #d97c1e,
+    600 : #d5741a,
+    700 : #cf6916,
+    800 : #ca5f12,
+    900 : #c04c0a,
+    A100 : #fff2eb,
+    A200 : #ffcfb8,
+    A400 : #ffac85,
+    A700 : #ff9a6c 
+);
 
 $mat-purpureus: (
   50 : #f4eaf3,
@@ -38,6 +71,9 @@ html,body, button, .mat-toolbar .mat-button .mat-form-field .mat-stepper-horizon
   font-family: 'Nunito', sans-serif!important;
 }
 
+mat-sidenav-container.mat-drawer-container {
+  background-color: white;
+}
 mat-card {
   max-width: 80%;
   margin: 2em auto;
@@ -55,12 +91,6 @@ mat-toolbar-row {
   color: white;
 }
 
-
-//Inputs
-.mat-grid-tile {
-  overflow:visible!important;
-}
-
 app-field {
   width: 100%;
   mat-form-field {
@@ -69,28 +99,12 @@ app-field {
 }
 
 
-//Butoons
+//Butons
 
 .mat-raised-button.mat-accent {
   padding-top: 0px;
-  background-color: $purpura_col;
+  background-color: $primary;
   color:white;
-}
-
-
-//Stepper
-// .mat-form-field.mat-focused {
-
-//      .mat-form-field-infix {
-//       border-bottom: 1.5px solid $lavanda_col!important;
-//     }
-
-// }
-app-dynamic-form {
- .mat-form-field-infix{
-   border-bottom: 1.5px solid $lavanda_col;    
- }
- 
 }
 
 app-dynamic-form.dynamic-form {
@@ -121,23 +135,6 @@ app-dynamic-form.dynamic-form {
 .mat-radio-button {
   margin-left: 10px!important;
 }
-.mat-step-icon {
-  height: 65px!important;
-  width: 65px!important;
-  border: 1.5px solid rgba(0,0,0,.38);    
-  &:hover {
-    height: 70px!important;
-    width: 70px!important;
-    -webkit-transition: linear 0.3s; /* Safari */
-     transition: linear 0.3s;
-  }
-}
-// .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,
-//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after, [dir=rtl] 
-//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after, [dir=rtl] 
-//  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before {
-//   display: none!important;
-// }
 
 
 .mat-step-label{
@@ -153,29 +150,76 @@ app-dynamic-form.dynamic-form {
   margin-bottom: 10px;
 }
 .mat-step-header .mat-step-icon {
+  height: 65px!important;
+  width: 65px!important;
+  border: 1.5px solid rgba(0,0,0,.38);    
+  &:hover {
+    height: 70px!important;
+    width: 70px!important;
+    -webkit-transition: linear 0.3s; /* Safari */
+     transition: linear 0.3s;
+  }
+
   background-color: #fff;
   color:  rgba(0,0,0,.38);
   font-size: 17px;
   font-weight: 800;
-  -webkit-box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
-  -moz-box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
-  box-shadow: 1px 1px 3px 0px rgba(186,186,186,1);
+  @include box-shadow(1px,1px,3px,0px,#bababa);
+
   &-selected {
-    color: $morado_col!important;
-    border: 1.5px solid $morado_col;
+    color: $primary!important;
+    border: 1.5px solid $primary;
   }
 
   &-state-number{
     color:  rgba(0,0,0,.38);
   }
   &-state-edit{
-    background-color: $morado_col;
+    background-color: $primary;
     border:none;
     color:  #fff;
-    border: 1.5px solid $morado_col;
+    border: 1.5px solid $primary;
   }
 }
 
 .mat-radio-outer-circle {
-  border-color:$lavanda_col;
+  border-color:$secondary;
+}
+
+.ods-container {
+  // height: 350px;
+  padding-bottom: 50px;
+  // display: flex;
+  // flex-wrap:wrap;
+  // justify-content: flex-start ;
+  // align-items: center;
+ @include flex-parent(flex-start,center,center,wrap);
+  div {
+    flex-basis:calc(100%/6);
+    padding: 0px 10px;
+    mat-button-toggle {
+      white-space: pre-wrap;
+      line-height:0px;
+      width: 100%;
+      height: 100px;
+      font-size: 14px;
+      background-color:rgba(#aaaaaa,0.5);
+      color: white;
+      margin-bottom: 20px;
+      // background-color:rgba($lavanda_col,0.2);
+      &.mat-button-toggle-checked {
+        background-color: rgba($secondary,0.5);
+      }
+    }
+  }
+    @media(max-width: 1439px) {
+      div {
+        flex-basis:calc(100%/3);
+        padding: 0px 10px;
+      }
+    }
+    @media(max-width: 960px) {
+      display: none;
+    }
+
 }
