@@ -57,6 +57,8 @@ export class RegisterAssocComponent implements OnInit {
     this.thirdFormFields = service.getThirdFormFields();
     this.labels = service.getFormLabels();
 
+    this.setFieldValue('email', 'test@test.com');
+
   }
 
   ngOnInit() {
@@ -182,5 +184,18 @@ export class RegisterAssocComponent implements OnInit {
   }
 
 
-
+  private setFieldValue(fieldKey: string, value) {
+    let index = this.firstFormFields.findIndex(field => field.key === fieldKey);
+    if (index !== -1) {
+      this.firstFormFields[index].value = value;
+    }
+    index = this.secondFormFields.findIndex(field => field.key === fieldKey);
+    if (index !== -1) {
+      this.secondFormFields[index].value = value;
+    }
+    index = this.thirdFormFields.findIndex(field => field.key === fieldKey);
+    if (index !== -1) {
+      this.thirdFormFields[index].value = value;
+    }
+  }
 }
