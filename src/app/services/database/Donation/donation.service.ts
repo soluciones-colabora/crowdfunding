@@ -17,7 +17,7 @@ export class DonationService {
   constructor( private afs: AngularFirestore ) {
     // Obten la colección con todas las asociaciones:
     this.donationsCollection = this.afs.collection('donations',
-    (ref) => ref.where('role', '==', 'donnor').where('status', '==', 'active').orderBy('createdOn', 'desc'));
+    (ref) => ref.orderBy('createdOn', 'desc'));
   }
 
   getData(): Observable<any[]> {
