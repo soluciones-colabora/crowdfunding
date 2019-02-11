@@ -60,6 +60,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 // import { DynamicFormControlComponent } from './dynamic-forms/dynamic-form-control/dynamic-form-field.component';
 import { ScrollSpyModule } from 'ngx-scrollspy';
 import { ScrollerComponent } from './components/scroller/scroller.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { ScrollerComponent } from './components/scroller/scroller.component';
     ConfirmationDialog,
     AssocDetailComponent,
     ProfileComponent,
-    ScrollerComponent
+    ScrollerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

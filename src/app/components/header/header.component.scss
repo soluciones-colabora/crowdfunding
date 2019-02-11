@@ -1,44 +1,46 @@
 @import '../../../styles.scss';
-.example-spacer {
-  flex: 1 1 auto;
-}
+@import '../../main-nav/main-nav.component.scss'
 
-.example-container {
-  display: flex;
-  // flex-direction: column;
-  align-content: center;
-}
+// .example-spacer {
+//   flex: 1 1 auto;
+// }
 
-.example-container > * {
-  width: 100%;
-}
+// .example-container {
+//   display: flex;
+//   // flex-direction: column;
+//   align-content: center;
+// }
 
-.mat-toolbar {
-  color: #fff;
-  &.mat-primary {
-    background: rgba($purpura_col,0.5);
-  }
-  &.mat-accent {
-    background: rgba($lavanda_col,0.5); 
-  }
-}
+// .example-container > * {
+//   width: 100%;
+// }
 
-.mat-form-field {
-  font-family: 'Nunito', sans-serif;
-}
-.pipe {
-  margin: 15px;
-  border-width: 2px;
-}
+// .mat-toolbar {
+//   color: #fff;
+//   &.mat-primary {
+//     background: rgba($purpura_col,0.5);
+//   }
+//   &.mat-accent {
+//     background: rgba($lavanda_col,0.5);
+//   }
+// }
 
-.navbar {
-  padding-top: 0%;
-}
+// .mat-form-field {
+//   font-family: 'Nunito', sans-serif;
+// }
+// .pipe {
+//   margin: 15px;
+//   border-width: 2px;
+// }
 
-.mat-form-field-underline {
-  display: hidden!important;
-}
+// .navbar {
+//   padding-top: 0%;
+// }
 
-mat-input-container input {
-  border: none;
-}
+// .mat-form-field-underline {
+//   display: hidden!important;
+// }
+
+// mat-input-container input {
+//   border: none;
+// }

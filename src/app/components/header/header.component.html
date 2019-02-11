@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <mat-grid-list cols="8" rowHeight="64px" gutterSize="0">
     <mat-grid-tile colspan="6">
       <mat-toolbar color="primary">
@@ -24,4 +24,63 @@
       </mat-toolbar>
     </mat-grid-tile>
   </mat-grid-list>
-</div>
+</div> -->
+
+<mat-toolbar color="primary">
+  <!-- Navbar Show/Hide Button -->
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+
+  <!-- Show logo -->
+  <a class="navbar-brand"><img src="assets/feyac.png" alt="" routerLink=""></a>
+  <span class="spacer"></span>
+
+
+  <!-- Display options if size allows it -->
+  <span *ngIf="!(isHandset$ | async)" class="content-links">
+    <button mat-button [routerLink]="['apoyar']">APOYAR CAMPAÑAS</button>
+    <span class="">|</span>
+    <button mat-button [routerLink]="['']">¿CÓMO APOYAR?</button>
+
+
+
+    <!-- If user show profile picture and menu options -->
+    <div *ngIf="user; else notlogged">
+      <!-- Show Profile Picture -->
+      <button mat-button [matMenuTriggerFor]="menu">
+        <img class="navbar-avatar" [src]="user.photoURL" alt=""  routerLink="">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <!-- Menu items for user... -->
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['perfil']">
+          <mat-icon>account_circle</mat-icon>
+          <span>Ver perfil</span>
+        </button>
+        <button mat-menu-item [routerLink]="['apoyar']">
+          <mat-icon>edit</mat-icon>
+          <span>Ver notificaciones</span>
+        </button>
+        <button mat-menu-item (click)="authService.signOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Cerrar sesión</span>
+        </button>
+      </mat-menu>
+    </div>
+
+
+    <!-- If no user show login and registration options -->
+    <ng-template #notlogged let-user>
+      <button mat-button [routerLink]="['login']">INICIAR SESIÓN</button>
+      <span class="">|</span>
+      <button mat-button [routerLink]="['register']">REGISTRARSE</button>
+    </ng-template>
+  </span>
+</mat-toolbar>
