@@ -2,7 +2,7 @@
 
   <cdk-virtual-scroll-viewport
   orientation="horizontal"
-  itemSize="400"
+  itemSize="500"
   class="example-viewport"
   (scrolledIndexChange)="nextBatch($event, (people[people.length - 1].name))"
   >
@@ -18,7 +18,7 @@
     <iframe *ngIf="theEnd" src="https://giphy.com/embed/lD76yTC5zxZPG" width="480"
       height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
 
-    <div *cdkVirtualFor="let p of people" class="card">
+    <div *cdkVirtualFor="let p of people" class="scroller-scrollbar card">
       <app-card></app-card>
     </div>
 

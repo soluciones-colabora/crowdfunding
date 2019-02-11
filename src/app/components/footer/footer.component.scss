@@ -37,7 +37,7 @@
 .footer {
 // Permalink - use to edit and share this gradient:
 // http://colorzilla.com/gradient-editor/#6d5895+0,6d5895+35,a65199+74,a65199+100
-background-color: $primary; // Old browsers
+background-color: rgba($secondary,0.9); // Old browsers
 // background: url('/assets/img/bg-pattern.png'),  $primary;
 // @include filter-gradient(#6d5895, #a65199, horizontal); // IE6-9 fallback on horizontal gradient
 // @include background-image(linear-gradient(to bottom right, #6d5895 0%,#6d5895 35%,#a65199 74%,#a65199 100%));
@@ -46,7 +46,7 @@ background-color: $primary; // Old browsers
   // position: absolute;
   display: flex;
   width: 100%;
-  min-height: 325px;
+  // min-height: 325px;
   color:white;
   ul {
     list-style-type:none;
@@ -92,22 +92,6 @@ mat-form-field {
 }
 
  //Responsivo
- @media(max-width: 1180px) {
-
-}
-
-@media(max-width: 1024px) {
-      
-}
-
-@media(max-width: 950px) {
-
-}
-
-@media(max-width: 860px) {
-
-}
-
 @media(max-width: 768px) {
   .holder {
     flex-wrap: wrap-reverse;
@@ -118,7 +102,10 @@ mat-form-field {
     }
     .idioma {
       flex-basis: 100%;
-  
+      display: flex;
+      div:first-child {
+        padding-right: 20px;
+      }
     }
     .contacto {
       flex-basis: 50%;

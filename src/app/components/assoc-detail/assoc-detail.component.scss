@@ -37,12 +37,12 @@
   background-color:$lavanda_col;
   color:white;
   border: 1.5px solid $lavanda_col;
-  &:hover {
-    background-color:white;
-    color:$lavanda_col;
-    // border-color: $lavanda_col;
-    transition: all 1.2 ease-in;
-  }
+  // &:hover {
+  //   background-color:white;
+  //   color:$lavanda_col;
+  //   // border-color: $lavanda_col;
+  //   transition: all 1.2 ease-in;
+  // }
 }
 
 
@@ -140,18 +140,14 @@
       justify-content: center;
       align-items: center;
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a65199+0,a65199+19,a65199+39,6d5895+70,6d5895+100 */
-      background: #a65199; /* Old browsers */
-      background: -moz-linear-gradient(-45deg, #a65199 0%, #a65199 19%, #a65199 39%, #6d5895 70%, #6d5895 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(-45deg, #a65199 0%,#a65199 19%,#a65199 39%,#6d5895 70%,#6d5895 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(135deg, #a65199 0%,#a65199 19%,#a65199 39%,#6d5895 70%,#6d5895 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a65199', endColorstr='#6d5895',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      // background: #a65199; /* Old browsers */
+      // background: -moz-linear-gradient(-45deg, #a65199 0%, #a65199 19%, #a65199 39%, #6d5895 70%, #6d5895 100%); /* FF3.6-15 */
+      // background: -webkit-linear-gradient(-45deg, #a65199 0%,#a65199 19%,#a65199 39%,#6d5895 70%,#6d5895 100%); /* Chrome10-25,Safari5.1-6 */
+      // background: linear-gradient(135deg, #a65199 0%,#a65199 19%,#a65199 39%,#6d5895 70%,#6d5895 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a65199', endColorstr='#6d5895',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      @include gradient-crowdfunding;
       img {
-        height: 150px;
-        width:150px;
-        overflow:hidden;
-        object-fit: cover;
-        border-radius: 100%;
-        box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.43);
+         @include avatar(150px,150px);
       }
     }
 
@@ -170,7 +166,7 @@
     padding: 30px;
     flex-basis:80%;
     overflow:auto;
-    background-color:rgba(#bababa,0.5);
+    background-color:$gris-bajo;
     height: 600px;
     h3, strong {
       font-weight: 800;
@@ -197,35 +193,11 @@
     .equipo {
       flex-basis: 50%; 
     img {
-      height: 50px;
-      width:50px;
-      overflow:hidden;
-      object-fit: cover;
-      border-radius: 100%;
-      box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.43);
+     @include avatar(50px,50px);
     }
   }
   }
  }
- .scrollbar-colabora::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: #F5F5F5;
-  border-radius: 10px; }
-  
-  .scrollbar-colabora::-webkit-scrollbar {
-  width: 0.5em;
-  background-color: #F5F5F5; }
-  
-  .scrollbar-colabora::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  // background-image: -webkit-gradient(linear, left top, right top, from(#ffecd2), to(#fcb69f));
-  // background-image: -webkit-linear-gradient(left, #ffecd2 0%, #fcb69f 100%);
-  // background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); }
-  background: $purpura_col;
-}
 }
 
 .active {

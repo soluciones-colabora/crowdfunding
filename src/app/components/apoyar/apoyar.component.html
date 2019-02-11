@@ -7,7 +7,7 @@
 <div class="search-container">
   <div class="search">
     <mat-form-field>
-      <input matInput placeholder="Buscar campañas">
+      <input matInput placeholder="Buscar campañas"> 
       <mat-icon matPrefix color="primary">search</mat-icon>
     </mat-form-field>
     <div class="spacer"></div>
@@ -46,22 +46,9 @@
 <div class="section-cards">
   <h2>{{'Ciudades y comunidades sostenibles' | uppercase}}</h2>
   <div class="container-scroller">
-    <div class="scrolling-wrapper">
-      <div class="card"  *ngFor="let field of odsFields"><app-card></app-card></div>
+      <app-scroller></app-scroller>
     </div>
-
-
-<div class="container-scroller">
-  <div class="scrolling-wrapper">
-    <div class="card"><app-card></app-card></div>
-    <div class="card"><app-card></app-card></div>
-    <div class="card"><app-card></app-card></div>
-    <div class="card"><app-card></app-card></div>
-    <div class="card"><app-card></app-card></div>
-    <div class="card"><app-card></app-card></div>
-  </div>
-</div>
-
+<!-- 
 <h1>This scroller doesn't load from db</h1>
 
 <div class="cdk-virtual-scroll-data-source-example">
@@ -71,22 +58,26 @@
         <app-card></app-card>
       </div>
   </cdk-virtual-scroll-viewport>
+</div> -->
+
+<div class="section-cards">
+    <h2>{{'Vida de ecosistemas terrestres' | uppercase}}</h2>
+    <div class="container-scroller">
+        <app-scroller></app-scroller>
+    </div>
 </div>
 
-<h1>This scroller loads from db</h1>
-<app-scroller></app-scroller>
+<!-- <h1>This scroller loads from db</h1>
+  <app-scroller></app-scroller> -->
+<!-- </div> -->
 
-
-<div class="campaign" *ngFor="let field of odsFields">
-  <div class="campaign-card" >
-    <app-card></app-card>
-  </div>
-</div>
 <div class="section-cards">
   <h2>{{'Vida de ecosistemas terrestres' | uppercase}}</h2>
   <div class="container-scroller">
     <div class="scrolling-wrapper">
-      <div class="card"  *ngFor="let field of odsFields"><app-card></app-card></div>
+      <div class="card"  *ngFor="let field of odsFields">
+        <app-card></app-card>
+      </div>
     </div>
   </div>
 </div>

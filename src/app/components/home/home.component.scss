@@ -1,15 +1,17 @@
 @import '../../../styles.scss';
 .inicio{
-	@include navbar(85);
+	@include navbar(85px);
 	// @include container-general;
 	&__titulo {
 		height: 450px;
 		    // display: inline-block;
-		background: url("/assets/unicef.jpg");
-		background-position:top;
+		background: url("/assets/mano.jpeg");
+		background-position:center;
 		background-size: cover;
+		background-repeat: no-repeat;
 		position: relative;
 		text-align: center;
+		// outline: 1px solid tomato;
 		.overlay {
 	        position: absolute;
 	        left: 0;
@@ -20,29 +22,31 @@
 	        // display: flex;
 			// align-items: center;
 			// justify-content: center;
-			background: rgba(#ffffff, 0.5);	
+			background: rgba($secondary, 0.2);	
 		}
 	}	
-}
-	.mat-flat-button {
-			padding-top: 0px;
-			background-color:rgba(#fff, 0);
-			color:$lavanda_col;
-			// font-weight: bold;
-			border: 1.5px solid $lavanda_col;
-			&:hover {
-				background-color:$lavanda_col;
-				color:white;
-				// border-color: $lavanda_col;
-				transition: all .3 ease;
-			}
+	@media(max-width: 600px) {
+		
 	}
+}
+
 
 .titulo-centrado {
 	position: absolute;
-	top: 50%;
+	top: 75%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	@media(max-width: 1320px) {
+		h1 {
+			font-size: 1.5rem;
+		}
+	}
+	@media(max-width: 760px) {
+		// h1 {
+		// 	font-size: 1.5rem;
+		// }
+		top:65%;
+	}
 }
 
 .titulo {
@@ -56,23 +60,31 @@
 		text-shadow: 0.707px 0.707px 5.88px rgba(0, 0, 0, 0.59);
 	} 
 	&__purpura{
-		color: rgba($morado_col,1);
+		color: rgba(white, 1);
+		text-shadow: 0.707px 0.707px 5.88px rgba(0, 0, 0, 0.59);
 		// text-shadow: 0.707px 0.707px 5.88px rgba(white, 0.59);
 	} 
 	&__rosa{
 		// padding-left: 100px;
-		color: rgba(#7b276b,0.9);
+		color: rgba($secondary,0.9);
 		// text-shadow: 0.707px 0.707px 5.88px rgba(white, 0.59);
 	} 
+
+
+
 }
 
 .btn-centrado {
 	position: absolute;
-	top: 70%;
+	top: 85%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 250px;
-    font-size: 18px;
+	font-size: 18px;
+	@media(max-width: 1320px) {
+		font-size: 18px;
+		width: 200px;
+	}
 }
 
 .apoya {
@@ -145,7 +157,7 @@
   .carousel {
     width: 100% !important;
     max-height: 200px !important;
-    background: #d5d5d5 !important;
+    background: $gris-bajo !important;
 
     owl-carousel {
         .item {
@@ -256,21 +268,20 @@
 .section-cards{
   // position: relative;
   padding: 35px;
-  @media(max-width: 376px) {
-    padding:0px;
-  }
+//   @media(max-width: 376px) {
+//     // padding:0px;
+//   }
   color:#747474;
     h2 {
         font-weight: bold;
         @media(max-width: 376px) {
-          padding-left:20px;
+		  padding-left:15px;
+		  font-size:1.5em;
         }
     }
  }
  //Responsivo
- @media(max-width: 1440px) {
- 
-}
+
  
   //Responsivo
   @media(max-width: 1440px) {
@@ -474,17 +485,13 @@
         }
     }
 }
-@media(max-width: 598px) {
-	.inicio {
-		padding-top: 55px;
-	}
-}
+
 @media(max-width: 560px) {
 	.titulo {
 		font-size: 30px;
 	}
 }
-@media(max-width: 440px) {
+@media(max-width: 620px) {
 
     .inicio__servicios {
         &-cuadro {

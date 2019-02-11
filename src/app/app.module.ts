@@ -55,11 +55,13 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { InViewportModule } from 'ng-in-viewport';
 import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { LottieAnimationViewModule } from 'ng-lottie';
 import { ProfileComponent } from './components/profile/profile.component';
 // import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 // import { DynamicFormControlComponent } from './dynamic-forms/dynamic-form-control/dynamic-form-field.component';
-import { ScrollSpyModule } from 'ngx-scrollspy';
+// import { ScrollSpyModule } from 'ngx-scrollspy';
 import { ScrollerComponent } from './components/scroller/scroller.component';
+import { ParticlesModule } from 'angular-particle';
 
 
 @NgModule({
@@ -102,8 +104,9 @@ import { ScrollerComponent } from './components/scroller/scroller.component';
     MaterialComponentsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
+    LottieAnimationViewModule.forRoot(),
     InViewportModule,
-    ScrollSpyModule.forRoot(),
+    // ScrollSpyModule.forRoot(),
     ScrollDispatchModule,
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
@@ -134,7 +137,8 @@ import { ScrollerComponent } from './components/scroller/scroller.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ParticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent],

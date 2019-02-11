@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterMainComponent },
   { path: 'register/assoc', component: RegisterAssocComponent },
-  { path: 'detail', component: AssocDetailComponent },
+  { path: 'detail/:id', component: AssocDetailComponent },
   { path: 'register/donor', component: RegisterDonorComponent },
   { path: 'apoyar', component: ApoyarComponent },
   { path: 'perfil', component: ProfileComponent },

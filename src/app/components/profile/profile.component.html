@@ -6,7 +6,7 @@
         <div class="general-info">
             <h1> <span><mat-icon>person</mat-icon></span> {{'Félix Román Ehuan Collí'}}</h1>
         <h5><span><mat-icon>email</mat-icon></span> {{'fnixro2@gmail.com'}}</h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem veritatis minima vel, rem natus praesentium eaque nostrum. 
+        <p class="general-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem veritatis minima vel, rem natus praesentium eaque nostrum. 
           Asperiores blanditiis perferendis voluptatum aperiam corrupti architecto distinctio atque, ipsa suscipit praesentium qui.</p>
         </div>
         <div class="general-badge">
@@ -21,7 +21,72 @@
           <app-register-donor></app-register-donor>
         </mat-tab>
         <mat-tab label="Donaciones">
-          <app-register-assoc></app-register-assoc>
+            <div class="donaciones-2">
+            <mat-card>
+              <div class="nombre">
+                 Hogar de Angeles 
+              </div>  
+              <div class="fecha">
+                  <mat-icon>calendar_today</mat-icon>
+                  24 Abril 2019
+              </div>
+              <div class="donado">
+                  <!-- <mat-icon>attach_money</mat-icon> -->
+                  {{ '250' | currency:'MXN' }}
+              </div>
+              <a routerLink="/detail/aslkads">
+                  <mat-icon>arrow_right</mat-icon>
+                </a>
+               </mat-card>
+            <mat-card>
+              <div class="nombre">
+                 Hogar de Angeles 
+              </div>  
+              <div class="fecha">
+                  <mat-icon>calendar_today</mat-icon>
+                  24 Abril 2019
+              </div>
+              <div class="donado">
+                  <!-- <mat-icon>attach_money</mat-icon> -->
+                  {{ '250' | currency:'MXN' }}
+              </div>
+              <a href="">
+                  <mat-icon>arrow_right</mat-icon>
+                </a>
+               </mat-card>
+            <mat-card>
+              <div class="nombre">
+                 Asociación civil con nombre muy largo
+              </div>  
+              <div class="fecha">
+                  <mat-icon>calendar_today</mat-icon>
+                  24 Abril 2019
+              </div>
+              <div class="donado">
+                  <!-- <mat-icon>attach_money</mat-icon> -->
+                  {{ '250' | currency:'MXN' }}
+              </div>
+              <a href="">
+                  <mat-icon>arrow_right</mat-icon>
+                </a>
+               </mat-card>
+            <mat-card>
+              <div class="nombre">
+                Mayas de yucatán
+              </div>  
+              <div class="fecha">
+                  <mat-icon>calendar_today</mat-icon>
+                  24 Abril 2019
+              </div>
+              <div class="donado">
+                  <!-- <mat-icon>attach_money</mat-icon> -->
+                  {{ '250' | currency:'MXN' }}
+              </div>
+              <a href="">
+                <mat-icon>arrow_right</mat-icon>
+              </a>
+               </mat-card>
+        </div>
         </mat-tab>
         <mat-tab label="Cambiar contraseña">
           <app-register-assoc></app-register-assoc>
