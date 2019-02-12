@@ -1,4 +1,8 @@
 @import '../../../styles.scss';
+.login-holder {
+  height: 500px;
+  @include navbar(115px);
+}
 .btn-social {
   color: #fff;
   i {
@@ -45,7 +49,11 @@
 
 .login-card {
   max-width: 400px;
-  @include navbar;
+  // @include navbar;
+  @media (max-width: 426px) {
+    // @include navbar;
+    margin: 0px 30px;
+  }
 }
 
 .example-stretched-tabs {
@@ -84,4 +92,8 @@
 .strike > span:after {
   left: 100%;
   margin-left: 15px;
+}
+
+form > button.mat-raised-button {
+  margin-top:20px;
 }

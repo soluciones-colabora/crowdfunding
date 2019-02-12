@@ -64,6 +64,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ScrollerComponent } from './components/scroller/scroller.component';
 import { ParticlesModule } from 'angular-particle';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoaderComponent } from './loader/loader.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 @NgModule({
@@ -93,7 +95,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AssocDetailComponent,
     ProfileComponent,
     ScrollerComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoaderComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

@@ -79,10 +79,11 @@
   }
 
   @mixin gradient-crowdfunding {
-    background: $primary; /* Old browsers */
-    background-image: linear-gradient(45deg,$primary,$secondary);
+    // background: $primary; /* Old browsers */
+    background-image: linear-gradient(45deg,$secondary,$primary);
+    opacity: 0.98;
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$primary, endColorstr=$secondary,GradientType=1 ); /* IE6-9 */
+    // filter: progid:DXImageTrans  form.Microsoft.gradient( startColorstr=$primary, endColorstr=$secondary,GradientType=1 ); /* IE6-9 */
   }
 
   @mixin flex-parent ($justify: space-evenly,$align-items: center,$align-content:center,$wrap:nowrap,$direction:row) {

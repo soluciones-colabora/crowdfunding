@@ -14,10 +14,10 @@ export class AssocDetailComponent implements AfterViewInit {
   @ViewChild('galeria_li') galeria_li: ElementRef;
   safeURL: SafeResourceUrl;
   navItem: number;
-  team: [
+  team = [
     {
       nombre: 'Félix Ehuan',
-      avatar: 'https://www.w3schools.com/howto/img_avatar1.png',
+      avatar: 'https://www.w3schools.com/howto/img_avatar.png',
       cargo: 'Dirección de proyectos',
       licenciatura: 'Lic. en Ingeniería Física'
     },
@@ -29,31 +29,33 @@ export class AssocDetailComponent implements AfterViewInit {
     },
     {
       nombre: 'Gabriela Alzina',
-      avatar: 'https://www.w3schools.com/howto/img_avatar4.png',
+      avatar: 'https://www.w3schools.com/w3images/avatar2.png',
       cargo: 'Dirección de proyectos',
       licenciatura: 'Lic. en Mercadotecnia'
     },
     {
       nombre: 'Alejandro Castillo',
-      avatar: 'https://www.w3schools.com/howto/img_avatar4.png',
+      avatar: 'https://www.w3schools.com/w3images/avatar6.png',
       cargo: 'Dirección de proyectos',
       licenciatura: 'Lic. en Ingeniería Mecatrónica'
     },
     {
       nombre: 'Félix Ehuan',
-      avatar: 'https://www.w3schools.com/howto/img_avatar1.png',
-      cargo: 'Dirección de proyectos',
-      licenciatura: 'Lic. en Ingeniería Física'
-    },
-    {
-      nombre: 'Félix Ehuan',
-      avatar: 'https://www.w3schools.com/howto/img_avatar1.png',
+      avatar: 'https://www.w3schools.com/w3images/avatar5.png',
       cargo: 'Dirección de proyectos',
       licenciatura: 'Lic. en Ingeniería Física'
     }
-  ]
-  constructor(private _sanitizer: DomSanitizer, private renderer: Renderer2,
-    paypalS: PaypalService) {
+  ];
+  slides = [
+    {img: 'assets/canaco_gris.png'},
+    {img: 'assets/coparmex_gris.png'},
+    {img: 'assets/ieym_gris.png'},
+    {img: 'assets/nacional_gris.png'},
+    {img: 'assets/sefoe_gris.png'},
+    {img: 'assets/siies_gris.png'},
+    {img: 'assets/tec_gris.png'},
+  ];
+  constructor(private _sanitizer: DomSanitizer, private renderer: Renderer2, paypalS: PaypalService) {
     this.navItem = 0;
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/O3cBZ5X-eGw');
   }

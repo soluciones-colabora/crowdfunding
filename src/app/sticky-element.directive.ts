@@ -43,8 +43,8 @@ export class StickyElementDirective implements OnInit {
     if (currentScroll < this.offset && this.url) {
       this.renderer.addClass(this.element.nativeElement, 'transparent');
     } else if (this.offset < currentScroll) {
+      // this.renderer.addClass(this.element.nativeElement, 'solid');
       this.renderer.removeClass(this.element.nativeElement, 'transparent');
-      // this.renderer.removeClass(this.element.nativeElement, 'solid');
     }
   }
 }
