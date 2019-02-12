@@ -33,7 +33,14 @@ export class MainNavComponent implements OnInit, OnDestroy {
     this.authService.user.pipe(takeUntil(this.ngUnsubscribe)).subscribe((user) => {
       this.loading = false;
       this.user = user;
-      console.log('user :', user);
+      if (this.user) {
+        console.log('this.user :', this.user);
+        if (!this.user.photoURL && this.user.logo) {
+          this.user.photoURL =  this.user.logo;
+        } else if (!this.user.photoURL) {
+          this.user.photoURL = 'https://t4.ftcdn.net/jpg/02/15/84/43/240_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg';
+        }
+      }
       // if (!user && this.router.url !== '/login') { this.router.navigate(['/index']); }
       // if (!user) { this.router.navigate(['/index']); }
     });
