@@ -1,25 +1,25 @@
 <div class="asociacion">
-    <div class="image-holder" style="background: url('assets/cancer.png');"></div>
+    <div class="image-holder" [ngStyle]="{'background': 'url(' + project.logo + ')'}"></div>
+    <!-- <div class="image-holder" style="background: url({{safeurl}});"></div> -->
     <hr>
     <div class="stats">
       <div class="stats-graph">
-          <circle-progress [percent]="20"> </circle-progress>
-
+          <circle-progress [percent]="project.percentage"> </circle-progress>
       </div>
       <div class="stats-holder">
         <div class="stats-time">
-            <strong>10</strong> días
-        </div> 
+            <strong>{{project.timeRemaining}}</strong> días
+        </div>
         <div class="stats-spacer"></div>
         <div class="stats-donators">
-            <strong>50</strong> donadores
-        </div> 
+            <strong>{{project.numberdonors}}</strong> donadores
+        </div>
       </div>
     </div>
     <div class="description">
       <div class="text">
-          <h6>{{'Una vida digna con oportunidades' | uppercase}}</h6>
-        <p>Adquisición de una camioneta para transportar a los niños a las escuelas, poder recoger donaciones que nos otorgan.Lorem ipsum dolor sit amet</p>
+        <h6>{{project.title | uppercase}}</h6>
+        <p>{{project.description}}</p>
       </div>
       <div class="footer">
         <hr class="thin">
@@ -27,18 +27,18 @@
         <div class="footer-holder">
           <div class="donado">
             <h6><strong>DONADO:</strong></h6>
-            <p>{{1875 | currency: 'MXN'}}</p>
+            <p>{{project.amountcollected | currency: 'MXN'}}</p>
           </div>
           <!-- <div class="spacer">
             <span class="rule"></span>
           </div> -->
           <div class="meta">
             <h6><strong>META MÍNIMA</strong></h6>
-            <p>{{2500 | currency: 'MXN'}}</p>
+            <p>{{project.goal | currency: 'MXN'}}</p>
           </div>
         </div>
       </div>
     </div>
     <button mat-flat-button routerLink="/detail/id">DONAR</button>
     </div>
-  </div> 
+  </div>

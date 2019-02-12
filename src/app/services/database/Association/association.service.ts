@@ -6,6 +6,7 @@ import { Association } from '../../../interfaces/association.interface';
 import { Observable, of } from 'rxjs';
 import { map, switchMap, startWith, tap, filter } from 'rxjs/operators';
 
+import * as faker from 'faker';
 @Injectable({
   providedIn: 'root'
 })
@@ -117,6 +118,27 @@ export class AssociationService {
   deleteAssociation(id: string): Promise<void> {
     return this.getAssociation(id).delete();
   }
+
+  insertFake(size: number) {
+    let associations = Array(100).fill(1).map( _ => {
+      return {
+        email:    faker.internet.email(),
+        name:     faker.name.findName(),
+        acname:   faker.company.companyName(),
+        cluni:    "012345",
+        isDonnor: true,
+        logo:     faker.image.people(),
+
+        address:    faker.address.streetName(),
+        postalCode: faker.address.zipCode(),
+        state:      faker.address.state(),
+        locality:   faker.address.city(),
+        cellphone:  faker.phone.phoneNumber(),
+        phone:      faker.phone.phoneNumber(),
+      }
+    })
+  }
+
 }
 
 

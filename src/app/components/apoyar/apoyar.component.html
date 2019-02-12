@@ -7,7 +7,7 @@
 <div class="search-container">
   <div class="search">
     <mat-form-field>
-      <input matInput placeholder="Buscar campañas"> 
+      <input matInput placeholder="Buscar campañas">
       <mat-icon matPrefix color="primary">search</mat-icon>
     </mat-form-field>
     <div class="spacer"></div>
@@ -35,11 +35,17 @@
     </mat-button-toggle>
   </div>
 </div>
+
+
+
+
 <div class="section-cards">
   <h2>{{'Fin de la pobreza' | uppercase }}</h2>
   <div class="container-scroller">
     <div class="scrolling-wrapper">
-      <div class="card"  *ngFor="let field of odsFields"><app-card></app-card></div>
+      <div class="card"  *ngFor='let project of projects$ | async'>
+        <app-card></app-card>
+      </div>
     </div>
   </div>
 </div>
@@ -48,7 +54,7 @@
   <div class="container-scroller">
       <app-scroller></app-scroller>
     </div>
-<!-- 
+<!--
 <h1>This scroller doesn't load from db</h1>
 
 <div class="cdk-virtual-scroll-data-source-example">
@@ -75,8 +81,8 @@
   <h2>{{'Vida de ecosistemas terrestres' | uppercase}}</h2>
   <div class="container-scroller">
     <div class="scrolling-wrapper">
-      <div class="card"  *ngFor="let field of odsFields">
-        <app-card></app-card>
+      <div class="card"  *ngFor='let project of projects$ | async'>
+        <app-card [project]=project></app-card>
       </div>
     </div>
   </div>
