@@ -26,6 +26,13 @@ export class FieldService {
       }),
 
       new TextboxField({
+        key: 'password',
+        label: 'Password',
+        required: true,
+        placeholder: 'Contraseña',
+        order: 3,
+      }),
+      new TextboxField({
         key: 'email',
         label: 'Email',
         required: true,
@@ -35,11 +42,20 @@ export class FieldService {
       }),
 
       new TextboxField({
+        key: 'newpassword',
+        label: 'newPassword',
+        required: true,
+        type: 'password',
+        placeholder: 'Vuelve a escribir tu contraseña',
+        order: 4
+      }),
+
+      new TextboxField({
         key: 'phone',
         label: 'Phone',
         required: true,
         placeholder: 'Teléfono',
-        order: 3
+        order: 5
       }),
 
       new TextboxField({
@@ -47,7 +63,7 @@ export class FieldService {
         label: 'Ocupación',
         required: true,
         placeholder: 'Ocupación',
-        order: 4
+        order: 6
       }),
 
       new DropdownField({
@@ -58,7 +74,7 @@ export class FieldService {
           {key: 'female',  value: 'Mujer'}
         ],
         required: true,
-        order: 5
+        order: 7
       }),
 
       new DatepickerField({
@@ -66,7 +82,7 @@ export class FieldService {
         label: 'Birthdate',
         required: true,
         placeholder: 'Fecha de nacimiento',
-        order: 6
+        order: 8
       }),
 
       new TextboxField({
@@ -74,7 +90,7 @@ export class FieldService {
         label: 'Country',
         required: true,
         placeholder: 'País',
-        order: 7
+        order: 9
       }),
 
       new TextboxField({
@@ -82,7 +98,7 @@ export class FieldService {
         label: 'Postal Code',
         required: true,
         placeholder: 'Código Postal',
-        order: 8
+        order: 10
       }),
     ];
 

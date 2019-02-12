@@ -138,13 +138,37 @@
 
 .img-asoc {
   height: 200px;
+ 
+  // overflow: hidden;
+  position: relative;
+  .overlay {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+    @include gradient-crowdfunding;
+    // background-color:rgba(#000000, 0.5);
+    opacity: 0.2;
+  }
   display:flex;
   justify-content: center;
   align-items: center;
+  .background {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%,-50%);
+    filter:blur(2px);
+    opacity: 0.5;
+  }
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a65199+0,a65199+19,a65199+39,6d5895+70,6d5895+100 */
-  @include gradient-crowdfunding;
-  img {
+  img.avatar {
      @include avatar(150px,150px);
+     z-index: 1;
   }
   &-small {
     height: 150px;
