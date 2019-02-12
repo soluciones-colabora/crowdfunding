@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { element } from 'protractor';
+import { PaypalService } from '../../services/paypal/paypal.service';
 @Component({
   selector: 'app-assoc-detail',
   templateUrl: './assoc-detail.component.html',
@@ -51,21 +51,21 @@ export class AssocDetailComponent implements AfterViewInit {
       cargo: 'Dirección de proyectos',
       licenciatura: 'Lic. en Ingeniería Física'
     }
-  ] 
-  constructor(private _sanitizer: DomSanitizer, private renderer: Renderer2) {
+  ]
+  constructor(private _sanitizer: DomSanitizer, private renderer: Renderer2,
+    paypalS: PaypalService) {
     this.navItem = 0;
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/O3cBZ5X-eGw');
   }
 
-  ngAfterViewInit() {
-  
-}
+  ngAfterViewInit() { }
 
   public navigate (index: number) {
     this.navItem = index;
     console.log('this.navItem :', this.navItem);
   }
- scrollToElement($element): void {
+
+  scrollToElement($element): void {
     console.log($element.id);
     // $element.scrollIntoView();
     $element.scrollIntoView({behavior: "smooth", block: "start"});
@@ -80,7 +80,7 @@ export class AssocDetailComponent implements AfterViewInit {
   //   this.renderer.removeClass(target, visible ? 'inactive' : 'active');
   //   console.log(visible);
   // }
-  
+
   public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
     // this.renderer.addClass(target, visible ? 'active' : 'inactive');
     // this.renderer.removeClass(target, visible ? 'inactive' : 'active');
@@ -123,4 +123,5 @@ export class AssocDetailComponent implements AfterViewInit {
       this.renderer.addClass(element.nativeElement,'active');
 
   }
+
 }

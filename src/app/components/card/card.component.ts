@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { url } from 'inspector';
 
 @Component({
   selector: 'app-card',

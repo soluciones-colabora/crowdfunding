@@ -37,12 +37,12 @@
        <p>DONADO</p> <span>{{1875 | currency:'MXN'}}</span>
       </div>
     </div>
-    <div class="circle-holder">     
+    <div class="circle-holder">
         <circle-progress [percent]="75" [radius]="60"> </circle-progress>
     </div>
     <div class="video">
-        <iframe height="100%" width="100%" [src]='safeURL' frameborder="0"  
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        <iframe height="100%" width="100%" [src]='safeURL' frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
     </div>
   </div>
@@ -50,10 +50,15 @@
     <button mat-flat-button>QUIERO APOYAR</button>
     <div class="spacer"></div>
   </div>
+  <div>
+      <div id="paypal-button-container"></div>
+  </div>
 </div>
 
+
+
 <div class="general-holder">
-<div class="menu"> 
+<div class="menu">
   <div class="img-asoc">
     <img src="assets/hogardeangeles.png" alt="">
   </div>
@@ -72,13 +77,13 @@
     (inViewportAction)="onIntersection($event)" class="scroll-with-offset">
       <h3 >RESUMEN</h3>
       <hr style="padding-right: 20px;">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo 
-        leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non 
-        tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue 
-        ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo
+        leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non
+        tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue
+        ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim
         congue vitae eget justo. Nullam tincidunt tortor nisl, id ultrices felis accumsan
-        sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam 
-        non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing 
+        sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam
+        non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Vivamus lacinia ante faucibus venenatis tincidunt.</p>
         <strong>MISIÓN</strong>
         <p>Fortalecer a las Organizaciones de la Sociedad Civil para que dependan menos de donativos y tengan un modelo de negocio social
@@ -97,19 +102,19 @@
          <strong>DESCARGABLES</strong>
 
     </div>
-    
+
     <div #beneficiarios id="beneficiarios"  inViewport
     [inViewportOptions]="{ threshold: [0] }"
     (inViewportAction)="onIntersection($event)" class="scroll-with-offset">
       <h3>BENEFICIARIOS</h3>
       <hr>
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo 
-        leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non 
-        tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue 
-        ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim 
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo
+        leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non
+        tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue
+        ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim
         congue vitae eget justo. Nullam tincidunt tortor nisl, id ultrices felis accumsan
-        sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam 
-        non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing 
+        sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam
+        non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Vivamus lacinia ante faucibus venenatis tincidunt.</p>
     </div>
 
@@ -118,13 +123,13 @@
     (inViewportAction)="onIntersection($event)" class="scroll-with-offset">
       <h3>PROPUESTA DE VALOR</h3>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo 
-          leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non 
-          tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue 
-          ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo
+          leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non
+          tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue
+          ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim
           congue vitae eget justo. Nullam tincidunt tortor nisl, id ultrices felis accumsan
-          sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam 
-          non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing 
+          sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam
+          non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Vivamus lacinia ante faucibus venenatis tincidunt.</p>
     </div>
     <div #equipo id="equipo"  inViewport
@@ -132,21 +137,21 @@
     (inViewportAction)="onIntersection($event)" class="scroll-with-offset" >
       <h3>EQUIPO</h3>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo 
-          leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non 
-          tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue 
-          ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget commodo
+          leo. Curabitur nec dolor finibus, ornare ipsum sed, pretium lacus. Vivamus non
+          tortor sit amet sem vestibulum semper. Integer eget urna tempor, molestie augue
+          ques, viverra urna. Quisque sed enim sem. Nunc tempus leo sit amet sem dignissim
           congue vitae eget justo. Nullam tincidunt tortor nisl, id ultrices felis accumsan
-          sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam 
-          non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing 
+          sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam
+          non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Vivamus lacinia ante faucibus venenatis tincidunt.</p>
 
         <div class="img-equipo" *ngFor="let member of team">
          <img src="member.avatar" alt="">
-         
+
         </div>
     </div>
-    
+
     <div #galeria id="galeria"  inViewport
     [inViewportOptions]="{ threshold: [0] }"
     (inViewportAction)="onIntersection($event)" class="scroll-with-offset">
