@@ -20,17 +20,17 @@
   background: transparent;
   transition: all 0.4s ease-in;
 }
-.mat-toolbar.mat-primary.solid {
+.solid {
   @include gradient-crowdfunding;
   transition: all 0.4s ease-in;
 }
 .mat-toolbar.mat-primary {
-  transition: all 0.4s ease-out;
   position: fixed!important;
   top: 0!important;
   z-index: 10;
   height: 85px;
-//  @include gradient-crowdfunding;
+  @include gradient-crowdfunding;
+  transition: all 0.4s ease-in;
 }
 
 mat-form-field {

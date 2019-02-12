@@ -9,7 +9,7 @@
 }
 .search-container {
   width: 100%;
-  padding: 35px;
+  padding: 0px 51px;
   // display: flex;
   // // flex-direction: column;
   // justify-content: space-evenly;
@@ -57,14 +57,14 @@
 }
 .ods-container {
     // height: 350px;
-    padding-bottom: 50px;
+    padding: 50px;
     display: flex;
     flex-wrap:wrap;
     justify-content: flex-start ;
     align-items: center;
    
     div {
-      flex-basis:calc(100%/5);
+      flex-basis:calc(100%/4);
       padding: 0px 10px;
       mat-button-toggle {
         white-space: pre-wrap;

@@ -1,3 +1,4 @@
+<div>
 <div class="main-holder">
   <div class="title">
       <h2>{{'campaña para apoyo visual' | uppercase}}</h2>
@@ -38,20 +39,19 @@
       </div>
     </div>
     <div class="circle-holder">     
-        <circle-progress [percent]="75" [radius]="60"> </circle-progress>
+        <circle-progress [percent]="['75']" [radius]="60"> </circle-progress>
     </div>
     <div class="video">
-        <iframe height="100%" width="100%" [src]='safeURL' frameborder="0"  
+        <iframe height="350px" width="100%" [src]='safeURL' frameborder="0"  
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen></iframe>
     </div>
-  </div>
-  <div class="button-holder">
-    <button mat-flat-button>QUIERO APOYAR</button>
-    <div class="spacer"></div>
+    <div class="button-holder">
+      <button mat-flat-button>QUIERO APOYAR</button>
+      <!-- <div class="spacer"></div> -->
+    </div>
   </div>
 </div>
-
 <div class="general-holder">
 <div class="menu"> 
   <div class="img-asoc">
@@ -140,10 +140,12 @@
           sed. Vestibulum ultricies sapien a ipsum dictum pharetra. Donec imperdiet diam 
           non metus aliquam pretium. Lorem ipsum dolor sit amet, consectetur adipiscing 
           elit. Vivamus lacinia ante faucibus venenatis tincidunt.</p>
-
-        <div class="img-equipo" *ngFor="let member of team">
-         <img src="member.avatar" alt="">
-         
+        <div class="img-equipo">
+          <div *ngFor="let member of team">
+            <img [src]="member.avatar" alt="">
+         <h6><strong>{{member.nombre}}</strong></h6>
+          <p>{{member.cargo}}</p>
+          </div>    
         </div>
     </div>
     
@@ -152,14 +154,50 @@
     (inViewportAction)="onIntersection($event)" class="scroll-with-offset">
       <h3>GALERÍA</h3>
       <hr>
-      <h5>Smooth Scroll Example</h5>
-      <h5>Smooth Scroll Example</h5>
-      <h5>Smooth Scroll Example</h5>
-      <h5>Smooth Scroll Example</h5>
-      <h5>Smooth Scroll Example</h5>
-      <h5>Smooth Scroll Example</h5>
-      <h5>Smooth Scroll Example</h5>
-      <h5>Smooth Scroll Example</h5>
+      <div class="responsive-carousel">
+          <div class="carousel" id="carousel4">
+            <owl-carousel
+               [options]="{ 'items': 7,
+               'dots': false,
+               'navigation': false,
+               'autoplay': true,
+               'autoplaySpeed': 500,
+               'loop': true}"
+               [items]="slides">
+               <div class="item" *ngFor="let image of slides;let i = index">
+                   <img src="{{image.img}}" alt="">
+               </div>
+           </owl-carousel>
+          </div>
+          <div class="carousel" id="carousel5">
+            <owl-carousel
+               [options]="{ 'items': 4,
+                'dots': false,
+                'navigation': false,
+                'autoplay': true,
+                'autoplaySpeed': 500,
+                'loop': true}"
+               [items]="slides">
+               <div class="item" *ngFor="let image of slides;let i = index">
+                   <img src="{{image.img}}" alt="">
+               </div>
+           </owl-carousel>
+          </div>
+          <div class="carousel" id="carousel6">
+            <owl-carousel
+               [options]="{items: 2,
+               dots: false,
+               navigation: false,
+               autoplay: true,
+               autoplaySpeed: 500,
+               loop: true}"
+               [items]="slides">
+               <div class="item" *ngFor="let image of slides;let i = index">
+                   <img src="{{image.img}}" alt="">
+               </div>
+           </owl-carousel>
+          </div>
+          </div>
     </div>
 
 

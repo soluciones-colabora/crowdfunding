@@ -1,6 +1,8 @@
-
-<div *ngIf="auth.user | async; then authenticated else guest">
+<div class="login-holder">
+  
+  <div *ngIf="auth.user | async; else guest">
     <!-- template will replace this div -->
+  </div>
 </div>
 
 <!-- User NOT logged in -->
@@ -39,7 +41,7 @@
     <mat-card-actions>
       <mat-grid-list cols="1" rowHeight="50px">
         <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <button mat-flat-button (click)="signInWithFacebook()" class="button btn-social btn-facebook">
+          <button mat-raised-button (click)="signInWithFacebook()" class="button btn-social btn-facebook">
             <i class="fa fa-facebook fa-lg"></i> Ingresar con Facebook
           </button>
         </mat-grid-tile>
