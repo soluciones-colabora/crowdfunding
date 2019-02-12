@@ -7,6 +7,7 @@ import { AuthService } from '../services/authentication/auth.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject} from 'rxjs/Subject';
 
+import * as faker from 'faker';
 
 @Component({
   selector: 'app-main-nav',
@@ -27,14 +28,16 @@ export class MainNavComponent implements OnInit, OnDestroy {
     private breakpointObserver: BreakpointObserver,
     public authService: AuthService,
     private router: Router
-  ) { }
+  ) {
+    console.log('faker :', faker);
+  }
 
   ngOnInit() {
     this.authService.user.pipe(takeUntil(this.ngUnsubscribe)).subscribe((user) => {
       this.loading = false;
       this.user = user;
       if (this.user) {
-        console.log('this.user :', this.user);
+        // Display photo of user depending on its role...
         if (!this.user.photoURL && this.user.logo) {
           this.user.photoURL =  this.user.logo;
         } else if (!this.user.photoURL) {

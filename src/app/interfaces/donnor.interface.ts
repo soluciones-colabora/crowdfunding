@@ -17,6 +17,7 @@ export interface Donnor {
   postalCode?:   number;
   amountdonated?: number;
   numberdonated?: number;
+
   // Interests
   interests?:    object;
 }

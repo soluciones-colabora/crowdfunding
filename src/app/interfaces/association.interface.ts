@@ -1,10 +1,10 @@
 
 export interface Association {
   // DB Info
-  uid?:      any;
-  role?:        string;
+  uid?:        any;
+  role?:       string;
   createdOn?:  Date;
-  status?:      string;
+  status?:     string;
 
   // Basic information
   email?:    string;
@@ -39,6 +39,10 @@ export interface Association {
   team?:           [];
   socialNetworks?: [];
   gallery?:        [];
+
+  // Donations status...
+  timeRemaining?: number;
+  goal?: number;
   amountcollected?: number;
   numberdonors?: number;
   rating?: number;
