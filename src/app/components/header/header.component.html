@@ -26,26 +26,27 @@
   </mat-grid-list>
 </div> -->
 
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="transparent" Sticky-Element offset="420">
   <!-- Navbar Show/Hide Button -->
-  <button
+  <button mat-button
     type="button"
     aria-label="Toggle sidenav"
     mat-icon-button
     (click)="drawer.toggle()"
     *ngIf="isHandset$ | async">
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    <mat-icon aria-label="Side nav toggle icon" color="white" class="menu-white">menu</mat-icon>
   </button>
 
   <!-- Show logo -->
+  <span class="spacer" *ngIf="isHandset$ | async"></span>
   <a class="navbar-brand"><img src="assets/feyac.png" alt="" routerLink=""></a>
-  <span class="spacer"></span>
+  <span class="spacer" *ngIf="!(isHandset$ | async)"></span>
 
 
   <!-- Display options if size allows it -->
   <span *ngIf="!(isHandset$ | async)" class="content-links">
     <button mat-button [routerLink]="['apoyar']">APOYAR CAMPAÑAS</button>
-    <span class="">|</span>
+    <span class="divider">|</span>
     <button mat-button [routerLink]="['']">¿CÓMO APOYAR?</button>
 
 
@@ -55,7 +56,7 @@
       <!-- Show Profile Picture -->
       <button mat-button [matMenuTriggerFor]="menu">
         <img class="navbar-avatar" [src]="user.photoURL" alt=""  routerLink="">
-        <mat-icon>more_vert</mat-icon>
+        <mat-icon color="white">more_vert</mat-icon>
       </button>
 
       <!-- Menu items for user... -->
@@ -79,7 +80,7 @@
     <!-- If no user show login and registration options -->
     <ng-template #notlogged let-user>
       <button mat-button [routerLink]="['login']">INICIAR SESIÓN</button>
-      <span class="">|</span>
+      <span class="divider">|</span>
       <button mat-button [routerLink]="['register']">REGISTRARSE</button>
     </ng-template>
   </span>

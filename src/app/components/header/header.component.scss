@@ -1,6 +1,8 @@
 @import '../../../styles.scss';
-@import '../../main-nav/main-nav.component.scss'
-
+@import '../../main-nav/main-nav.component.scss';
+mat-icon.menu-white {
+    color:white;
+}
 // .example-spacer {
 //   flex: 1 1 auto;
 // }

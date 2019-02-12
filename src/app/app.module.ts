@@ -16,6 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 
 // Directives
 import { DropZoneDirective } from './drop-zone.directive';
+import { StickyElementDirective } from './sticky-element.directive';
 
 // Firebase Modules
 import { AngularFireModule } from '@angular/fire';
@@ -77,6 +78,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     EmailAvailableDirective,
     EmailRegisteredDirective,
     MatchPasswordValidatorDirective,
+    StickyElementDirective,
     RegisterMainComponent,
     RegisterAssocComponent,
     RegisterDonorComponent,

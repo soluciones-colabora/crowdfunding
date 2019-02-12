@@ -1,9 +1,9 @@
 @import '../../../styles.scss';
 .inicio{
-	@include navbar(85px);
+	// @include navbar(85px);
 	// @include container-general;
 	&__titulo {
-		height: 450px;
+		height: 500px;
 		    // display: inline-block;
 		background: url("/assets/mano.jpeg");
 		background-position:center;
