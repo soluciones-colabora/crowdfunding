@@ -87,7 +87,7 @@ export class LoginComponent implements OnInit {
   private afterSignIn() {
     // Do after login stuff here, such router redirects, toast messages, etc.
 
-    return this.router.navigate(['/']);
+    return this.router.navigate(['/apoyar']);
   }
 
 }
