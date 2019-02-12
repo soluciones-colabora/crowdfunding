@@ -62,6 +62,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 // import { ScrollSpyModule } from 'ngx-scrollspy';
 import { ScrollerComponent } from './components/scroller/scroller.component';
 import { ParticlesModule } from 'angular-particle';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { ParticlesModule } from 'angular-particle';
     ConfirmationDialog,
     AssocDetailComponent,
     ProfileComponent,
-    ScrollerComponent
+    ScrollerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

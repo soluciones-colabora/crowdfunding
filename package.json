@@ -40,8 +40,10 @@
     "ng-in-viewport": "^6.0.3",
     "ng-lottie": "^0.3.2",
     "ngx-owl-carousel": "^2.0.7",
+    "ngx-scrollspy": "^1.2.1",
     "ngx-toastr": "^9.1.1",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

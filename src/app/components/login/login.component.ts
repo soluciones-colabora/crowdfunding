@@ -38,21 +38,22 @@ export class LoginComponent implements OnInit {
   // }
 
 
-  constructor(public auth: AuthService,
-              private router: Router,
-              private emailRegistered: EmailRegisteredValidator,
-              private formBuilder: FormBuilder) {
-
-                this.formulario = this.formBuilder.group({
-                  // Datos de usuario
-                  email: ['', {
-                    updateOn: 'blur',
-                    validators: Validators.compose([Validators.required, Validators.email]),
-                    asyncValidators : this.emailRegistered.validate.bind(this.emailRegistered)
-                  }],
-                  password: ['', Validators.required],
-                  rememberPassword: [false]
-                });
+  constructor(
+    public auth: AuthService,
+    private router: Router,
+    private emailRegistered: EmailRegisteredValidator,
+    private formBuilder: FormBuilder
+  ) {
+    this.formulario = this.formBuilder.group({
+      // Datos de usuario
+      email: ['', {
+        updateOn: 'blur',
+        validators: Validators.compose([Validators.required, Validators.email]),
+        asyncValidators : this.emailRegistered.validate.bind(this.emailRegistered)
+      }],
+      password: ['', Validators.required],
+      rememberPassword: [false]
+    });
   }
 
 
