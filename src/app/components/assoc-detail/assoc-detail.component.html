@@ -47,14 +47,34 @@
         allowfullscreen></iframe>
     </div>
     <div class="button-holder">
-      <button mat-flat-button>QUIERO APOYAR</button>
+      <button mat-flat-button (click)="tooglePaypal()">QUIERO APOYAR</button>
       <!-- <div class="spacer"></div> -->
     </div>
-  </div>
-  <div>
-      <div id="paypal-button-container"></div>
+    <div class="pagos-container" #paypal>
+      <div class="pagos-card">
+        <h1>{{'500' | currency:'MXN'}}</h1>
+        <div id="paypal-button-container"></div>  
+      </div>
+      <div class="pagos-card">
+        <h1>{{'250' | currency:'MXN'}}</h1>
+        <div id="paypal-button-container-2"></div>  
+      </div>
+      <div class="pagos-card">
+        <h1>{{'150' | currency:'MXN'}}</h1>
+        <div id="paypal-button-container-3"></div>  
+      </div>
+      <div class="pagos-card">
+        <h1>{{'50' | currency:'MXN'}}</h1>
+        <div id="paypal-button-container-4"></div>  
+      </div>
+    </div>
   </div>
 </div>
+<div class="img-asoc" id="responsive-banner">
+    <div class="background" style="background: url('assets/hogardeangeles.png') no-repeat scroll center;"> </div>
+      <img src="assets/hogardeangeles.png"alt="" class="avatar">
+      <div class="overlay"></div>
+    </div>
 <div class="general-holder">
 <div class="menu">
   <div class="img-asoc">

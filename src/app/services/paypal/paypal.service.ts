@@ -21,7 +21,10 @@ export class PaypalService {
       // paypal.Button.render(this.setPayPalConfig(button.paymentAmount, button.styleName), '#paypal-checkout'+ button.paymentAmount);
       // this.paypalLoad = false;
       // })
-      paypal.Buttons(this.setPayPalConfig('0.01')).render('#paypal-button-container');
+      paypal.Buttons(this.setPayPalConfig('500.00')).render('#paypal-button-container');
+      paypal.Buttons(this.setPayPalConfig('250.00')).render('#paypal-button-container-2');
+      paypal.Buttons(this.setPayPalConfig('150.00')).render('#paypal-button-container-3');
+      paypal.Buttons(this.setPayPalConfig('50.00')).render('#paypal-button-container-4');
     });
   }
 

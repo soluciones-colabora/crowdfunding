@@ -12,6 +12,8 @@ export class AssocDetailComponent implements AfterViewInit {
   @ViewChild('valor_li') valor_li: ElementRef;
   @ViewChild('equipo_li') equipo_li: ElementRef;
   @ViewChild('galeria_li') galeria_li: ElementRef;
+  @ViewChild('paypal') paypal: ElementRef;
+  visible_flag: boolean = false;
   safeURL: SafeResourceUrl;
   navItem: number;
   team = [
@@ -77,12 +79,14 @@ export class AssocDetailComponent implements AfterViewInit {
       // myDiv.scrollTop = 0;
   }
 
-  // public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
-  //   this.renderer.addClass(target, visible ? 'active' : 'inactive');
-  //   this.renderer.removeClass(target, visible ? 'inactive' : 'active');
-  //   console.log(visible);
-  // }
-
+  tooglePaypal() {
+    if( this.visible_flag) {
+      this.renderer.removeClass(this.paypal.nativeElement, 'visible');
+    } else{
+      this.renderer.addClass(this.paypal.nativeElement, 'visible');
+    }
+    this.visible_flag = !this.visible_flag;
+  }
   public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
     // this.renderer.addClass(target, visible ? 'active' : 'inactive');
     // this.renderer.removeClass(target, visible ? 'inactive' : 'active');
