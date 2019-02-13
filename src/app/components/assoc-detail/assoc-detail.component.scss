@@ -356,7 +356,8 @@
   opacity: 0;
   .pagos-card {
     padding: 10px;
-    // @include box-shadow;
+    @include box-shadow;
+    border-radius: 5px;
     // width: 250px;
     // height: 150px;
   }

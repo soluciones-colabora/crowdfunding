@@ -80,10 +80,16 @@ export class AssocDetailComponent implements AfterViewInit {
   }
 
   tooglePaypal() {
-    if( this.visible_flag) {
-      this.renderer.removeClass(this.paypal.nativeElement, 'visible');
-    } else{
+    if (this.visible_flag) { // visible
+      this.renderer.removeClass(this.paypal.nativeElement, 'fadeInUp');
+      this.renderer.addClass(this.paypal.nativeElement, 'fadeOutDown');
+      setTimeout(() => {
+        this.renderer.removeClass(this.paypal.nativeElement, 'visible');
+      }, 600);
+    } else { // no visible
+      this.renderer.removeClass(this.paypal.nativeElement, 'fadeOutDown');
       this.renderer.addClass(this.paypal.nativeElement, 'visible');
+        this.renderer.addClass(this.paypal.nativeElement, 'fadeInUp');
     }
     this.visible_flag = !this.visible_flag;
   }
