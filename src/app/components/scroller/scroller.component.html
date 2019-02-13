@@ -1,4 +1,4 @@
-<ng-container *ngIf="infinite | async as people">
+<ng-container *ngIf="(infinite | async) as people else loading">
 
   <cdk-virtual-scroll-viewport
   orientation="horizontal"
@@ -25,3 +25,7 @@
   </cdk-virtual-scroll-viewport>
 
 </ng-container>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

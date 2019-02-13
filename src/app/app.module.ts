@@ -119,7 +119,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     MDBBootstrapModule,
     NgCircleProgressModule.forRoot({
       radius: 45,
-      space : -5,
+      space : -6,
       outerStrokeWidth: 6,
       innerStrokeWidth: 6,
       backgroundPadding: 0,
@@ -136,7 +136,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
       innerStrokeColor: '#e7e8ea',
       showInnerStroke: true,
       showUnits: true,
-      animation: true,
+      animation: false,
       animationDuration: 300
     }),
     OwlModule,

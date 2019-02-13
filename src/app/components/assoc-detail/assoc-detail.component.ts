@@ -94,36 +94,7 @@ export class AssocDetailComponent implements AfterViewInit {
     this.visible_flag = !this.visible_flag;
   }
   public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
-    // this.renderer.addClass(target, visible ? 'active' : 'inactive');
-    // this.renderer.removeClass(target, visible ? 'inactive' : 'active');
     console.log(target.id);
-    // switch (target.id) {
-    //   case 'resumen':
-    //   console.log(this.resumen_li);
-    //   this.disable_li(this.resumen_li);
-    //   // this.renderer.addClass(this.resumen_li.nativeElement,'active');
-    //     break;
-    //   case 'beneficiarios':
-    //   this.disable_li(this.beneficiarios_li);
-    //   // this.renderer.addClass(this.beneficiarios_li.nativeElement, visible ? 'active' : 'inactive');
-    //     break;
-    //   case 'valor':
-    //   this.disable_li(this.valor_li);
-    //   // this.renderer.addClass(this.valor_li.nativeElement, visible ? 'active' : 'inactive');
-    //     break;
-    //   case 'equipo':
-    //   this.disable_li(this.equipo_li);
-    //   // this.renderer.addClass(this.equipo_li.nativeElement, visible ? 'active' : 'inactive');
-    //   // this.renderer.removeClass(this.equipo_li.nativeElement, visible ? 'inactive' : 'active');
-    //     break;
-    //   case 'galeria':
-    //   this.disable_li(this.galeria_li);
-    //   // this.renderer.addClass(this.galeria_li.nativeElement, visible ? 'active' : 'inactive');
-    //   // this.renderer.removeClass(this.galeria_li.nativeElement, visible ? 'inactive' : 'active');
-    //     break;
-    //   default:
-    //     break;
-    // }
   }
 
    private disable_li(element:ElementRef) {

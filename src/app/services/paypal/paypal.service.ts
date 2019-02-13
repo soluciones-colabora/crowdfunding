@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-
+import { Injectable, Inject, Injector } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 declare let paypal: any;
 
 interface Style {
@@ -13,9 +13,11 @@ interface Style {
 @Injectable({
   providedIn: 'root'
 })
+
+// @Injectable()
 export class PaypalService {
 
-  constructor() {
+  constructor(toasts:ToastrService) {
     this.addPaypalScript().then(() => {
       // this.paypalButtons.forEach(button => {
       // paypal.Button.render(this.setPayPalConfig(button.paymentAmount, button.styleName), '#paypal-checkout'+ button.paymentAmount);
@@ -27,6 +29,10 @@ export class PaypalService {
       paypal.Buttons(this.setPayPalConfig('50.00')).render('#paypal-button-container-4');
     });
   }
+
+//   private get toastr(): ToastrService {
+//     return this.injector.get(ToastrService);
+// }
 
   addPaypalScript() {
     // this.addScript = true;
@@ -43,7 +49,7 @@ export class PaypalService {
     return {
       style: {
         layout:  'vertical',
-        color:   'gold',
+        color:   'blue',
         shape:   'rect',
         label:   'paypal',
         tagline: false
@@ -56,7 +62,7 @@ export class PaypalService {
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '0.01'
+              value: paymentAmount
             }
           }]
         });
@@ -68,6 +74,9 @@ export class PaypalService {
         return actions.order.capture().then(function(details) {
           // Show a success message to your buyer
           alert('Transaction completed by ' + details.payer.name.given_name);
+            this.toastr.success('¡Su registro se realizó exitosamente!', details.payer.name.given_name, {
+              timeOut: 10000
+            });
         });
       },
 
@@ -75,14 +84,16 @@ export class PaypalService {
         /*
          * Buyer cancelled the payment
         */
-        window.alert('Payment Canceled!');
+       window.alert('Payment Canceled!');
+       this.toastr.error('El pago fue cancelado');
       },
 
       onError: function(err) {
         /*
          * An error occurred during the transaction
         */
-        window.alert('Something went wrong with your payment!');
+       window.alert('Something went wrong with your payment!');
+       this.toastr.error('¡Hubo un error con su registro!', '¡Error!');
       }
     };
   }

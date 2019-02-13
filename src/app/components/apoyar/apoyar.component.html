@@ -37,9 +37,18 @@
 </div>
 
 
-
-
 <div class="section-cards">
+  <h2>{{'Fin de la pobreza' | uppercase }}</h2>
+  <div class="container-scroller">
+    <div class="scrolling-wrapper">
+      <div class="card"  *ngFor='let project of projects$ | async' >
+        <app-card [project]=project ></app-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="section-cards">
   <h2>{{'Fin de la pobreza' | uppercase }}</h2>
   <hr>
   <div class="container-scroller">
@@ -49,13 +58,24 @@
       </div>
     </div>
   </div>
-</div>
-<div class="section-cards">
+</div> -->
+<!-- <div class="section-cards">
   <h2>{{'Ciudades y comunidades sostenibles' | uppercase}}</h2>
   <hr>
   <div class="container-scroller">
       <app-scroller></app-scroller>
+    </div> -->
+    <div class="section-cards">
+      <h2>{{'Ciudades y comunidades sostenibles' | uppercase}}</h2>
+      <div class="container-scroller">
+        <div class="scrolling-wrapper">
+          <div class="card"  *ngFor='let project of projects$ | async' >
+            <app-card [project]=project></app-card>
+          </div>
+        </div>
+      </div>
     </div>
+    
 <!--
 <h1>This scroller doesn't load from db</h1>
 
@@ -68,13 +88,13 @@
   </cdk-virtual-scroll-viewport>
 </div> -->
 
-<div class="section-cards">
+<!-- <div class="section-cards">
     <h2>{{'Vida de ecosistemas terrestres' | uppercase}}</h2>
     <hr>
     <div class="container-scroller">
         <app-scroller></app-scroller>
     </div>
-</div>
+</div> -->
 
 <!-- <h1>This scroller loads from db</h1>
   <app-scroller></app-scroller> -->
@@ -84,8 +104,8 @@
   <h2>{{'Vida de ecosistemas terrestres' | uppercase}}</h2>
   <div class="container-scroller">
     <div class="scrolling-wrapper">
-      <div class="card"  *ngFor='let project of projects$ | async'>
-        <app-card [project]=project></app-card>
+      <div class="card"  *ngFor='let project of projects$ | async' >
+        <app-card [project] = project></app-card>
       </div>
     </div>
   </div>
@@ -93,3 +113,6 @@
 
 
 
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

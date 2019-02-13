@@ -37,12 +37,6 @@
   background-color:$lavanda_col;
   color:white;
   border: 1.5px solid $lavanda_col;
-  // &:hover {
-  //   background-color:white;
-  //   color:$lavanda_col;
-  //   // border-color: $lavanda_col;
-  //   transition: all 1.2 ease-in;
-  // }
 }
 
 
@@ -165,7 +159,7 @@
   }
   img.avatar {
      @include avatar(150px,150px);
-     z-index: 1;
+     z-index: 5;
   }
   &-small {
     height: 150px;
@@ -178,7 +172,7 @@
   }
   @media(max-width: 769px) {
     &#responsive-banner {
-      display: block;
+      display: flex;
     }
   } 
   
@@ -358,8 +352,7 @@
     padding: 10px;
     @include box-shadow;
     border-radius: 5px;
-    // width: 250px;
-    // height: 150px;
+    margin-bottom:25px;
   }
   div#paypal-button-container,div#paypal-button-container-2,div#paypal-button-container-3,div#paypal-button-container-4 {
     z-index: 0;
