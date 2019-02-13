@@ -83,7 +83,7 @@ export class DonnorService {
     donnor.role = 'donnor';
     donnor.status = 'pending';
     donnor.createdOn = new Date();
-    return this.donnorsCollection.doc(donnor.uid).set(donnor);
+    return this.donnorsCollection.doc(donnor.uid).set(donnor, { merge: true });
   }
 
   updateDonnor(id: string, data: any): Promise<void> {

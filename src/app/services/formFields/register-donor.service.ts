@@ -25,30 +25,30 @@ export class FieldService {
         order: 1,
       }),
 
-      new TextboxField({
-        key: 'password',
-        label: 'Password',
-        required: true,
-        placeholder: 'Contraseña',
-        order: 3,
-      }),
-      new TextboxField({
-        key: 'email',
-        label: 'Email',
-        required: true,
-        type: 'email',
-        placeholder: 'Correo electrónico',
-        order: 2
-      }),
+      // new TextboxField({
+      //   key: 'password',
+      //   label: 'Password',
+      //   required: true,
+      //   placeholder: 'Contraseña',
+      //   order: 3,
+      // }),
+      // new TextboxField({
+      //   key: 'email',
+      //   label: 'Email',
+      //   required: true,
+      //   type: 'email',
+      //   placeholder: 'Correo electrónico',
+      //   order: 2
+      // }),
 
-      new TextboxField({
-        key: 'newpassword',
-        label: 'newPassword',
-        required: true,
-        type: 'password',
-        placeholder: 'Vuelve a escribir tu contraseña',
-        order: 4
-      }),
+      // new TextboxField({
+      //   key: 'newpassword',
+      //   label: 'newPassword',
+      //   required: true,
+      //   type: 'password',
+      //   placeholder: 'Vuelve a escribir tu contraseña',
+      //   order: 4
+      // }),
 
       new TextboxField({
         key: 'phone',

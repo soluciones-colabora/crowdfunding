@@ -3,6 +3,7 @@
   height: 500px;
   @include navbar(115px);
 }
+
 .btn-social {
   color: #fff;
   i {
@@ -59,7 +60,6 @@
 .example-stretched-tabs {
   max-width: 800px;
 }
-
 
 // Para la línea ó
 .strike {

@@ -1,5 +1,5 @@
 <div class="login-holder">
-  
+
   <div *ngIf="auth.user | async; else guest">
     <!-- template will replace this div -->
   </div>
@@ -11,7 +11,7 @@
     <mat-card-header class="center">
       <mat-card-title>INICIAR SESIÓN</mat-card-title>
       <mat-card-subtitle>Ingresa tus datos para comenzar a apoyar</mat-card-subtitle>
-      <mat-card-subtitle>¿No tienes cuenta? <a href="">Regístrate aquí</a></mat-card-subtitle>
+      <mat-card-subtitle>¿No tienes cuenta? <a [routerLink]="['/register']">Regístrate aquí</a></mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <form [formGroup]="formulario" (ngSubmit)="register()">

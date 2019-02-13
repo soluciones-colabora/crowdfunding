@@ -36,6 +36,7 @@ export class RegisterAssocComponent implements OnInit {
   labels: string[];
 
   payload = {};
+  uid: any;
 
 
   constructor(
@@ -45,6 +46,7 @@ export class RegisterAssocComponent implements OnInit {
     private authService: AuthService,
     private storage: AngularFireStorage,
     private assocSrvc: AssociationService,
+    private activatedRoute: ActivatedRoute,
     private toastr:  ToastrService
     ) {
     this.formFields = [];
@@ -58,6 +60,11 @@ export class RegisterAssocComponent implements OnInit {
     this.labels = service.getFormLabels();
 
     this.setFieldValue('email', 'test@test.com');
+    this.activatedRoute.params.subscribe(params => {
+      if ( params['id'] ) {
+        this.uid = params['id'];
+      }
+    });
 
   }
 
@@ -97,21 +104,21 @@ export class RegisterAssocComponent implements OnInit {
 
   async register() {
     try {
-      const email = this.payload['email'];
-      const password = 'password';
+      // const email = this.payload['email'];
+      // const password = 'password';
 
-      // Signup the new user and get its uid
-      const credential = await this.authService.emailSignUp(email, password);
-      const uid = credential.user.uid;
+      // // Signup the new user and get its uid
+      // const credential = await this.authService.emailSignUp(email, password);
+      // const uid = credential.user.uid;
 
-      // Send user email to verify its email
-      await credential.user.sendEmailVerification();
+      // // Send user email to verify its email
+      // await credential.user.sendEmailVerification();
 
       // Store all user files
-      await this.uploadAllFiles(uid);
+      await this.uploadAllFiles(this.uid);
 
       // Register association in DB
-      const association: Association = { ...this.payload, uid: uid};
+      const association: Association = { ...this.payload, uid: this.uid};
       await this.assocSrvc.createAssociation(association);
 
       // Inform user register was succesful
@@ -120,7 +127,7 @@ export class RegisterAssocComponent implements OnInit {
       });
 
       // Return to index
-      this.router.navigate(['/index']);
+      this.router.navigate(['/apoyar']);
     } catch (error) {
       // Should check for each type of error: SignUp, Upload, CreateAssoc
       // console.log('error :', error);

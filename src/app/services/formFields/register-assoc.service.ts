@@ -126,14 +126,14 @@ export class FieldService {
       //   order: 3
       // }),
 
-      new TextboxField({
-        key: 'email',
-        label: 'Email',
-        required: true,
-        type: 'email',
-        placeholder: 'Correo electrónico',
-        order: 1
-      }),
+      // new TextboxField({
+      //   key: 'email',
+      //   label: 'Email',
+      //   required: true,
+      //   type: 'email',
+      //   placeholder: 'Correo electrónico',
+      //   order: 1
+      // }),
 
       new TextboxField({
         key: 'name',
@@ -156,7 +156,7 @@ export class FieldService {
         label: 'cluni',
         required: true,
         placeholder: 'CLUNI',
-        order: 4
+        order: 6
       }),
 
       new RadiobuttonField({
@@ -166,7 +166,7 @@ export class FieldService {
           {key: 'Si',  value: 'Si'},
           {key: 'No',  value: 'No'}
         ],
-        order: 5
+        order: 4
       }),
 
       new UploadField({
@@ -177,7 +177,7 @@ export class FieldService {
         required: true,
         // type: 'application/pdf',
         // type: '.doc,.docx',
-        order: 6
+        order: 5
       }),
 
       new TextboxField({
