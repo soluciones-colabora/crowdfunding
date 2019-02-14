@@ -1,5 +1,5 @@
 
-<mat-toolbar>Colabora México</mat-toolbar>
+<mat-toolbar>Crowdfunding</mat-toolbar>
 
 <div *ngIf="user; else notlogged">
   <mat-nav-list>
@@ -11,7 +11,7 @@
         <!-- <h6>{{'Félix Ehuan'}}</h6> -->
       </a>
     </div>
-    <button mat-menu-item *ngIf="profile_drawer">
+    <button mat-menu-item *ngIf="profile_drawer"> 
       <mat-icon>account_circle</mat-icon>
       <span>Ver perfil</span>
     </button>
@@ -23,7 +23,7 @@
       <mat-icon>exit_to_app</mat-icon>
       <span>Cerrar sesión</span>
     </button>
-    <a mat-list-item [routerLink]="['apoyar']" >APOYAR CAMPAÑAS</a>
+    <a mat-list-item  [routerLink]="['apoyar']" >APOYAR CAMPAÑAS</a>
     <a mat-list-item [routerLink]="['']">¿CÓMO APOYAR?</a>
     <mat-menu #menu="matMenu">
         <button mat-menu-item [routerLink]="['perfil']">
@@ -34,7 +34,7 @@
           <mat-icon>edit</mat-icon>
           <span>Ver notificaciones</span>
         </button> -->
-        <button mat-menu-item (click)="authService.signOut()">
+        <button mat-menu-item (click)="authService.signOut()" >
           <mat-icon>exit_to_app</mat-icon>
           <span>Cerrar sesión</span>
         </button>

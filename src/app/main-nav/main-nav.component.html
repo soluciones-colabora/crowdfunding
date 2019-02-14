@@ -3,10 +3,10 @@
     [ngClass]="{hidden:!(isHandset$ | async)}"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)"
+    [opened]="opened"
     >
     <!-- Display navbar contents -->
-    <app-navbar [user]="user"></app-navbar>
+    <app-navbar [user]="user" [drawer]="drawer"></app-navbar>
   </mat-sidenav>
   <mat-sidenav-content>
     <!-- Show header and rest of the content -->
