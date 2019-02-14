@@ -58,15 +58,16 @@
 }
 
 .login-holder {
-  height: 500px;
-  @include navbar(115px);
+  height: 600px;
+  @include navbar(85px);
+  @include flex-parent();
 }
 
-.login-card {
-  max-width: 400px;
-  // @include navbar;
+mat-card.login-card {
+  max-width: 350px;
+  // height: 500px;
+  @include box-shadow();
   @media (max-width: 426px) {
-    // @include navbar;
     margin: 0px 30px;
   }
 }
@@ -74,6 +75,9 @@
 .example-container {
   display: flex;
   flex-direction: column;
+  mat-form-field {
+    margin-bottom: 30px;
+  }
 }
 
 form > button.mat-raised-button {

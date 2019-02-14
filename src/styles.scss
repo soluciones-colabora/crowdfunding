@@ -6,6 +6,7 @@
 // @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import "~owl.carousel/dist/assets/owl.carousel.css";
 @import "animate.scss";
+
 // @import "~owl.carousel/dist/assets/owl.theme.default.css";
 // @import '/colabora-theme.scss';
 //Variables
@@ -17,6 +18,15 @@ $secondary:#A94924;
 $gris_col: rgba(#bababa,0.5);
 $gris-bajo:#efefef;
 
+// router-outlet ~ * {
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+// }
+
+// app-footer {
+//   position: absolute;
+// }
 $mat-chinese-red: (
     50 : #f5e9e5,
     100 : #e5c8bd,
@@ -85,7 +95,9 @@ mat-card {
 mat-toolbar-row {
   justify-content: space-between;
 }
-
+.navbar-active {
+  outline: 1px solid;
+}
 .done {
   position: fixed;
   bottom: 20px;

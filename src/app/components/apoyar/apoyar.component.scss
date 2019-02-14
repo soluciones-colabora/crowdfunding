@@ -1,19 +1,29 @@
 @import '../../../styles.scss';
 .apoyar {
   @include navbar;
-    padding: 20px;
+    padding: 20px 30px;
     color:#747474;
+    border-bottom: 1px solid $gris-bajo;
+
     h1 {
-        font-weight: bold;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-style: italic;
     }
 }
 .search-container {
   width: 100%;
-  padding: 0px 51px;
+  padding: 15px 50px;
   // display: flex;
   // // flex-direction: column;
   // justify-content: space-evenly;
   // algn-content: flex-end;
+  p {
+    margin:0;
+  }
   .spacer { 
     flex: 1 1 auto;
     @media(max-width: 425px) {
@@ -57,7 +67,7 @@
 }
 .ods-container {
     // height: 350px;
-    padding: 50px;
+    padding: 30px 10 0px;
     display: flex;
     flex-wrap:wrap;
     justify-content: flex-start ;

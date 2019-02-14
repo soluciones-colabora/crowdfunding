@@ -1,4 +1,4 @@
-<div class="inicio">
+<div class="inicio animated fadeInLeft slow" #inicio>
     <div class="inicio__titulo">
       <div class="overlay">
       </div>
@@ -10,20 +10,20 @@
           <!-- <span class="titulo__rosa">&#8728;</span> -->
           </h1>
         </div>
-      <button mat-raised-button class="btn-centrado" color="accent">QUIERO APOYAR</button>
+      <button mat-raised-button [routerLink]="['apoyar']" class="btn-centrado" color="accent">QUIERO APOYAR</button>
     </div>
 </div>
 
-<div class="apoya apoya-container">
+<div class="apoya apoya-container animated fadeInUp slow" #apoya>
     <div class="apoya-rectangle square-1"><img src="assets/cuadrado2.png" alt=""></div>
     <!-- <div class="apoya-rectangle square-2"><img src="assets/cuadrado2.png" alt=""></div> -->
     <div class="apoya-rectangle square-3"><img src="assets/cuadrado2.png" alt=""></div>
     <div class="apoya-card">
       <div class="content">
         <H1>APOYA UNA CAMPAÑA</H1> 
-        <p>Apoya a nuestrar causas y sé parte del cambio positivo en el mundo.</p>
-        <p>Conoce más sobre el proceso y las asociaciones que se encargan todos los días de realizar el cambio.</p>
-        <button mat-raised-button  color="accent">VER CAMPAÑAS</button>
+        <p>Apoya a nuestrar causas y sé parte del cambio positivo en el mundo.<br>
+        Conoce más sobre el proceso y las asociaciones que se encargan todos los días de realizar el cambio.</p>
+        <button mat-raised-button [routerLink]="['apoyar']" color="accent">VER CAMPAÑAS</button>
       </div>
     </div>
 </div> 
@@ -41,14 +41,18 @@
     </div> 
   </div> -->
 
-  <div class="section-cards">
-    <h2>{{'Campañas destacadas' | uppercase }}</h2>
+  <div class="section-cards animated fadeInUp slow" #campaign>
+    <h2>{{'Campañas destacadas' | uppercase}}</h2>
     <div class="container-scroller">
-          <app-scroller></app-scroller>
+      <div class="scrolling-wrapper">
+        <div class="card"  *ngFor='let project of projects$ | async' >
+          <app-card [project]=project></app-card>
+        </div>
+      </div>
     </div>
   </div>
 
-<div class="responsive-carousel">
+<div class="responsive-carousel animated fadeIn slow" #carousel>
     <div class="carousel" id="carousel1">
       <owl-carousel
          [options]="{ 'items': 7,

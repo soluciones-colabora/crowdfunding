@@ -1,9 +1,8 @@
-<div>
 <div class="main-holder">
-  <div class="title">
+  <div class="title animated fadeInLeft slow">
       <h2>{{'campaña para apoyo visual' | uppercase}}</h2>
   </div>
-  <div class="subtitle">
+  <div class="subtitle animated fadeInLeft slow">
       <a href="www.hogardeangeles.com">
         www.hogardeangeles.com
       </a>
@@ -20,11 +19,11 @@
         <i class="fas fa-map-marker"></i>
       </a>
   </div>
-  <div class="hr-holder">
+  <div class="hr-holder animated fadeInLeft slow">
      <div class="hr"></div>
   </div>
   <div class="detail-holder">
-    <div class="statistics">
+    <div class="statistics animated fadeInUp slow">
       <div>
       <p> {{'Días restantes' | uppercase}}</p> <span>10</span>
       </div>
@@ -38,15 +37,15 @@
        <p>DONADO</p> <span>{{1875 | currency:'MXN'}}</span>
       </div>
     </div>
-    <div class="circle-holder">
+    <div class="circle-holder animated fadeInDown slow">
         <circle-progress [percent]="['75']" [radius]="60"> </circle-progress>
     </div>
-    <div class="video">
+    <div class="video animated fadeIn slow">
         <iframe height="350px" width="100%" [src]='safeURL' frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
     </div>
-    <div class="button-holder">
+    <div class="button-holder animated fadeInRight slow">
       <button mat-flat-button (click)="tooglePaypal()">QUIERO APOYAR</button>
       <!-- <div class="spacer"></div> -->
     </div>
@@ -70,12 +69,12 @@
     </div>
   </div>
 </div>
-<div class="img-asoc" id="responsive-banner">
+<div class="img-asoc" id="responsive-banner" >
     <div class="background" style="background: url('assets/hogardeangeles.png') no-repeat scroll center;"> </div>
       <img src="assets/hogardeangeles.png"alt="" class="avatar">
       <div class="overlay"></div>
   </div>
-<div class="general-holder">
+<div class="general-holder animated fadeInUp slow">
 <div class="menu">
   <div class="img-asoc">
   <div class="background" style="background: url('assets/hogardeangeles.png') no-repeat scroll center;"> </div>

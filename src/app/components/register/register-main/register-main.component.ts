@@ -13,7 +13,10 @@ import { matchPasswordValidator } from '../../../validators/match-password.direc
 export class RegisterMainComponent implements OnInit {
   public formulario: FormGroup;
   public hide = true;
-
+  myStyle: object = {};
+  myParams: object = {};
+  width: number = 100;
+  height: number = 100;
   constructor (
     public auth: AuthService,
     private emailAvailable: EmailAvailableValidator,
@@ -31,6 +34,25 @@ export class RegisterMainComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.myStyle = {
+      'width': '100%',
+      'height': '100%',
+      'z-index': 12
+  };
+
+this.myParams = {
+      particles: {
+          number: {
+              value: 80,
+          },
+          color: {
+              value: '#fff'
+          },
+          shape: {
+              type: 'circle',
+          },
+  }
+};
   }
 
   async register() {

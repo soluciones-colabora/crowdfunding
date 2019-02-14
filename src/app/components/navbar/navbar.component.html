@@ -8,7 +8,7 @@
       <a mat-icon-button (click)="profile_drawer = !profile_drawer;">
         <img class="navbar-avatar" [src]="user.photoURL">
         <!-- <mat-icon>more_vert</mat-icon> -->
-        <h6>{{'Félix Ehuan'}}</h6>
+        <!-- <h6>{{'Félix Ehuan'}}</h6> -->
       </a>
     </div>
     <button mat-menu-item *ngIf="profile_drawer">
@@ -23,8 +23,8 @@
       <mat-icon>exit_to_app</mat-icon>
       <span>Cerrar sesión</span>
     </button>
-    <a mat-list-item href="#">APOYAR CAMPAÑAS</a>
-    <a mat-list-item href="#">¿CÓMO APOYAR?</a>
+    <a mat-list-item [routerLink]="['apoyar']" >APOYAR CAMPAÑAS</a>
+    <a mat-list-item [routerLink]="['']">¿CÓMO APOYAR?</a>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>
         <mat-icon>dialpad</mat-icon>

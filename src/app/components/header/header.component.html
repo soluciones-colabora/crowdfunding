@@ -45,9 +45,9 @@
 
   <!-- Display options if size allows it -->
   <span *ngIf="!(isHandset$ | async)" class="content-links">
-    <button mat-button [routerLink]="['apoyar']">APOYAR CAMPAÑAS</button>
-    <span class="divider">|</span>
-    <button mat-button [routerLink]="['']">¿CÓMO APOYAR?</button>
+    <button mat-button [routerLink]="['apoyar']" routerLinkActive="navbar-active" >APOYAR CAMPAÑAS</button>
+    <!-- <span class="divider">|</span> -->
+    <button mat-button [routerLink]="['ayuda']" routerLinkActive="navbar-active">¿CÓMO APOYAR?</button>
 
 
 
@@ -79,9 +79,9 @@
 
     <!-- If no user show login and registration options -->
     <ng-template #notlogged let-user>
-      <button mat-button [routerLink]="['login']">INICIAR SESIÓN</button>
-      <span class="divider">|</span>
-      <button mat-button [routerLink]="['register']">REGISTRARSE</button>
+      <button mat-button [routerLink]="['login']" routerLinkActive="navbar-active">INICIAR SESIÓN</button>
+      <!-- <span class="divider">|</span> -->
+      <button mat-button [routerLink]="['register']" routerLinkActive="navbar-active">REGISTRARSE</button>
     </ng-template>
   </span>
 </mat-toolbar>
