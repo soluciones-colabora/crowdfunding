@@ -9,6 +9,8 @@ import { AuthService } from '../../services/authentication/auth.service';
 export class NavbarComponent implements OnInit {
 
   @Input() user: any;
+  @Input() drawer: any;
+
   profile_drawer = true;
 
 
@@ -17,6 +19,11 @@ export class NavbarComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  async logOut() {
+    await this.authService.signOut();
+    this.drawer.toggle();
   }
 
 }

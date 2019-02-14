@@ -11,15 +11,15 @@
         <!-- <h6>{{'Félix Ehuan'}}</h6> -->
       </a>
     </div>
-    <button mat-menu-item *ngIf="profile_drawer">
+    <button mat-menu-item *ngIf="profile_drawer" (click)="drawer.toggle()">
       <mat-icon>account_circle</mat-icon>
       <span>Ver perfil</span>
     </button>
-    <button mat-menu-item *ngIf="profile_drawer">
+    <button mat-menu-item *ngIf="profile_drawer" (click)="drawer.toggle()">
       <mat-icon>edit</mat-icon>
       <span>Ver notificaciones</span>
     </button>
-    <button mat-menu-item *ngIf="profile_drawer" (click)="authService.signOut()">
+    <button mat-menu-item *ngIf="profile_drawer" (click)="logOut()">
       <mat-icon>exit_to_app</mat-icon>
       <span>Cerrar sesión</span>
     </button>
@@ -34,7 +34,7 @@
           <mat-icon>edit</mat-icon>
           <span>Ver notificaciones</span>
         </button> -->
-        <button mat-menu-item (click)="authService.signOut()">
+        <button mat-menu-item (click)="logOut()">
           <mat-icon>exit_to_app</mat-icon>
           <span>Cerrar sesión</span>
         </button>
@@ -44,10 +44,10 @@
 <ng-template #notlogged let-user>
   <!-- If notLogged just show redirection buttons -->
   <mat-nav-list>
-    <a mat-list-item [routerLink]="['apoyar']">APOYAR CAMPAÑAS</a>
-    <a mat-list-item [routerLink]="['ayuda']">¿CÓMO APOYAR?</a>
-    <a mat-list-item [routerLink]="['login']">INICIAR SESIÓN</a>
-    <a mat-list-item [routerLink]="['register']">REGISTRARSE</a>
+    <a mat-list-item (click)="drawer.toggle()" [routerLink]="['apoyar']">APOYAR CAMPAÑAS</a>
+    <a mat-list-item (click)="drawer.toggle()" [routerLink]="['ayuda']">¿CÓMO APOYAR?</a>
+    <a mat-list-item (click)="drawer.toggle()" [routerLink]="['login']">INICIAR SESIÓN</a>
+    <a mat-list-item (click)="drawer.toggle()" [routerLink]="['register']">REGISTRARSE</a>
   </mat-nav-list>
 </ng-template>
 
