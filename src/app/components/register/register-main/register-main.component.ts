@@ -61,12 +61,15 @@ this.myParams = {
     try {
       // Signup the new user and get its uid
       const credential = await this.auth.emailSignUp(email, password);
+
+      // Send user email to verify its email
+      await credential.user.sendEmailVerification();
+
       await this.auth.updateUserData(credential.user);
 
       // const uid = credential.user.uid;
 
-      // // Send user email to verify its email
-      // await credential.user.sendEmailVerification();
+
 
       // // Register donnor in DB
       // const donnor: Donnor = { ...this.payload, uid: uid};

@@ -82,6 +82,11 @@ export class LoginComponent implements OnInit {
     await this.afterSignIn();
   }
 
+  async signInWithGoogle() {
+    await this.auth.googleLogin();
+    await this.afterSignIn();
+  }
+
   /// Shared
 
   private afterSignIn() {
