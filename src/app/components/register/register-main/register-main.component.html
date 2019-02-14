@@ -1,6 +1,6 @@
 
 <div *ngIf="auth.user | async as user else notlogged" class="general-holder">
-  <div class="register-holder animated fadeInLeftBig">
+  <div class="register-holder animated fadeInRight">
     <div class="register-center">
       <h3>REGISTRARSE</h3>
       <p>Elige el tipo de perfil que te gustaría tener</p>
@@ -24,7 +24,7 @@
 </div>
 
 <ng-template #notlogged let-user>
-  <div class="login-holder animated fadeInRightBig"> 
+  <div class="login-holder animated fadeInRight"> 
     <mat-card class="login-card">
       <mat-card-header class="center">
         <mat-card-title>REGISTRO DE USUARIO</mat-card-title>

@@ -2,12 +2,13 @@
 
   <div *ngIf="auth.user | async; else guest">
     <!-- template will replace this div -->
+    <app-loader></app-loader>
   </div>
 </div>
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-  <mat-card class="login-card animated fadeInLeftBig">
+  <mat-card class="login-card animated fadeInLeft">
     <mat-card-header class="center">
       <mat-card-title>INICIAR SESIÓN</mat-card-title>
       <mat-card-subtitle>Ingresa tus datos para comenzar a apoyar</mat-card-subtitle>

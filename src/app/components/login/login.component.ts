@@ -5,6 +5,7 @@ import { AuthService } from '../../services/authentication/auth.service';
 
 import { EmailRegisteredValidator } from '../../validators/email-registered.directive';
 import { matchPasswordValidator } from '../../validators/match-password.directive';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -42,7 +43,8 @@ export class LoginComponent implements OnInit {
     public auth: AuthService,
     private router: Router,
     private emailRegistered: EmailRegisteredValidator,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toast: ToastrService
   ) {
     this.formulario = this.formBuilder.group({
       // Datos de usuario
@@ -77,13 +79,14 @@ export class LoginComponent implements OnInit {
   }
 
   async signInWithFacebook() {
-    console.log('I was clicked!');
     await this.auth.facebookLogin();
     await this.afterSignIn();
   }
 
   async signInWithGoogle() {
     await this.auth.googleLogin();
+    await this.toast.success('', 'Te has autenticado correctamente',
+     {positionClass: 'toast-top-center',easeTime: 350});
     await this.afterSignIn();
   }
 
@@ -91,7 +94,6 @@ export class LoginComponent implements OnInit {
 
   private afterSignIn() {
     // Do after login stuff here, such router redirects, toast messages, etc.
-
     return this.router.navigate(['/apoyar']);
   }
 

@@ -2,6 +2,7 @@
 .login-holder {
   height: 500px;
   @include navbar(115px);
+  @include flex-parent;
 }
 
 .btn-social {

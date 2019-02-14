@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { Observable, of } from 'rxjs';
 import { switchMap, startWith, tap, filter } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
 
 interface User {
   uid: string;
@@ -23,7 +24,8 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private router: Router ) {
+    private router: Router,
+    private toast: ToastrService ) {
       this.user = this.afAuth.authState.pipe(
         switchMap(user => {
           if (user) {
@@ -124,7 +126,11 @@ export class AuthService {
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['/']);
+      this.toast.error('', 'Cerrando sesión',
+      {positionClass: 'toast-top-center', easeTime: 350});
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 1000);
     });
   }
 
