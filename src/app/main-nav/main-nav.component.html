@@ -3,7 +3,7 @@
     [ngClass]="{hidden:!(isHandset$ | async)}"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="opened"
+    [opened]="!(isHandset$ | async)"
     >
     <!-- Display navbar contents -->
     <app-navbar [user]="user" [drawer]="drawer"></app-navbar>

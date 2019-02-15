@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   @Input() user: any;
-  @Input() drawer: ElementRef;
+  @Input() drawer: any;
+
   profile_drawer = true;
 
 
@@ -21,9 +22,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  navegar(route:string) {
-    this.router.navigateByUrl(`/${route}`);
-    // [routerLink]="['apoyar']"  (click)="drawer.toggle()"
+  async logOut() {
+    await this.authService.signOut();
+    this.drawer.toggle();
   }
 
 }
