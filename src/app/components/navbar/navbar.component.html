@@ -1,5 +1,5 @@
 
-<mat-toolbar>Colabora México</mat-toolbar>
+<mat-toolbar>Crowdfunding</mat-toolbar>
 
 <div *ngIf="user; else notlogged">
   <mat-nav-list>
@@ -23,8 +23,8 @@
       <mat-icon>exit_to_app</mat-icon>
       <span>Cerrar sesión</span>
     </button>
-    <a mat-list-item [routerLink]="['apoyar']" >APOYAR CAMPAÑAS</a>
-    <a mat-list-item [routerLink]="['']">¿CÓMO APOYAR?</a>
+    <a mat-list-item  (click)="drawer.toggle()" [routerLink]="['apoyar']" >APOYAR CAMPAÑAS</a>
+    <a mat-list-item  (click)="drawer.toggle()" [routerLink]="['']">¿CÓMO APOYAR?</a>
     <mat-menu #menu="matMenu">
         <button mat-menu-item [routerLink]="['perfil']">
           <mat-icon>account_circle</mat-icon>

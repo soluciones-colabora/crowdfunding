@@ -15,7 +15,10 @@ export class StickyElementDirective implements OnInit {
   private url: boolean;
   navStart: Observable<NavigationStart>;
   @Input() offset: number;
-  constructor(private element: ElementRef,  private renderer: Renderer2, private route: ActivatedRoute, private router: Router) {
+  constructor(private element: ElementRef,
+      private renderer: Renderer2, 
+      private route: ActivatedRoute, 
+      private router: Router) {
     route.url.subscribe(data =>{
       this.observable_data = data;
     });

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { AuthService } from '../../services/authentication/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnInit {
   profile_drawer = true;
 
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService, private router: Router) {
     console.log('user :', this.user);
    }
 
