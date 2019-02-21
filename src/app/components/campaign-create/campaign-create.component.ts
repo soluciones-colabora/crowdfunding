@@ -98,6 +98,7 @@ export class CampaignCreateComponent implements OnInit {
       // Create new campaign
       const campaign: Campaign = { ...this.payload };
       const createdCampaign = await this.campaignSrvc.createCampaign(campaign);
+      console.log('timeRemaining :', this.campaignSrvc.getTimeRemaining(createdCampaign));
 
       // Upload images related to campaign
       await this.uploadAllFiles(createdCampaign.id);

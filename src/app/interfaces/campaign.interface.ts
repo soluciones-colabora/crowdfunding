@@ -25,5 +25,5 @@ export interface Campaign {
   status?:       string;
   createdOn?:    Date;
   updatedOn?:    Date;
-  endsOn?:       Date;
+  endsOn?:       any;
 }

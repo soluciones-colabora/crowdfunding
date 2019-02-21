@@ -1,26 +1,26 @@
 <div class="main-holder">
   <div class="title animated fadeInLeft slow">
-      <h2>{{'campaña para apoyo visual' | uppercase}}</h2>
+    <h2>{{'campaña para apoyo visual' | uppercase}}</h2>
   </div>
   <div class="subtitle animated fadeInLeft slow">
-      <a href="www.hogardeangeles.com">
-        www.hogardeangeles.com
-      </a>
-      <a href="" >
-        (999)1234567
-      </a>
-      <a href="">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="">
-        <i class="fas fa-map-marker"></i>
-      </a>
+    <a href="www.hogardeangeles.com">
+      www.hogardeangeles.com
+    </a>
+    <a href="" >
+      (999)1234567
+    </a>
+    <a href="">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="">
+      <i class="fas fa-map-marker"></i>
+    </a>
   </div>
   <div class="hr-holder animated fadeInLeft slow">
-     <div class="hr"></div>
+    <div class="hr"></div>
   </div>
   <div class="detail-holder">
     <div class="statistics animated fadeInUp slow">
@@ -52,44 +52,44 @@
     <div class="pagos-container animated " #paypal>
       <div class="pagos-card">
         <h1>{{'500' | currency:'MXN'}}</h1>
-        <div id="paypal-button-container"></div>  
+        <div id="paypal-button-container"></div>
       </div>
       <div class="pagos-card">
         <h1>{{'250' | currency:'MXN'}}</h1>
-        <div id="paypal-button-container-2"></div>  
+        <div id="paypal-button-container-2"></div>
       </div>
       <div class="pagos-card">
         <h1>{{'150' | currency:'MXN'}}</h1>
-        <div id="paypal-button-container-3"></div>  
+        <div id="paypal-button-container-3"></div>
       </div>
       <div class="pagos-card">
         <h1>{{'50' | currency:'MXN'}}</h1>
-        <div id="paypal-button-container-4"></div>  
+        <div id="paypal-button-container-4"></div>
       </div>
     </div>
   </div>
 </div>
 <div class="img-asoc" id="responsive-banner" >
-    <div class="background" style="background: url('assets/hogardeangeles.png') no-repeat scroll center;"> </div>
-      <img src="assets/hogardeangeles.png"alt="" class="avatar">
-      <div class="overlay"></div>
-  </div>
-<div class="general-holder animated fadeInUp slow">
-<div class="menu">
-  <div class="img-asoc">
   <div class="background" style="background: url('assets/hogardeangeles.png') no-repeat scroll center;"> </div>
+  <img src="assets/hogardeangeles.png"alt="" class="avatar">
+  <div class="overlay"></div>
+</div>
+<div class="general-holder animated fadeInUp slow">
+  <div class="menu">
+    <div class="img-asoc">
+    <div class="background" style="background: url('assets/hogardeangeles.png') no-repeat scroll center;"> </div>
     <img src="assets/hogardeangeles.png"alt="" class="avatar">
     <div class="overlay"></div>
+    </div>
+    <ul>
+      <li #resumen_li><a (click)="scrollToElement(resumen)"  > RESUMEN</a></li>
+      <li #beneficiarios_li><a (click)="scrollToElement(beneficiarios)"> BENEFICIARIOS</a></li>
+      <li #valor_li><a (click)="scrollToElement(valor)" > PROPUESTA DE VALOR</a></li>
+      <li #equipo_li><a (click)="scrollToElement(equipo)"> EQUIPO</a></li>
+      <li #galeria_li><a (click)="scrollToElement(galeria)" > GALERÍA</a></li>
+    </ul>
   </div>
-  <ul>
-    <li #resumen_li><a (click)="scrollToElement(resumen)"  > RESUMEN</a></li>
-    <li #beneficiarios_li><a (click)="scrollToElement(beneficiarios)"> BENEFICIARIOS</a></li>
-    <li #valor_li><a (click)="scrollToElement(valor)" > PROPUESTA DE VALOR</a></li>
-    <li #equipo_li><a (click)="scrollToElement(equipo)"> EQUIPO</a></li>
-    <li #galeria_li><a (click)="scrollToElement(galeria)" > GALERÍA</a></li>
-  </ul>
-</div>
-<div class="info scrollbar-colabora">
+  <div class="info scrollbar-colabora">
     <div #resumen  id="resumen"
     inViewport
     [inViewportOptions]="{ threshold: [0] }"
@@ -223,8 +223,8 @@
           </div>
           </div>
     </div>
-
-
   </div>
 </div>
+<!-- <div *ngIf="campaign$ | async as campaign">{{campaign | json}}</div> -->
+<!-- <div *ngIf="campaign$ | async as campaign">{{campaignSrvc.getTimeRemaining(campaign)}}</div> -->
 

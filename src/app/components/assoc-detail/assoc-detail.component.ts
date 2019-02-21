@@ -1,6 +1,14 @@
 import { Component, AfterViewInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { PaypalService } from '../../services/paypal/paypal.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { CampaignService } from '../../services/database/Campaign/campaign.service';
+import { Campaign } from '../../interfaces/campaign.interface';
+import { Observable } from 'rxjs';
+
+import { map, take, tap, finalize } from 'rxjs/operators';
+
 @Component({
   selector: 'app-assoc-detail',
   templateUrl: './assoc-detail.component.html',
@@ -57,9 +65,31 @@ export class AssocDetailComponent implements AfterViewInit {
     {img: 'assets/siies_gris.png'},
     {img: 'assets/tec_gris.png'},
   ];
-  constructor(private _sanitizer: DomSanitizer, private renderer: Renderer2, paypalS: PaypalService) {
+  campaign$: Observable<Campaign>;
+  timeRemaining: string;
+
+  constructor(
+    private _sanitizer: DomSanitizer,
+    private renderer: Renderer2,
+    paypalS: PaypalService,
+    private activatedRoute: ActivatedRoute,
+    public campaignSrvc: CampaignService
+    ) {
     this.navItem = 0;
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/O3cBZ5X-eGw');
+    this.activatedRoute.params.subscribe(params => {
+      if ( params['id'] ) {
+        this.campaign$ = this.campaignSrvc.getCampaign(params['id']).valueChanges();
+        // .pipe(
+        //   take(1),
+        //   tap(campaign => {
+        //     this.timeRemaining = this.campaignSrvc.getTimeRemaining(campaign);
+        //     console.log('this.timeRemaining :', this.timeRemaining);
+
+        //   })
+        // );
+      }
+    });
   }
 
   ngAfterViewInit() { }
