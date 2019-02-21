@@ -1,11 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, ViewChild } from '@angular/core';
 import { FieldService } from 'src/app/services/formFields/register-donor.service';
 import { ButtonToggleField } from '../../dynamic-forms/classes/field-buttonToggle';
-import { ProjectService } from '../../services/database/Project/project.service';
+import { CampaignService } from '../../services/database/Campaign/campaign.service';
 
 import { Observable, of } from 'rxjs';
 
-interface Project {
+interface Campaign {
   title?: string;
   description?: string;
 
@@ -30,14 +30,14 @@ interface Project {
 export class ApoyarComponent implements OnInit {
   odsFields: any[];
 
-  projects$: Observable<Project[]>;
+  campaigns$: Observable<Campaign[]>;
 
   items = Array.from({length: 6}).map((_, i) => `Item #${i}`);
 
-  constructor(fieldservice: FieldService, projectService: ProjectService) {
+  constructor(fieldservice: FieldService, campaignService: CampaignService) {
     this.odsFields = fieldservice.getSecondFormFields();
-    // projectService.insertFake(5);
-    this.projects$ = projectService.getData();
+    // campaignService.insertFake(10);
+    this.campaigns$ = campaignService.getData();
   }
 
   ngOnInit() {

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// Guards
+import { ProfileGuard } from './services/guards/profile.guard';
+
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterMainComponent } from './components/register/register-main/register-main.component';
@@ -9,9 +12,7 @@ import { RegisterDonorComponent } from './components/register/register-donor/reg
 import { AssocDetailComponent } from './components/assoc-detail/assoc-detail.component';
 
 
-
-// import { Name3Component } from './';
-// import { Name4Component } from './';
+import { CampaignCreateComponent } from './components/campaign-create/campaign-create.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ApoyarComponent } from './components/apoyar/apoyar.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -27,7 +28,7 @@ const routes: Routes = [
   { path: 'apoyar', component: ApoyarComponent },
   { path: 'perfil', component: ProfileComponent },
   { path: 'loader', component: LoaderComponent },
-  // { path: 'path3', component: Name3Component },
+  { path: 'createCampaign/:id', component: CampaignCreateComponent, canActivate: [ProfileGuard] },
   // { path: 'path4', component: Name4Component },
   { path: '**', component: PageNotFoundComponent }
 

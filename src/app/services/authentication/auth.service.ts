@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 
 interface User {
   uid: string;
+  role?: string;
   email?: string | null;
   photoURL?: string;
   displayName?: string;

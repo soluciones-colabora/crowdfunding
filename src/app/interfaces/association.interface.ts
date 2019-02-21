@@ -41,6 +41,7 @@ export interface Association {
   gallery?:        [];
 
   // Donations status...
+  currentCampaign?: string;
   timeRemaining?: number;
   goal?: number;
   amountcollected?: number;

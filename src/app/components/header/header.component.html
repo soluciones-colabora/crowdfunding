@@ -58,13 +58,34 @@
         <img class="navbar-avatar" [src]="user.photoURL" alt="">
         <mat-icon color="white">more_vert</mat-icon>
       </button>
-
-      <!-- Menu items for user... -->
       <mat-menu #menu="matMenu">
-        <button mat-menu-item [routerLink]="['perfil']">
+        <button mat-menu-item [routerLink]="['perfil']" >
           <mat-icon>account_circle</mat-icon>
           <span>Ver perfil</span>
         </button>
+        <div [ngSwitch]="user.role">
+          <div *ngSwitchCase="'association'">
+            <div *ngIf="user.currentCampaign; else createCampaign">
+              <button mat-menu-item [routerLink]="['/detail', user.currentCampaign]">
+                <mat-icon>edit</mat-icon>
+                <span>Ver Campaña Actual</span>
+              </button>
+            </div>
+            <ng-template #createCampaign>
+              <button mat-menu-item [routerLink]="['/createCampaign', user.uid]">
+                <mat-icon>edit</mat-icon>
+                <span>Crear Campaña</span>
+              </button>
+            </ng-template>
+          </div>
+          <div *ngSwitchDefault>
+              <!-- *ngSwitchCase="'association'" -->
+            <button mat-menu-item [routerLink]="['apoyar']">
+              <mat-icon>edit</mat-icon>
+              <span>Ver notificaciones</span>
+            </button>
+          </div>
+        </div>
         <!-- <button mat-menu-item [routerLink]="['apoyar']">
           <mat-icon>edit</mat-icon>
           <span>Ver notificaciones</span>

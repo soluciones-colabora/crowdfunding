@@ -66,6 +66,7 @@ import { ParticlesModule } from 'angular-particle';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoaderComponent } from './loader/loader.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { CampaignCreateComponent } from './components/campaign-create/campaign-create.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     ScrollerComponent,
     NavbarComponent,
     LoaderComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    CampaignCreateComponent
   ],
   imports: [
     BrowserModule,

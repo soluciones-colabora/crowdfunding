@@ -4,7 +4,7 @@
       </div>
       <particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams"></particles>
       <div class="titulo-centrado">
-          <h1 class="titulo titulo__purpura"> 
+          <h1 class="titulo titulo__purpura">
           <!-- <span class="titulo__rosa">&#8728;</span> -->
           A UN CLIC DE CAMBIAR VIDAS
           <!-- <span class="titulo__rosa">&#8728;</span> -->
@@ -20,13 +20,13 @@
     <div class="apoya-rectangle square-3"><img src="assets/cuadrado2.png" alt=""></div>
     <div class="apoya-card">
       <div class="content">
-        <H1>APOYA UNA CAMPAÑA</H1> 
+        <H1>APOYA UNA CAMPAÑA</H1>
         <p>Apoya a nuestrar causas y sé parte del cambio positivo en el mundo.<br>
         Conoce más sobre el proceso y las asociaciones que se encargan todos los días de realizar el cambio.</p>
         <button mat-raised-button [routerLink]="['apoyar']" color="accent">VER CAMPAÑAS</button>
       </div>
     </div>
-</div> 
+</div>
 
 <!-- <h3 stlye="text-align:center;">Nuevas campañas</h3>
   <div class="campaign">
@@ -38,15 +38,15 @@
     </div>
     <div class="campaign-card">
       <app-card></app-card>
-    </div> 
+    </div>
   </div> -->
 
   <div class="section-cards animated fadeInUp slow" #campaign>
     <h2>{{'Campañas destacadas' | uppercase}}</h2>
     <div class="container-scroller">
       <div class="scrolling-wrapper">
-        <div class="card"  *ngFor='let project of projects$ | async' >
-          <app-card [project]=project></app-card>
+        <div class="card"  *ngFor='let campaign of campaigns$ | async' >
+          <app-card [campaign]=campaign></app-card>
         </div>
       </div>
     </div>
@@ -101,9 +101,9 @@
   <defs>
     <filter id="dropshadow" x="0%" y="0%" width="120%" height="120%" filterUnits="userSpaceOnUse">
       <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/> <!-- stdDeviation is how much to blur -->
-      <feOffset dx="0" dy="0" result="offsetblur"/> 
+      <feOffset dx="0" dy="0" result="offsetblur"/>
       <!-- <feOffset dx="-2" dy="-2" result="offsetblur"/> -->
-      <feMerge> 
+      <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
         <feMergeNode in="SourceGraphic"/>

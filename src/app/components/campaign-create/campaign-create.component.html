@@ -1,0 +1,15 @@
+<mat-card class="campaign-create-card">
+    <mat-card-header class="center">
+      <mat-card-title>REGISTRAR UNA NUEVA CAMPAÑA</mat-card-title>
+      <mat-card-subtitle>Ingrese los datos para crear su campaña.</mat-card-subtitle>
+      <mat-card-subtitle>¡Atención! Una vez creada la campaña no puede ser eliminada</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-horizontal-stepper linear="false" label="false" #stepper>
+        <mat-step [stepControl]="firstFormGroup" *ngFor="let fields of formFields; let i = index">
+          <app-dynamic-form [fields]="fields" (submited)="onSubmit(i, $event)"></app-dynamic-form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+  </mat-card>

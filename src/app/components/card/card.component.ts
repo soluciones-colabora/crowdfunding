@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { projection } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +8,7 @@ import { projection } from '@angular/core/src/render3';
 })
 export class CardComponent implements OnInit {
   // @Input() category = 'none';
-  @Input() project = {
+  @Input() campaign = {
     title: 'Una vida digna con oportunidades',
     description: `Adquisición de una camioneta para transportar a los niños a las escuelas,
     poder recoger donaciones que nos otorgan.Lorem ipsum dolor sit amet`,
@@ -24,8 +23,8 @@ export class CardComponent implements OnInit {
   random_url: string;
 
   constructor(private sanitizer: DomSanitizer) {
-    // console.log('this.project :', this.project);
-    // if (this.project.logo != 'assets/cancer.png') {
+    // console.log('this.campaign :', this.campaign);
+    // if (this.campaign.logo != 'assets/cancer.png') {
     //   this.random_number = Math.ceil(Math.random() * 10);
     //   this.random_url = `/${this.random_number}/`;
     // } else {

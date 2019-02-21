@@ -23,7 +23,7 @@
     </mat-form-field>
     <div class="spacer"></div>
   </div>
-</div> 
+</div>
   <div class="ods-container animated fadeInUp slow">
     <div >
         <mat-button-toggle>
@@ -42,8 +42,8 @@
   <h2>{{'Fin de la pobreza' | uppercase }}</h2>
   <div class="container-scroller">
     <div class="scrolling-wrapper">
-      <div class="card"  *ngFor='let project of projects$ | async' >
-        <app-card [project]=project ></app-card>
+      <div class="card"  *ngFor='let campaign of campaigns$ | async' >
+        <app-card [campaign]=campaign ></app-card>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@
   <hr>
   <div class="container-scroller">
     <div class="scrolling-wrapper">
-      <div class="card"  *ngFor='let project of projects$ | async'>
+      <div class="card"  *ngFor='let campaign of campaigns$ | async'>
         <app-card></app-card>
       </div>
     </div>
@@ -70,13 +70,13 @@
       <h2>{{'Ciudades y comunidades sostenibles' | uppercase}}</h2>
       <div class="container-scroller">
         <div class="scrolling-wrapper">
-          <div class="card"  *ngFor='let project of projects$ | async' >
-            <app-card [project]=project></app-card>
+          <div class="card"  *ngFor='let campaign of campaigns$ | async' >
+            <app-card [campaign]=campaign></app-card>
           </div>
         </div>
       </div>
     </div>
-    
+
 <!--
 <h1>This scroller doesn't load from db</h1>
 
@@ -105,8 +105,8 @@
   <h2>{{'Vida de ecosistemas terrestres' | uppercase}}</h2>
   <div class="container-scroller">
     <div class="scrolling-wrapper">
-      <div class="card"  *ngFor='let project of projects$ | async' >
-        <app-card [project] = project></app-card>
+      <div class="card"  *ngFor='let campaign of campaigns$ | async' >
+        <app-card [campaign] = campaign></app-card>
       </div>
     </div>
   </div>

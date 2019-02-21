@@ -1,0 +1,32 @@
+@import '../../../styles.scss';
+
+.campaign-create-card {
+  @include navbar(100px);
+  max-width: 800px;
+  min-height: 700px;
+
+  mat-card-content {
+    padding-top:20px;
+    mat-horizontal-stepper {
+      padding-top:20px;
+    }
+  }
+}
+
+div.mat-horizontal-stepper-header-container{
+  margin-bottom: 24px!important;
+}
+
+div.mat-horizontal-stepper-content {
+  padding-top:24px!important;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls-stepper {
+  margin-top: 24px;
+}

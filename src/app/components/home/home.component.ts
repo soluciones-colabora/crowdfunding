@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { FieldService } from '../../services/formFields/register-donor.service';
-import { ProjectService } from '../../services/database/Project/project.service';
+import { CampaignService } from '../../services/database/Campaign/campaign.service';
 import { Observable, of } from 'rxjs';
 
-interface Project {
+interface Campaign {
   title?: string;
   description?: string;
 
@@ -48,10 +48,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   myParams: object = {};
   width: number = 100;
   height: number = 100;
-  projects$: Observable<Project[]>;
-  constructor(fieldservice: FieldService,private renderer: Renderer2, projectService: ProjectService) { 
+  campaigns$: Observable<Campaign[]>;
+  constructor(fieldservice: FieldService,private renderer: Renderer2, campaignService: CampaignService) {
     this.odsFields = fieldservice.getSecondFormFields();
-    this.projects$ = projectService.getData();
+    this.campaigns$ = campaignService.getData();
   }
 
 
@@ -84,7 +84,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     // setTimeout(() => {
     //   this.renderer.removeClass(this.apoya.nativeElement, 'fadeInRight');
     //   this.renderer.addClass(this.apoya.nativeElement, 'fadeOutRight');
-      
+
     // }, 600);
     // // Apoya
     // // Campañas
@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     // this.renderer.addClass(this.carousel.nativeElement, 'fadeOut');
     // // this.renderer.removeClass(this.apoya.nativeElement, 'fadeIn');
     // // this.renderer.addClass(this.apoya.nativeElement, 'fadeOut');
-    
+
   }
 }
 
